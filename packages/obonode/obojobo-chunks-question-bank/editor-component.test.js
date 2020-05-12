@@ -20,6 +20,12 @@ jest.mock(
 	'obojobo-document-engine/src/scripts/oboeditor/components/node/with-slate-wrapper',
 	() => item => item
 )
+jest.mock(
+	'obojobo-document-engine/src/scripts/oboeditor/components/node/editor-component',
+	() => props => <div>{props.children}</div>
+)
+
+jest.useFakeTimers()
 
 describe('QuestionBank editor', () => {
 	test('QuestionBank builds the expected component', () => {
@@ -75,7 +81,7 @@ describe('QuestionBank editor', () => {
 			.at(0)
 			.simulate('change', { target: { value: 'all' } })
 
-		expect(Transforms.setNodes).toHaveBeenCalled()
+		expect(component.html()).toMatchSnapshot()
 	})
 
 	test('QuestionBank component changes choose amount', () => {
@@ -125,8 +131,9 @@ describe('QuestionBank editor', () => {
 			.find('input')
 			.at(2)
 			.simulate('blur')
+		jest.runAllTimers()
 
-		expect(Transforms.setNodes).toHaveBeenCalled()
+		expect(component.html()).toMatchSnapshot()
 	})
 
 	test('QuestionBank component changes select type', () => {
@@ -157,7 +164,7 @@ describe('QuestionBank editor', () => {
 			.at(0)
 			.simulate('change', { target: { value: 'pick' } })
 
-		expect(Transforms.setNodes).toHaveBeenCalled()
+		expect(component.html()).toMatchSnapshot()
 	})
 
 	test('QuestionBank component deletes self', () => {
@@ -273,5 +280,23 @@ describe('QuestionBank editor', () => {
 			expect.objectContaining({ type: 'ObojoboDraft.Chunks.QuestionBank' }),
 			{ at: [0] }
 		)
+	})
+
+	test('QuestionBank component sets properties', () => {
+		const props = {
+			element: {
+				content: {},
+				children: []
+			},
+			editor: {},
+			selected: true
+		}
+
+		ReactEditor.findPath.mockReturnValueOnce([])
+
+		const component = mount(<QuestionBank {...props} />)
+
+		component.setProps({ selected: false })
+		expect(Transforms.setNodes).toHaveBeenCalled()
 	})
 })

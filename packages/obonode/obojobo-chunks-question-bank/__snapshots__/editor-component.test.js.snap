@@ -1,115 +1,145 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`QuestionBank editor QuestionBank builds the expected component 1`] = `
-<div
-  className="oboeditor-component component "
-  data-obo-component="true"
->
+<div>
   <div
-    className="obojobo-draft--chunks--question-bank editor-bank"
+    className="obojobo-draft--chunks--question-bank editor-bank  is-open"
   >
     <div
-      className="obojobo-draft--components--button is-not-dangerous align-center delete-button"
+      className="obojobo-draft--components--button is-not-dangerous align-center collapse-button"
     >
       <button
         className="button"
         contentEditable={false}
         onClick={[Function]}
       >
+        ⌃
+      </button>
+    </div>
+    <div
+      className="obojobo-draft--components--button is-not-dangerous align-center delete-button"
+    >
+      <button
+        className="button"
+        contentEditable={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+      >
         ×
       </button>
     </div>
     <div
-      className="qb-settings"
+      className="question-bank-content"
     >
-      <fieldset
-        className="choose"
+      <div
+        className="qb-settings"
+        contentEditable={false}
       >
-        <legend>
-          How many questions should be displayed?
-        </legend>
-        <label>
-          <input
-            name="undefined-choose"
-            onChange={[Function]}
-            type="radio"
-            value="all"
-          />
-          All questions
-        </label>
-        <span>
-           or
-        </span>
-        <label>
-          <input
-            checked={true}
-            name="undefined-choose"
-            onChange={[Function]}
-            type="radio"
-            value="pick"
-          />
-          Pick
-        </label>
-        <input
-          onBlur={[Function]}
-          onChange={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          type="number"
-        />
-      </fieldset>
-      <label
-        className="select"
-      >
-        How should questions be selected?
-        <select
-          onChange={[Function]}
-          onClick={[Function]}
+        <fieldset
+          className="choose"
         >
-          <option
+          <legend>
+            How many questions should be displayed?
+          </legend>
+          <label>
+            <input
+              name="undefined-choose"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="radio"
+              value="all"
+            />
+            All questions
+          </label>
+          <span>
+             or
+          </span>
+          <label>
+            <input
+              checked={true}
+              name="undefined-choose"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              type="radio"
+              value="pick"
+            />
+            Pick
+          </label>
+          <input
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            type="number"
+            value={1}
+          />
+        </fieldset>
+        <label
+          className="select"
+        >
+          How should questions be selected?
+          <select
+            onBlur={[Function]}
+            onChange={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
             value="sequential"
           >
-            In order
-          </option>
-          <option
-            value="random"
-          >
-            Randomly
-          </option>
-          <option
-            value="random-unseen"
-          >
-            Randomly, with no repeats
-          </option>
-        </select>
-      </label>
-    </div>
-    <div
-      className="button-bar"
-    >
-      <div
-        className="obojobo-draft--components--button is-not-dangerous align-center"
-      >
-        <button
-          className="button"
-          contentEditable={false}
-          onClick={[Function]}
-        >
-          Add Question
-        </button>
+            <option
+              value="sequential"
+            >
+              In order
+            </option>
+            <option
+              value="random"
+            >
+              Randomly
+            </option>
+            <option
+              value="random-unseen"
+            >
+              Randomly, with no repeats
+            </option>
+          </select>
+        </label>
       </div>
       <div
-        className="obojobo-draft--components--button is-not-dangerous align-center"
+        className="button-bar"
+        contentEditable={false}
       >
-        <button
-          className="button"
-          contentEditable={false}
-          onClick={[Function]}
+        <div
+          className="obojobo-draft--components--button is-not-dangerous align-center"
         >
-          Add Question Bank
-        </button>
+          <button
+            className="button"
+            contentEditable={false}
+            onClick={[Function]}
+          >
+            Add Question
+          </button>
+        </div>
+        <div
+          className="obojobo-draft--components--button is-not-dangerous align-center"
+        >
+          <button
+            className="button"
+            contentEditable={false}
+            onClick={[Function]}
+          >
+            Add Question Bank
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 `;
+
+exports[`QuestionBank editor QuestionBank component changes choose amount 1`] = `"<div><div class=\\"obojobo-draft--chunks--question-bank editor-bank  is-open\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center collapse-button\\"><button class=\\"button\\" contenteditable=\\"false\\">⌃</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center delete-button\\"><button class=\\"button\\" contenteditable=\\"false\\">×</button></div><div class=\\"question-bank-content\\"><div class=\\"qb-settings\\" contenteditable=\\"false\\"><fieldset class=\\"choose\\"><legend>How many questions should be displayed?</legend><label><input type=\\"radio\\" name=\\"undefined-choose\\" value=\\"all\\">All questions</label><span> or</span><label><input type=\\"radio\\" name=\\"undefined-choose\\" value=\\"pick\\" checked=\\"\\">Pick</label><input type=\\"number\\" value=\\"7\\"></fieldset><label class=\\"select\\">How should questions be selected?<select><option value=\\"sequential\\">In order</option><option value=\\"random\\">Randomly</option><option value=\\"random-unseen\\">Randomly, with no repeats</option></select></label></div><div class=\\"button-bar\\" contenteditable=\\"false\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\"><button class=\\"button\\" contenteditable=\\"false\\">Add Question</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\"><button class=\\"button\\" contenteditable=\\"false\\">Add Question Bank</button></div></div></div></div></div>"`;
+
+exports[`QuestionBank editor QuestionBank component changes choose type 1`] = `"<div><div class=\\"obojobo-draft--chunks--question-bank editor-bank  is-open\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center collapse-button\\"><button class=\\"button\\" contenteditable=\\"false\\">⌃</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center delete-button\\"><button class=\\"button\\" contenteditable=\\"false\\">×</button></div><div class=\\"question-bank-content\\"><div class=\\"qb-settings\\" contenteditable=\\"false\\"><fieldset class=\\"choose\\"><legend>How many questions should be displayed?</legend><label><input type=\\"radio\\" name=\\"undefined-choose\\" value=\\"all\\">All questions</label><span> or</span><label><input type=\\"radio\\" name=\\"undefined-choose\\" value=\\"pick\\" checked=\\"\\">Pick</label><input type=\\"number\\" value=\\"8\\" disabled=\\"\\"></fieldset><label class=\\"select\\">How should questions be selected?<select><option value=\\"sequential\\">In order</option><option value=\\"random\\">Randomly</option><option value=\\"random-unseen\\">Randomly, with no repeats</option></select></label></div><div class=\\"button-bar\\" contenteditable=\\"false\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\"><button class=\\"button\\" contenteditable=\\"false\\">Add Question</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\"><button class=\\"button\\" contenteditable=\\"false\\">Add Question Bank</button></div></div></div></div></div>"`;
+
+exports[`QuestionBank editor QuestionBank component changes select type 1`] = `"<div><div class=\\"obojobo-draft--chunks--question-bank editor-bank  is-open\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center collapse-button\\"><button class=\\"button\\" contenteditable=\\"false\\">⌃</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center delete-button\\"><button class=\\"button\\" contenteditable=\\"false\\">×</button></div><div class=\\"question-bank-content\\"><div class=\\"qb-settings\\" contenteditable=\\"false\\"><fieldset class=\\"choose\\"><legend>How many questions should be displayed?</legend><label><input type=\\"radio\\" name=\\"undefined-choose\\" value=\\"all\\">All questions</label><span> or</span><label><input type=\\"radio\\" name=\\"undefined-choose\\" value=\\"pick\\" checked=\\"\\">Pick</label><input type=\\"number\\" value=\\"8\\"></fieldset><label class=\\"select\\">How should questions be selected?<select><option value=\\"sequential\\">In order</option><option value=\\"random\\">Randomly</option><option value=\\"random-unseen\\">Randomly, with no repeats</option></select></label></div><div class=\\"button-bar\\" contenteditable=\\"false\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\"><button class=\\"button\\" contenteditable=\\"false\\">Add Question</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\"><button class=\\"button\\" contenteditable=\\"false\\">Add Question Bank</button></div></div></div></div></div>"`;

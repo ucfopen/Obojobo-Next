@@ -8,21 +8,76 @@
 	margin-right: 3em;
 	padding: 1.5em;
 
-	// Remove padding for nested questionbanks
+	.collapse-button {
+		position: absolute;
+		left: 0;
+		right: auto;
+		top: -0.2em;
+		z-index: 3;
+		transform: rotate(-180deg);
+
+		.button {
+			font-size: 1.2em;
+			padding: 0;
+			min-width: 1.4em;
+			border-radius: 50%;
+			border: none;
+			background: none;
+			font-weight: bold;
+			color: $color-shadow;
+
+			&:hover {
+				background: none;
+				color: $color-obojobo-blue;
+			}
+		}
+	}
+
+	&.is-not-open {
+		.question-bank-content {
+			display: none;
+		}
+
+		.collapse-button {	
+			top: 0;
+			left: -0.2em;
+			transform: rotate(90deg);
+		}
+	}
+
+	// Remove padding for nested questionbanks and questions
 	.obojobo-draft--chunks--question-bank {
 		margin-left: 0;
 		margin-right: 0;
 		font-size: 0.9em;
 	}
 
+	.obojobo-draft--chunks--question {
+		&.pad {
+			padding-left: 0;
+			padding-right: 0;
+			font-size: 0.9em;
+		}
+	}
+
 	.qb-settings {
 		font-size: 0.85em;
 		font-family: $font-default;
 		font-weight: bold;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+		user-select: none;
 
 		.choose {
 			display: inline-block;
 			border: none;
+			margin-inline-start: 0;
+			padding-inline-start: 0;
+			padding-block-end: 0;
+			padding-inline-end: 0;
+			margin: 0.5em;
+			text-align: center;
 
 			input[type='radio'] {
 				margin-right: 0.5em;
@@ -48,11 +103,10 @@
 
 		.select {
 			display: inline-block;
-			text-align: right;
-			min-width: 19em;
-			position: absolute;
-			top: 1.8em;
-			right: 2.5em;
+			display: flex;
+			flex-direction: column;
+			padding-bottom: 0.5em;
+			margin: 0.5em;
 
 			select {
 				display: block;
@@ -60,7 +114,7 @@
 				border-radius: $dimension-rounded-radius;
 				font-size: 0.7em;
 				background-color: $color-bg;
-				min-width: 24em;
+				width: 24em;
 				padding: 0.7em 2.5em 0.7em 0.5em;
 				appearance: none;
 				//stylelint-disable-next-line declaration-colon-newline-after, value-list-comma-newline-after
@@ -73,8 +127,6 @@
 				background-repeat: no-repeat;
 				margin-top: 0.5em;
 				direction: rtl;
-				position: relative;
-				left: 3em;
 
 				option {
 					direction: rtl;

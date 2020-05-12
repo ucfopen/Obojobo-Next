@@ -4,6 +4,8 @@
 	background-color: $color-bg2;
 	padding: 0.5em;
 	margin-top: 0;
+	position: relative;
+	min-height: 1em;
 
 	> div {
 		background-color: $color-bg;
@@ -12,6 +14,50 @@
 		.obojobo-draft--components--button {
 			padding-top: 0.5em;
 			padding-bottom: 0.5em;
+		}
+	}
+
+	.collapse-button {
+		position: absolute;
+		left: 0.5em;
+		right: auto;
+		top: 0.5em;
+		z-index: 3;
+		transform: rotate(-180deg);
+		background: none;
+
+		.button {
+			font-size: 1.2em;
+			padding: 0;
+			min-width: 1.4em;
+			border-radius: 50%;
+			border: none;
+			background: none;
+			font-weight: bold;
+			color: $color-shadow;
+
+			&:hover {
+				background: none;
+				color: $color-obojobo-blue;
+			}
+		}
+	}
+
+	&.is-not-open {
+		> div {
+			background: none;
+			text-align: center;
+		}
+
+		.mc-content {
+			display: none;
+			text-align: center;
+		}
+
+		.collapse-button {	
+			top: 0.5em;
+			left: 0em;
+			transform: rotate(90deg);
 		}
 	}
 

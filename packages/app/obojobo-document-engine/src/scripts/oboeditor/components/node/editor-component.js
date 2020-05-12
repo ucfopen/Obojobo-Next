@@ -145,7 +145,7 @@ class Node extends React.Component {
 
 		return (
 			<div className={className} data-obo-component="true">
-				{this.props.selected ? (
+				{this.props.selected && !this.props.hideInsertMenus ? (
 					<div className={'component-toolbar'}>
 						<InsertMenu
 							dropOptions={Common.Registry.insertableItems}
