@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`XML to Draft Object Tranformation Converts actionbutton xml to actionbutton node 1`] = `
+exports[`XMLtoObject Converted actionbutton xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {
@@ -25,7 +25,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts assessment xml to assessment node 1`] = `
+exports[`XMLtoObject Converted assessment xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -89,7 +89,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts break xml to break node 1`] = `
+exports[`XMLtoObject Converted break xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {
@@ -109,7 +109,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts code xml to code node 1`] = `
+exports[`XMLtoObject Converted code xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {
@@ -128,7 +128,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts content xml to content node 1`] = `
+exports[`XMLtoObject Converted content xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -144,7 +144,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts figure xml to figure node 1`] = `
+exports[`XMLtoObject Converted figure xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -292,7 +292,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts heading xml to heading node 1`] = `
+exports[`XMLtoObject Converted heading xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -410,7 +410,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts html xml to html node 1`] = `
+exports[`XMLtoObject Converted html xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {
@@ -421,7 +421,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts list xml to list node 1`] = `
+exports[`XMLtoObject Converted list xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -488,7 +488,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts mathequation xml to mathequation node 1`] = `
+exports[`XMLtoObject Converted mathequation xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {
@@ -500,7 +500,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts mcanswer xml to mcanswer node 1`] = `
+exports[`XMLtoObject Converted mcanswer xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -535,7 +535,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts mcassessment xml to mcassessment node 1`] = `
+exports[`XMLtoObject Converted mcassessment xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -871,7 +871,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts mcchoice xml to mcchoice node 1`] = `
+exports[`XMLtoObject Converted mcchoice xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -922,7 +922,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts mcfeedback xml to mcfeedback node 1`] = `
+exports[`XMLtoObject Converted mcfeedback xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -957,7 +957,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts module xml to module node 1`] = `
+exports[`XMLtoObject Converted module xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1024,7 +1024,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts native-type xml to native-type node 1`] = `
+exports[`XMLtoObject Converted native-type xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {
@@ -1064,7 +1064,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts page xml to page node 1`] = `
+exports[`XMLtoObject Converted page xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1082,7 +1082,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts question xml to question node 1`] = `
+exports[`XMLtoObject Converted question xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1228,7 +1228,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts questionbank xml to questionbank node 1`] = `
+exports[`XMLtoObject Converted questionbank xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1736,7 +1736,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts table xml to table node 1`] = `
+exports[`XMLtoObject Converted table xml matches object 1`] = `
 Object {
   "children": Array [
     Object {
@@ -1795,7 +1795,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts text xml to text node 1`] = `
+exports[`XMLtoObject Converted text xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {
@@ -1814,7 +1814,7 @@ Object {
 }
 `;
 
-exports[`XML to Draft Object Tranformation Converts youtube xml to youtube node 1`] = `
+exports[`XMLtoObject Converted youtube xml matches object 1`] = `
 Object {
   "children": Array [],
   "content": Object {

@@ -3,6 +3,7 @@
     <Module>
         <Figure size="small" alt="A city" url="http://lorempixel.com/640/480/city">
             <textGroup>
+                <!-- comment -->
                 <t>This is a small image</t>
             </textGroup>
         </Figure>

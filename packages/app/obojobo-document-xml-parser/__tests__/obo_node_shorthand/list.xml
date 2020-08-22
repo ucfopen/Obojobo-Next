@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ObojoboDraftDoc>
+    <!-- comment -->
     <Module>
         <ol>
             <li start="1" indent="4">This is a test</li>

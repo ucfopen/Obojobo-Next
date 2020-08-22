@@ -59,14 +59,26 @@ const __finalPass = o => {
 	}
 }
 
+const pattern = /^[\r\n\t ]+$/g
+const filterEmptyTextOutsideOfTs = o => {
+	if (o.name === 't') return
+	if (o.elements) {
+		o.elements = o.elements.filter(e => !(e.type === 'text' && e.text.match(pattern)))
+		o.elements.forEach(e => filterEmptyTextOutsideOfTs(e))
+	}
+}
+
 module.exports = (xml, generateIds = false) => {
 	const root = convert.xml2js(xml, {
 		compact: false,
 		trim: false,
 		nativeType: false,
 		ignoreComment: true,
-		ignoreDeclaration: true
+		ignoreDeclaration: true,
+		captureSpacesBetweenElements: true
 	})
+
+	filterEmptyTextOutsideOfTs(root)
 	nameTransform(root)
 	extensionTransform(root)
 	htmlTransform(root)
