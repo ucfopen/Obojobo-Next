@@ -1,0 +1,36 @@
+name: Tag a release
+on:
+  workflow_dispatch:
+    inputs:
+      branchToTag:
+        description: 'Branch to tag'
+        required: true
+      newTag:
+        description: 'New tag (ex: v1.0.0-alpha1)'
+        required: true
+jobs:
+  tagRelease:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: refs/heads/${{ github.event.inputs.branchToTag }}
+
+    - name: NPM - Test, Build, Deploy
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.11.1
+        registry-url: https://registry.npmjs.org/
+
+    - name: Cache Yarn Deps
+      uses: c-hive/gha-yarn-cache@v1
+
+    - run: yarn install --frozen-lockfile
+    - run: yarn lerna version --no-push --no-commit-hooks --force-publish --no-git-tag-version --yes ${{ github.event.inputs.newTag }}
+
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v4.1.2
+      with:
+        commit_message: Version ${{ github.event.inputs.newTag }}
+        tagging_message: ${{ github.event.inputs.newTag }}
+        branch: ${{ github.event.inputs.branchToTag }}
