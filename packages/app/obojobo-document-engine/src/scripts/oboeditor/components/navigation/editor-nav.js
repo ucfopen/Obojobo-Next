@@ -106,6 +106,7 @@ class EditorNav extends React.PureComponent {
 							onClick={this.onNavItemClick.bind(this, item)}
 							savePage={this.props.savePage}
 							markUnsaved={this.props.markUnsaved}
+							updateAssessmentId={this.props.updateAssessmentId}
 						/>
 					)
 				case 'no-pages':

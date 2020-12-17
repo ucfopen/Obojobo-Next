@@ -6,18 +6,48 @@ import React from 'react'
 const { SimpleDialog } = Common.components.modal
 const { Button, Switch } = Common.components
 
+const ASSESSMENT_TRIGGER_START_ATTEMPT = 'assessment:startAttempt'
+const ASSESSMENT_TRIGGER_END_ATTEMPT = 'assessment:endAttempt'
+
 class TriggerListModal extends React.Component {
 	constructor(props) {
 		super(props)
 		this.inputRef = React.createRef()
-		this.state = { ...JSON.parse(JSON.stringify(props.content)) }
+		this.state = {
+			...JSON.parse(JSON.stringify(props.content)),
+			invalidAssessmentIdError: ""
+		}
 		if (!this.state.triggers) this.state.triggers = []
 
 		this.createTrigger = this.createTrigger.bind(this)
+		this.validateSetTriggers = this.validateSetTriggers.bind(this)
 	}
 
 	componentWillUnmount() {
 		if (this.props.onClose) this.props.onClose()
+	}
+
+	componentDidMount() {
+		this.validateSetTriggers()
+	}
+
+	validateSetTriggers() {
+		// Testing if the set assessment id prop is getting here:
+		this.state.triggers.forEach(trigger => {
+			trigger.actions.forEach(action => {
+				if (action.type === ASSESSMENT_TRIGGER_START_ATTEMPT ||
+					action.type === ASSESSMENT_TRIGGER_END_ATTEMPT) {
+						
+					if (action.value.id !== this.props.assessmentId) {
+						// Then, the assessment with the id 'action.value.id' does
+						// not exist.
+						this.setState({
+							invalidAssessmentIdError: 'One of the assessment IDs above does not exist'
+						})
+					}
+				}
+			})
+		})
 	}
 
 	updateTriggerType(index, event) {
@@ -347,10 +377,13 @@ class TriggerListModal extends React.Component {
 									{this.renderActionOptions(triggerIndex, actionIndex, action)}
 								</div>
 							))}
-							<Button onClick={this.createAction.bind(this, triggerIndex)}>+ Add Action</Button>
+							<div>
+								<Button onClick={this.createAction.bind(this, triggerIndex)}>+ Add Action</Button>
+							</div>
 						</div>
 					))}
 					<Button onClick={this.createTrigger}>+ Add Trigger</Button>
+					<span className="trigger-error">{this.state.invalidAssessmentIdError}</span>
 				</div>
 			</SimpleDialog>
 		)

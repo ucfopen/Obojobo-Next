@@ -555,6 +555,7 @@ class VisualEditor extends React.Component {
 						draftId={this.props.draftId}
 						savePage={this.exportCurrentToJSON}
 						markUnsaved={this.markUnsaved}
+						updateAssessmentId={this.props.updateAssessmentId}
 					/>
 
 					<div className="component obojobo-draft--modules--module" role="main">

@@ -42,7 +42,8 @@ class EditorApp extends React.Component {
 			mode: VISUAL_MODE,
 			code: null,
 			requestStatus: null,
-			requestError: null
+			requestError: null,
+			assessmentId: "my-assessment" // default id when a new module is created.
 		}
 
 		// caluclate edit lock settings
@@ -86,6 +87,7 @@ class EditorApp extends React.Component {
 		this.onWindowInactiveWarning = this.onWindowInactiveWarning.bind(this)
 		this.onWindowReturnFromInactive = this.onWindowReturnFromInactive.bind(this)
 		this.onWindowInactive = this.onWindowInactive.bind(this)
+		this.updateAssessmentId = this.updateAssessmentId.bind(this)
 		this.renewLockInterval = null
 	}
 
@@ -334,6 +336,10 @@ class EditorApp extends React.Component {
 		ModalStore.offChange(this.onModalStoreChange)
 	}
 
+	updateAssessmentId(assessmentId) {
+		this.setState({ assessmentId })
+	}
+
 	renderCodeEditor() {
 		return (
 			<CodeEditor
@@ -365,6 +371,7 @@ class EditorApp extends React.Component {
 					// even if the url was visited manually
 					this.props.settings && (this.props.settings.readOnly || this.props.settings.revisionId)
 				}
+				updateAssessmentId={this.updateAssessmentId}
 			/>
 		)
 	}
@@ -391,7 +398,9 @@ class EditorApp extends React.Component {
 				/>
 				{this.state.mode === VISUAL_MODE ? this.renderVisualEditor() : this.renderCodeEditor()}
 				{modalItem && modalItem.component ? (
-					<ModalContainer>{modalItem.component}</ModalContainer>
+					<ModalContainer assessmentId={this.state.assessmentId}>
+						{modalItem.component}
+					</ModalContainer>
 				) : null}
 			</div>
 		)

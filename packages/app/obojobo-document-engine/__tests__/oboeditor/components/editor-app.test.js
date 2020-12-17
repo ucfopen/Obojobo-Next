@@ -182,7 +182,7 @@ describe('EditorApp', () => {
 	})
 
 	test('onEditorStoreChange calls Editor.getState', () => {
-		expect.hasAssertions()
+		expect.hasAssertions() // here
 
 		ModalUtil.getCurrentModal.mockReturnValueOnce({
 			component: 'mock component'
@@ -197,7 +197,7 @@ describe('EditorApp', () => {
 		return global.flushPromises().then(() => {
 			component.update()
 			EditorStore.getState.mockClear()
-			component.instance().onEditorStoreChange()
+			component.instance().onEditorStoreChange() // here
 			expect(EditorStore.getState).toHaveBeenCalled()
 			expect(instance.state).toHaveProperty('requestStatus', null)
 			expect(instance.state).toHaveProperty('requestError', null)
@@ -235,7 +235,7 @@ describe('EditorApp', () => {
 	})
 
 	test('EditorApp component renders modal', () => {
-		expect.hasAssertions()
+		expect.hasAssertions() // here
 
 		jest.spyOn(Common.models.OboModel, 'create')
 		Common.models.OboModel.create.mockReturnValueOnce({
@@ -254,7 +254,8 @@ describe('EditorApp', () => {
 
 		return global.flushPromises().then(() => {
 			component.update()
-			expect(component.html()).toMatchSnapshot()
+			console.log(component)
+			expect(component.html()).toMatchSnapshot() // here
 			expect(instance.state).toHaveProperty('requestStatus', null)
 			expect(instance.state).toHaveProperty('requestError', null)
 			// eslint-disable-next-line no-console

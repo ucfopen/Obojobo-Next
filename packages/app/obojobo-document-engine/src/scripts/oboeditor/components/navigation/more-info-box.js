@@ -107,6 +107,11 @@ class MoreInfoBox extends React.Component {
 	handleIdChange(event) {
 		const currentId = event.target.value
 
+		if (this.props.isAssessment) {
+			// Then, this more-info-box belongs to an assessment.
+			this.props.updateAssessmentId(currentId)
+		}
+
 		return this.setState({ currentId, needsUpdate: true })
 	}
 

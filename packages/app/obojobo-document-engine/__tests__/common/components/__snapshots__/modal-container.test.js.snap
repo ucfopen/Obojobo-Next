@@ -6,6 +6,11 @@ exports[`ModalContainer ModalContainer component 1`] = `
 >
   <div
     className="content"
-  />
+  >
+    <div
+      assessmentId="mock-assessment-id"
+      className="mock-modal-content"
+    />
+  </div>
 </div>
 `;

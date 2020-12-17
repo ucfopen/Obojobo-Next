@@ -113,4 +113,9 @@
 		margin-bottom: 1em;
 		border: 1px solid $color-shadow;
 	}
+
+	.trigger-error {
+		color: $color-dangerous-minor;
+		margin-left: 1.2em;
+	}
 }
