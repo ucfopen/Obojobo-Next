@@ -1,0 +1,13 @@
+setup:
+  addons:
+    - plan: heroku-postgresql:hobby-dev
+    - plan: scheduler
+build:
+  docker:
+    web: obojobo-node-alpine.Dockerfile
+release:
+  command:
+    - yarn obojobo-migrate up -e production
+  image: web
+run:
+  web: pm2-runtime start ecosystem.config.js

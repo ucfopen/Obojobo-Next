@@ -3,10 +3,10 @@
 	"description": "Run Obojobo Next on Heroku",
 	"keywords": ["education", "edtech", "obojobo", "openedu", "open education", "learning"],
 	"website": "https://ucfopen.github.io/Obojobo-Docs/",
+	"stack": "container",
 	"logo": "https://ucfopen.github.io/Obojobo-Docs/assets/images/obojobo_blue.svg",
 	"success_url": "/",
 	"scripts": {
-		"postdeploy": "cd node_modules/obojobo-express && yarn sampleDraft:seed",
 		"purgedata": "yarn run obojobo_purge_data"
 	},
 	"env": {
@@ -39,8 +39,8 @@
 			"value": "obojobo_server:error,obojobo_server:warn"
 		},
 		"YARN_PRODUCTION": {
-			"description": "Do not change. Makes sure yarn install includes dev dependencies",
-			"value": "false"
+			"description": "Do not change",
+			"value": "true"
 		},
 		"OBO_DEMO_PURGE_MODE": {
 			"description": "Automatically purge old data for demo purposes or to limit database growth. Additional addon setup required.",
@@ -61,7 +61,24 @@
 		"OBO_EDITLOCK_DB_LOCK_DURATION":{
 			"description": "Editor lock: period of time a lock lasts unless it is renewed.",
 			"value": "5"
+		},
+		"SECRET_SOURCE":{
+			"description": "Where to programmatically load secrets from. 'aws' or 'none'",
+			"value": "none"
+		},
+		"NODE_ENV":{
+			"description": "Do not change.",
+			"value": "production"
+		},
+		"PM2_APP_INSTANCES":{
+			"description": "Do not change.",
+			"value": "max"
+		},
+		"PM2_APP_MAX_MEMORY":{
+			"description": "Do not change.",
+			"value": "175M"
 		}
+
 	},
 	"formation": {
 		"web": {
@@ -69,7 +86,6 @@
 			"size": "free"
 		}
 	},
-	"image": "heroku/nodejs",
 	"addons": [
 		{
 			"plan": "heroku-postgresql:hobby-dev",
@@ -78,11 +94,5 @@
 			}
 		},
 		"scheduler"
-	],
-	"buildpacks": [
-		{
-			"url": "heroku/nodejs"
-		}
-	],
-	"environments": {}
+	]
 }
