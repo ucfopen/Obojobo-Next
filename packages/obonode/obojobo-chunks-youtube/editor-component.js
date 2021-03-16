@@ -22,7 +22,6 @@ class YouTube extends React.Component {
 		this.focusYoutube = this.focusYoutube.bind(this)
 		this.deleteNode = this.deleteNode.bind(this)
 		this.showSourceModal = this.showSourceModal.bind(this)
-		this.returnFocusOnShiftTab = this.returnFocusOnShiftTab.bind(this)
 		this.returnFocusOnTab = this.returnFocusOnTab.bind(this)
 	}
 	showSourceModal(event) {
@@ -36,6 +35,7 @@ class YouTube extends React.Component {
 	handleSourceChange(content) {
 		ModalUtil.hide()
 		const path = ReactEditor.findPath(this.props.editor, this.props.element)
+
 		Transforms.setNodes(
 			this.props.editor,
 			{ content: { ...this.props.element.content, ...content } },
@@ -46,7 +46,9 @@ class YouTube extends React.Component {
 	renderNoVideo() {
 		return (
 			<div className="empty-frame">
-				<div>No Video Id.</div>
+				<div>
+					<p>No video specified. Click &apos;Edit&apos; to add one.</p>
+				</div>
 			</div>
 		)
 	}
@@ -76,13 +78,6 @@ class YouTube extends React.Component {
 		}
 	}
 
-	returnFocusOnShiftTab(event) {
-		if (event.key === 'Tab' && event.shiftKey) {
-			event.preventDefault()
-			return ReactEditor.focus(this.props.editor)
-		}
-	}
-
 	render() {
 		const content = this.props.element.content
 
@@ -93,14 +88,9 @@ class YouTube extends React.Component {
 				<div
 					contentEditable={false}
 					className={`obojobo-draft--chunks--you-tube viewer pad ${isSelected}`}
-					onClick={this.focusYoutube}
+					onClick={this.focusYoutube.bind(this)}
 				>
-					<Button
-						className="delete-button"
-						onClick={this.deleteNode}
-						onKeyDown={this.returnFocusOnShiftTab}
-						tabIndex={this.props.selected ? 0 : -1}
-					>
+					<Button className="delete-button" onClick={this.deleteNode.bind(this)}>
 						×
 					</Button>
 					{content.videoId ? this.renderVideo() : this.renderNoVideo()}

@@ -1,0 +1,1436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard renders in MODE_RECENT with less modules than moduleCount, no collections 1`] = `
+<span
+  id="dashboard-root"
+>
+  <div
+    className="repository--section-wrapper repository--stick-to-top"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <nav
+      className="repository--nav"
+    >
+      <a
+        href="/"
+      >
+        <div
+          className="repository--nav--logo"
+        >
+          Obojobo
+        </div>
+      </a>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/library"
+        >
+          Module Library
+        </a>
+      </div>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/dashboard"
+        >
+          Dashboard
+        </a>
+      </div>
+      <div
+        className="repository--nav--current-user"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <div
+            className="repository--nav--current-user--name"
+          >
+            firstName lastName
+          </div>
+          <div
+            className="avatar repository--nav--current-user--avatar"
+          >
+            <div
+              className="avatar--image"
+            >
+              <img
+                alt=""
+                src="/path/to/avatar"
+              />
+            </div>
+          </div>
+        </button>
+        <div
+          className="repository--nav--current-user--menu is-not-open"
+        >
+          <div
+            className="repository--nav--current-user--link"
+          >
+            <a
+              href="/profile/logout"
+            >
+              Log Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="repository--section-wrapper--full-width repository--section-wrapper--grey default-bg"
+  >
+    <div
+      className="repository--section-wrapper--full-width-bg"
+    />
+    <section
+      className="repository--title-banner repository--info-banner"
+    >
+      <h1
+        className="repository--title-banner--title"
+      />
+    </section>
+  </div>
+  <div
+    className="repository--section-wrapper"
+  >
+    <section
+      className="repository--main-content"
+    >
+      <div
+        className="repository--main-content--control-bar"
+      >
+        <mock-MultiButton>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Collection
+          </button>
+          <hr />
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Module
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Tutorial
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            Upload...
+          </button>
+        </mock-MultiButton>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-modules-title stretch-width"
+      >
+        <span>
+          My Recent Modules
+        </span>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <div
+                className="repository--module-icon is-not-open"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <div
+                    className="repository--module-icon--image"
+                  >
+                    <svg
+                      version="1.1"
+                      viewBox="0 0 130 150"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <pattern
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<image xlink:href=\\"/library/module-icon/mockDraftId5\\" width=\\"150\\" height=\\"150\\" />",
+                            }
+                          }
+                          height="150"
+                          id="module-img-id-mockDraftId5"
+                          patternUnits="userSpaceOnUse"
+                          width="150"
+                        />
+                      </defs>
+                      <path
+                        d="M56.29165124598851 4.999999999999999Q64.9519052838329 0 73.61215932167728 4.999999999999999L121.24355652982142 32.5Q129.9038105676658 37.5 129.9038105676658 47.5L129.9038105676658 102.5Q129.9038105676658 112.5 121.24355652982142 117.5L73.61215932167728 145Q64.9519052838329 150 56.29165124598851 145L8.660254037844387 117.5Q0 112.5 0 102.5L0 47.5Q0 37.5 8.660254037844387 32.5Z"
+                        fill="url(#module-img-id-mockDraftId5)"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--menu-control-button menu-control-button"
+                  >
+                    <svg
+                      height="32px"
+                      viewBox="0 0 32 32"
+                      width="32px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--title"
+                  >
+                    E Module Title 5
+                  </div>
+                </button>
+              </div>
+              <div
+                className="repository--module-icon is-not-open"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <div
+                    className="repository--module-icon--image"
+                  >
+                    <svg
+                      version="1.1"
+                      viewBox="0 0 130 150"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <pattern
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<image xlink:href=\\"/library/module-icon/mockDraftId2\\" width=\\"150\\" height=\\"150\\" />",
+                            }
+                          }
+                          height="150"
+                          id="module-img-id-mockDraftId2"
+                          patternUnits="userSpaceOnUse"
+                          width="150"
+                        />
+                      </defs>
+                      <path
+                        d="M56.29165124598851 4.999999999999999Q64.9519052838329 0 73.61215932167728 4.999999999999999L121.24355652982142 32.5Q129.9038105676658 37.5 129.9038105676658 47.5L129.9038105676658 102.5Q129.9038105676658 112.5 121.24355652982142 117.5L73.61215932167728 145Q64.9519052838329 150 56.29165124598851 145L8.660254037844387 117.5Q0 112.5 0 102.5L0 47.5Q0 37.5 8.660254037844387 32.5Z"
+                        fill="url(#module-img-id-mockDraftId2)"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--menu-control-button menu-control-button"
+                  >
+                    <svg
+                      height="32px"
+                      viewBox="0 0 32 32"
+                      width="32px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--title"
+                  >
+                    A Module Title 2
+                  </div>
+                </button>
+              </div>
+              <div
+                className="repository--module-icon is-not-open"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <div
+                    className="repository--module-icon--image"
+                  >
+                    <svg
+                      version="1.1"
+                      viewBox="0 0 130 150"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <pattern
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<image xlink:href=\\"/library/module-icon/mockDraftId3\\" width=\\"150\\" height=\\"150\\" />",
+                            }
+                          }
+                          height="150"
+                          id="module-img-id-mockDraftId3"
+                          patternUnits="userSpaceOnUse"
+                          width="150"
+                        />
+                      </defs>
+                      <path
+                        d="M56.29165124598851 4.999999999999999Q64.9519052838329 0 73.61215932167728 4.999999999999999L121.24355652982142 32.5Q129.9038105676658 37.5 129.9038105676658 47.5L129.9038105676658 102.5Q129.9038105676658 112.5 121.24355652982142 117.5L73.61215932167728 145Q64.9519052838329 150 56.29165124598851 145L8.660254037844387 117.5Q0 112.5 0 102.5L0 47.5Q0 37.5 8.660254037844387 32.5Z"
+                        fill="url(#module-img-id-mockDraftId3)"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--menu-control-button menu-control-button"
+                  >
+                    <svg
+                      height="32px"
+                      viewBox="0 0 32 32"
+                      width="32px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--title"
+                  >
+                    C Module Title 3
+                  </div>
+                </button>
+              </div>
+              <div
+                className="repository--module-icon is-not-open"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <div
+                    className="repository--module-icon--image"
+                  >
+                    <svg
+                      version="1.1"
+                      viewBox="0 0 130 150"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <pattern
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<image xlink:href=\\"/library/module-icon/mockDraftId\\" width=\\"150\\" height=\\"150\\" />",
+                            }
+                          }
+                          height="150"
+                          id="module-img-id-mockDraftId"
+                          patternUnits="userSpaceOnUse"
+                          width="150"
+                        />
+                      </defs>
+                      <path
+                        d="M56.29165124598851 4.999999999999999Q64.9519052838329 0 73.61215932167728 4.999999999999999L121.24355652982142 32.5Q129.9038105676658 37.5 129.9038105676658 47.5L129.9038105676658 102.5Q129.9038105676658 112.5 121.24355652982142 117.5L73.61215932167728 145Q64.9519052838329 150 56.29165124598851 145L8.660254037844387 117.5Q0 112.5 0 102.5L0 47.5Q0 37.5 8.660254037844387 32.5Z"
+                        fill="url(#module-img-id-mockDraftId)"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--menu-control-button menu-control-button"
+                  >
+                    <svg
+                      height="32px"
+                      viewBox="0 0 32 32"
+                      width="32px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--title"
+                  >
+                    D Module Title 
+                  </div>
+                </button>
+              </div>
+              <div
+                className="repository--module-icon is-not-open"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <button
+                  onClick={[Function]}
+                >
+                  <div
+                    className="repository--module-icon--image"
+                  >
+                    <svg
+                      version="1.1"
+                      viewBox="0 0 130 150"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <pattern
+                          dangerouslySetInnerHTML={
+                            Object {
+                              "__html": "<image xlink:href=\\"/library/module-icon/mockDraftId4\\" width=\\"150\\" height=\\"150\\" />",
+                            }
+                          }
+                          height="150"
+                          id="module-img-id-mockDraftId4"
+                          patternUnits="userSpaceOnUse"
+                          width="150"
+                        />
+                      </defs>
+                      <path
+                        d="M56.29165124598851 4.999999999999999Q64.9519052838329 0 73.61215932167728 4.999999999999999L121.24355652982142 32.5Q129.9038105676658 37.5 129.9038105676658 47.5L129.9038105676658 102.5Q129.9038105676658 112.5 121.24355652982142 117.5L73.61215932167728 145Q64.9519052838329 150 56.29165124598851 145L8.660254037844387 117.5Q0 112.5 0 102.5L0 47.5Q0 37.5 8.660254037844387 32.5Z"
+                        fill="url(#module-img-id-mockDraftId4)"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--menu-control-button menu-control-button"
+                  >
+                    <svg
+                      height="32px"
+                      viewBox="0 0 32 32"
+                      width="32px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className="repository--module-icon--title"
+                  >
+                    B Module Title 4
+                  </div>
+                </button>
+              </div>
+              <a
+                className="repository--button repository--all-modules--button"
+                href="/dashboard/all"
+                target="_blank"
+              >
+                All Modules
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-collections-title"
+      >
+        <span>
+          My Collections
+        </span>
+        <div
+          className="repository--main-content--sort repository--collection-sort"
+        >
+          <span>
+            Sort
+          </span>
+          <select
+            onChange={[Function]}
+            value="alphabetical"
+          >
+            <option
+              value="newest"
+            >
+              Newest
+            </option>
+            <option
+              value="alphabetical"
+            >
+              Alphabetical
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <p
+                className="repository--item-list--collection--empty-placeholder"
+              >
+                <span
+                  className="repository--item-list--collection--empty-placeholder--text"
+                >
+                  Nothing to see here!
+                </span>
+                <button
+                  className="repository--button "
+                  onClick={[Function]}
+                >
+                  New Collection
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</span>
+`;
+
+exports[`Dashboard renders with default props 1`] = `
+<span
+  id="dashboard-root"
+>
+  <div
+    className="repository--section-wrapper repository--stick-to-top"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <nav
+      className="repository--nav"
+    >
+      <a
+        href="/"
+      >
+        <div
+          className="repository--nav--logo"
+        >
+          Obojobo
+        </div>
+      </a>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/library"
+        >
+          Module Library
+        </a>
+      </div>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/dashboard"
+        >
+          Dashboard
+        </a>
+      </div>
+      <div
+        className="repository--nav--current-user"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <div
+            className="repository--nav--current-user--name"
+          >
+            firstName lastName
+          </div>
+          <div
+            className="avatar repository--nav--current-user--avatar"
+          >
+            <div
+              className="avatar--image"
+            >
+              <img
+                alt=""
+                src="/path/to/avatar"
+              />
+            </div>
+          </div>
+        </button>
+        <div
+          className="repository--nav--current-user--menu is-not-open"
+        >
+          <div
+            className="repository--nav--current-user--link"
+          >
+            <a
+              href="/profile/logout"
+            >
+              Log Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="repository--section-wrapper--full-width repository--section-wrapper--grey default-bg"
+  >
+    <div
+      className="repository--section-wrapper--full-width-bg"
+    />
+    <section
+      className="repository--title-banner repository--info-banner"
+    >
+      <h1
+        className="repository--title-banner--title"
+      />
+    </section>
+  </div>
+  <div
+    className="repository--section-wrapper"
+  >
+    <section
+      className="repository--main-content"
+    >
+      <div
+        className="repository--main-content--control-bar"
+      >
+        <mock-MultiButton>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Collection
+          </button>
+          <hr />
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Module
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Tutorial
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            Upload...
+          </button>
+        </mock-MultiButton>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-modules-title stretch-width"
+      >
+        <span>
+          My Recent Modules
+        </span>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <p
+                className="repository--item-list--collection--empty-placeholder"
+              >
+                <span
+                  className="repository--item-list--collection--empty-placeholder--text"
+                >
+                  Nothing to see here!
+                </span>
+                <button
+                  className="repository--button "
+                  onClick={[Function]}
+                >
+                  New Module
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-collections-title"
+      >
+        <span>
+          My Collections
+        </span>
+        <div
+          className="repository--main-content--sort repository--collection-sort"
+        >
+          <span>
+            Sort
+          </span>
+          <select
+            onChange={[Function]}
+            value="alphabetical"
+          >
+            <option
+              value="newest"
+            >
+              Newest
+            </option>
+            <option
+              value="alphabetical"
+            >
+              Alphabetical
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <p
+                className="repository--item-list--collection--empty-placeholder"
+              >
+                <span
+                  className="repository--item-list--collection--empty-placeholder--text"
+                >
+                  Nothing to see here!
+                </span>
+                <button
+                  className="repository--button "
+                  onClick={[Function]}
+                >
+                  New Collection
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</span>
+`;
+
+exports[`Dashboard renders with mode = MODE_ALL 1`] = `
+<span
+  id="dashboard-root"
+>
+  <div
+    className="repository--section-wrapper repository--stick-to-top"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <nav
+      className="repository--nav"
+    >
+      <a
+        href="/"
+      >
+        <div
+          className="repository--nav--logo"
+        >
+          Obojobo
+        </div>
+      </a>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/library"
+        >
+          Module Library
+        </a>
+      </div>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/dashboard"
+        >
+          Dashboard
+        </a>
+      </div>
+      <div
+        className="repository--nav--current-user"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <div
+            className="repository--nav--current-user--name"
+          >
+            firstName lastName
+          </div>
+          <div
+            className="avatar repository--nav--current-user--avatar"
+          >
+            <div
+              className="avatar--image"
+            >
+              <img
+                alt=""
+                src="/path/to/avatar"
+              />
+            </div>
+          </div>
+        </button>
+        <div
+          className="repository--nav--current-user--menu is-not-open"
+        >
+          <div
+            className="repository--nav--current-user--link"
+          >
+            <a
+              href="/profile/logout"
+            >
+              Log Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="repository--section-wrapper--full-width repository--section-wrapper--grey default-bg"
+  >
+    <div
+      className="repository--section-wrapper--full-width-bg"
+    />
+    <section
+      className="repository--title-banner repository--info-banner"
+    >
+      <h1
+        className="repository--title-banner--title"
+      />
+    </section>
+  </div>
+  <div
+    className="repository--section-wrapper"
+  >
+    <section
+      className="repository--main-content"
+    >
+      <div
+        className="repository--main-content--control-bar"
+      >
+        <mock-MultiButton>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Module
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Tutorial
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            Upload...
+          </button>
+        </mock-MultiButton>
+        <div
+          className="repository--nav--links--search is-empty"
+        >
+          <input
+            name="search"
+            onChange={[Function]}
+            placeholder="Filter Modules..."
+            type="search"
+            value=""
+          />
+          <div
+            className="repository--nav--links--search--icon"
+          >
+            <svg
+              viewBox="0 0 250.313 250.313"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="m244.19 214.6l-54.379-54.378c-0.289-0.289-0.628-0.491-0.93-0.76 10.7-16.231 16.945-35.66 16.945-56.554 0-56.837-46.075-102.91-102.91-102.91s-102.91 46.075-102.91 102.91c0 56.835 46.074 102.91 102.91 102.91 20.895 0 40.323-6.245 56.554-16.945 0.269 0.301 0.47 0.64 0.759 0.929l54.38 54.38c8.169 8.168 21.413 8.168 29.583 0 8.168-8.169 8.168-21.413 0-29.582zm-141.28-44.458c-37.134 0-67.236-30.102-67.236-67.235 0-37.134 30.103-67.236 67.236-67.236 37.132 0 67.235 30.103 67.235 67.236s-30.103 67.235-67.235 67.235z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-modules-title "
+      >
+        <span>
+          My Modules
+        </span>
+        <div
+          className="repository--main-content--sort repository--module-sort"
+        >
+          <span>
+            Sort
+          </span>
+          <select
+            onChange={[Function]}
+            value="alphabetical"
+          >
+            <option
+              value="newest"
+            >
+              Newest
+            </option>
+            <option
+              value="alphabetical"
+            >
+              Alphabetical
+            </option>
+            <option
+              value="last updated"
+            >
+              Last updated
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <p
+                className="repository--item-list--collection--empty-placeholder"
+              >
+                <span
+                  className="repository--item-list--collection--empty-placeholder--text"
+                >
+                  Nothing to see here!
+                </span>
+                <button
+                  className="repository--button "
+                  onClick={[Function]}
+                >
+                  New Module
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</span>
+`;
+
+exports[`Dashboard renders with mode = MODE_COLLECTION 1`] = `
+<span
+  id="dashboard-root"
+>
+  <div
+    className="repository--section-wrapper repository--stick-to-top"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <nav
+      className="repository--nav"
+    >
+      <a
+        href="/"
+      >
+        <div
+          className="repository--nav--logo"
+        >
+          Obojobo
+        </div>
+      </a>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/library"
+        >
+          Module Library
+        </a>
+      </div>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/dashboard"
+        >
+          Dashboard
+        </a>
+      </div>
+      <div
+        className="repository--nav--current-user"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <div
+            className="repository--nav--current-user--name"
+          >
+            firstName lastName
+          </div>
+          <div
+            className="avatar repository--nav--current-user--avatar"
+          >
+            <div
+              className="avatar--image"
+            >
+              <img
+                alt=""
+                src="/path/to/avatar"
+              />
+            </div>
+          </div>
+        </button>
+        <div
+          className="repository--nav--current-user--menu is-not-open"
+        >
+          <div
+            className="repository--nav--current-user--link"
+          >
+            <a
+              href="/profile/logout"
+            >
+              Log Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="repository--section-wrapper--full-width repository--section-wrapper--grey default-bg"
+  >
+    <div
+      className="repository--section-wrapper--full-width-bg"
+    />
+    <section
+      className="repository--title-banner repository--info-banner"
+    >
+      <h1
+        className="repository--title-banner--title"
+      />
+    </section>
+  </div>
+  <div
+    className="repository--section-wrapper"
+  >
+    <section
+      className="repository--main-content"
+    >
+      <div
+        className="repository--main-content--control-bar"
+      >
+        <mock-MultiButton>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Module
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Tutorial
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            Upload...
+          </button>
+        </mock-MultiButton>
+        <button
+          className="repository--button manage-modules"
+          onClick={[Function]}
+        >
+          Manage Modules
+        </button>
+        <button
+          className="repository--button rename"
+          onClick={[Function]}
+        >
+          Rename
+        </button>
+        <button
+          className="repository--button dangerous-button"
+          onClick={[Function]}
+        >
+          Delete Collection
+        </button>
+        <div
+          className="repository--nav--links--search is-empty"
+        >
+          <input
+            name="search"
+            onChange={[Function]}
+            placeholder="Filter Modules..."
+            type="search"
+            value=""
+          />
+          <div
+            className="repository--nav--links--search--icon"
+          >
+            <svg
+              viewBox="0 0 250.313 250.313"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="m244.19 214.6l-54.379-54.378c-0.289-0.289-0.628-0.491-0.93-0.76 10.7-16.231 16.945-35.66 16.945-56.554 0-56.837-46.075-102.91-102.91-102.91s-102.91 46.075-102.91 102.91c0 56.835 46.074 102.91 102.91 102.91 20.895 0 40.323-6.245 56.554-16.945 0.269 0.301 0.47 0.64 0.759 0.929l54.38 54.38c8.169 8.168 21.413 8.168 29.583 0 8.168-8.169 8.168-21.413 0-29.582zm-141.28-44.458c-37.134 0-67.236-30.102-67.236-67.235 0-37.134 30.103-67.236 67.236-67.236 37.132 0 67.235 30.103 67.235 67.236s-30.103 67.235-67.235 67.235z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-modules-title "
+      >
+        <span>
+          Modules in 'Mock Collection Title'
+        </span>
+        <div
+          className="repository--main-content--sort repository--module-sort"
+        >
+          <span>
+            Sort
+          </span>
+          <select
+            onChange={[Function]}
+            value="alphabetical"
+          >
+            <option
+              value="newest"
+            >
+              Newest
+            </option>
+            <option
+              value="alphabetical"
+            >
+              Alphabetical
+            </option>
+            <option
+              value="last updated"
+            >
+              Last updated
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <p
+                className="repository--item-list--collection--empty-placeholder"
+              >
+                <span
+                  className="repository--item-list--collection--empty-placeholder--text"
+                >
+                  Nothing to see here!
+                </span>
+                <button
+                  className="repository--button "
+                  onClick={[Function]}
+                >
+                  New Module
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</span>
+`;
+
+exports[`Dashboard renders with mode = MODE_RECENT 1`] = `
+<span
+  id="dashboard-root"
+>
+  <div
+    className="repository--section-wrapper repository--stick-to-top"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <nav
+      className="repository--nav"
+    >
+      <a
+        href="/"
+      >
+        <div
+          className="repository--nav--logo"
+        >
+          Obojobo
+        </div>
+      </a>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/library"
+        >
+          Module Library
+        </a>
+      </div>
+      <div
+        className="repository--nav--links--link"
+      >
+        <a
+          href="/dashboard"
+        >
+          Dashboard
+        </a>
+      </div>
+      <div
+        className="repository--nav--current-user"
+      >
+        <button
+          onClick={[Function]}
+        >
+          <div
+            className="repository--nav--current-user--name"
+          >
+            firstName lastName
+          </div>
+          <div
+            className="avatar repository--nav--current-user--avatar"
+          >
+            <div
+              className="avatar--image"
+            >
+              <img
+                alt=""
+                src="/path/to/avatar"
+              />
+            </div>
+          </div>
+        </button>
+        <div
+          className="repository--nav--current-user--menu is-not-open"
+        >
+          <div
+            className="repository--nav--current-user--link"
+          >
+            <a
+              href="/profile/logout"
+            >
+              Log Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="repository--section-wrapper--full-width repository--section-wrapper--grey default-bg"
+  >
+    <div
+      className="repository--section-wrapper--full-width-bg"
+    />
+    <section
+      className="repository--title-banner repository--info-banner"
+    >
+      <h1
+        className="repository--title-banner--title"
+      />
+    </section>
+  </div>
+  <div
+    className="repository--section-wrapper"
+  >
+    <section
+      className="repository--main-content"
+    >
+      <div
+        className="repository--main-content--control-bar"
+      >
+        <mock-MultiButton>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Collection
+          </button>
+          <hr />
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Module
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            New Tutorial
+          </button>
+          <button
+            className="repository--button "
+            onClick={[Function]}
+          >
+            Upload...
+          </button>
+        </mock-MultiButton>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-modules-title stretch-width"
+      >
+        <span>
+          My Recent Modules
+        </span>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <p
+                className="repository--item-list--collection--empty-placeholder"
+              >
+                <span
+                  className="repository--item-list--collection--empty-placeholder--text"
+                >
+                  Nothing to see here!
+                </span>
+                <button
+                  className="repository--button "
+                  onClick={[Function]}
+                >
+                  New Module
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="repository--main-content--title repository--my-collections-title"
+      >
+        <span>
+          My Collections
+        </span>
+        <div
+          className="repository--main-content--sort repository--collection-sort"
+        >
+          <span>
+            Sort
+          </span>
+          <select
+            onChange={[Function]}
+            value="alphabetical"
+          >
+            <option
+              value="newest"
+            >
+              Newest
+            </option>
+            <option
+              value="alphabetical"
+            >
+              Alphabetical
+            </option>
+          </select>
+        </div>
+      </div>
+      <div
+        className="repository--item-list--collection"
+      >
+        <div
+          className="repository--item-list--collection--item-wrapper"
+        >
+          <div
+            className="repository--item-list--row"
+          >
+            <div
+              className="repository--item-list--collection--item--multi-wrapper"
+            >
+              <p
+                className="repository--item-list--collection--empty-placeholder"
+              >
+                <span
+                  className="repository--item-list--collection--empty-placeholder--text"
+                >
+                  Nothing to see here!
+                </span>
+                <button
+                  className="repository--button "
+                  onClick={[Function]}
+                >
+                  New Collection
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</span>
+`;

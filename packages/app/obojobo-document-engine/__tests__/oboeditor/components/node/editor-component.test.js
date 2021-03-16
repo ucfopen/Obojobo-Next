@@ -7,6 +7,7 @@ import Common from '../../../../src/scripts/common'
 import Node from 'src/scripts/oboeditor/components/node/editor-component'
 import InsertMenu from 'src/scripts/oboeditor/components/node/components/insert-menu'
 import MoreInfoBox from 'src/scripts/oboeditor/components/navigation/more-info-box'
+import isValidId from 'src/scripts/oboeditor/util/is-valid-id'
 
 const mockNode = {
 	isInsertable: true,
@@ -17,6 +18,7 @@ const mockNode = {
 	cloneBlankNode: () => ({ type: 'mockNode' })
 }
 
+jest.mock('src/scripts/oboeditor/util/is-valid-id')
 jest.mock('src/scripts/oboeditor/components/navigation/more-info-box', () =>
 	global.mockReactComponent(this, 'MockMoreInfoBox')
 )
@@ -229,6 +231,7 @@ describe('Component Editor Node', () => {
 
 	test('saveId does not allow duplicate nodes', () => {
 		const component = rtr.create(<Node {...mockProps} />)
+		isValidId.mockReturnValueOnce(true)
 		const result = component.getInstance().saveId('mock-duplicate-id', 'mock-id2')
 		expect(result).toBe('The id "mock-id2" already exists. Please choose a unique id.')
 		expect(Transforms.setNodes).not.toHaveBeenCalled()
@@ -244,6 +247,7 @@ describe('Component Editor Node', () => {
 	test('saveId updates the node if ids are not the same', () => {
 		ReactEditor.findPath.mockReturnValue([0]) // for getSlatePath
 		const component = rtr.create(<Node {...mockProps} />)
+		isValidId.mockReturnValueOnce(true)
 		const result = component.getInstance().saveId('mock-id', 'mock-id2')
 		expect(result).toBe()
 		expect(Transforms.setNodes).toHaveBeenCalledWith(
@@ -251,6 +255,14 @@ describe('Component Editor Node', () => {
 			{ id: 'mock-id2' },
 			{ at: [0] }
 		)
+	})
+
+	test('saveId checks if the id is valid', () => {
+		const component = rtr.create(<Node {...mockProps} />)
+		isValidId.mockReturnValueOnce(false)
+		component.getInstance().saveId('5', '5!')
+
+		expect(isValidId).toHaveBeenCalled()
 	})
 
 	test('saveContent calls Transforms.setNodes', () => {

@@ -6,6 +6,7 @@ import React from 'react'
 import MoreInfoBox from './more-info-box'
 import isOrNot from '../../../common/util/isornot'
 import generatePage from '../../documents/generate-page'
+import isValidId from '../../util/is-valid-id'
 
 import {
 	getTriggersWithActionsAdded,
@@ -92,13 +93,17 @@ class SubMenu extends React.Component {
 
 	saveId(oldId, newId) {
 		if (!newId) {
-			return 'Please enter an id'
+			return 'Please enter an id.'
+		}
+
+		if (!isValidId(newId)) {
+			return 'Invalid characters in id. Only letters, numbers, and special characters (-, _, :, .) are permitted.'
 		}
 
 		const model = OboModel.models[oldId]
 
 		if (!model.setId(newId)) {
-			return 'The id "' + newId + '" already exists. Please choose a unique id'
+			return 'The id "' + newId + '" already exists. Please choose a unique id.'
 		}
 
 		EditorUtil.rebuildMenu(OboModel.getRoot())

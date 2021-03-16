@@ -2,7 +2,7 @@
 
 exports[`Youtube adapter construct builds with attributes 1`] = `
 Object {
-  "endTime": null,
+  "endTime": 10,
   "startTime": 5,
   "videoId": "example_video_id",
 }
@@ -19,7 +19,7 @@ Object {
 exports[`Youtube adapter toJSON builds a JSON representation 1`] = `
 Object {
   "content": Object {
-    "endTime": null,
+    "endTime": 10,
     "startTime": 5,
     "videoId": "example_video_id",
   },

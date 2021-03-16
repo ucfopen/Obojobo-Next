@@ -16,12 +16,12 @@ const injectKatexIfNeeded = async ({ value: draftModel }) => {
 
 	if (stringModel.includes('latex')) {
 		const jsProps = {
-			src: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js'
+			src: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js'
 		}
 		const cssProps = {
 			rel: 'stylesheet',
 			type: 'text/css',
-			href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css'
+			href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css'
 		}
 		insertDomTag(jsProps, 'script')
 		insertDomTag(cssProps, 'link')

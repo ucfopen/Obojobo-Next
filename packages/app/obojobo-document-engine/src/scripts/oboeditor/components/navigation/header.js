@@ -1,5 +1,6 @@
 import Common from 'obojobo-document-engine/src/scripts/common'
 import EditorUtil from '../../util/editor-util'
+import isValidId from 'obojobo-document-engine/src/scripts/oboeditor/util/is-valid-id'
 import React from 'react'
 import MoreInfoBox from './more-info-box'
 
@@ -33,15 +34,21 @@ class Header extends React.Component {
 	}
 
 	saveId(oldId, newId) {
+		if (oldId === newId) return
+
 		const model = OboModel.models[oldId]
 
 		if (!newId) {
-			return 'Please enter an id'
+			return 'Please enter an id.'
+		}
+
+		if (!isValidId(newId)) {
+			return 'Invalid characters in id. Only letters, numbers, and special characters (-, _, :, .) are permitted.'
 		}
 
 		// prettier-ignore
 		if (!model.setId(newId)) {
-			return 'The id "' + newId + '" already exists. Please choose a unique id'
+			return 'The id "' + newId + '" already exists. Please choose a unique id.'
 		}
 
 		EditorUtil.rebuildMenu(OboModel.getRoot())

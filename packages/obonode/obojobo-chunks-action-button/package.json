@@ -1,6 +1,6 @@
 {
 	"name": "obojobo-chunks-action-button",
-	"version": "11.2.0",
+	"version": "11.3.0",
 	"license": "AGPL-3.0-only",
 	"scripts": {
 		"test": "TZ='America/New_York' jest --verbose",

@@ -107,6 +107,23 @@ class DraftPermissions {
 			throw logger.logError('Error draftIsPublic', error)
 		}
 	}
+
+	// returns a boolean
+	static async userHasPermissionToCollection(userId, collectionId) {
+		try {
+			const result = await db.oneOrNone(
+				`SELECT user_id
+				FROM repository_collections
+				WHERE id = $[collectionId]
+				AND user_id = $[userId]`,
+				{ userId, collectionId }
+			)
+
+			return result !== null
+		} catch (error) {
+			throw logger.logError('Error userHasPermissionToCollection', error)
+		}
+	}
 }
 
 module.exports = DraftPermissions

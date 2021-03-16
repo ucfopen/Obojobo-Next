@@ -7,7 +7,9 @@
 		"database": "",
 		"port": 5432,
 		"ssl": { "rejectUnauthorized": false },
-		"useBluebird": false
+		"useBluebird": false,
+		"query_timeout": 29000,
+		"statement_timeout": 29000
 	},
 	"test": {
 		"user": "postgres",
@@ -23,7 +25,9 @@
 		"host": "127.0.0.1",
 		"database": "postgres",
 		"ssl": false,
-		"useBluebird": true
+		"useBluebird": true,
+		"query_timeout": 29000,
+		"statement_timeout": 29000
 	},
 	"production":{
 		"user":  {"ENV": "DB_USER"},
@@ -31,6 +35,8 @@
 		"host": {"ENV": "DB_HOST"},
 		"database": {"ENV": "DB_NAME"},
 		"port": {"ENV": "DB_PORT"},
-		"ssl": {"ENV": "DB_SSL_JSON"}
+		"ssl": {"ENV": "DB_SSL_JSON"},
+		"query_timeout": {"ENV": "DB_TIMEOUT"},
+		"statement_timeout": {"ENV": "DB_TIMEOUT"}
 	}
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const db = require('obojobo-express/server/db')
 const UserModel = require('obojobo-express/server/models/user')
 

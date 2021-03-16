@@ -1,7 +1,7 @@
 {
 	"name": "obojobo-repository",
 	"license": "AGPL-3.0-only",
-	"version": "11.2.0",
+	"version": "11.3.0",
 	"repository": "https://github.com/ucfopen/Obojobo.git",
 	"homepage": "https://ucfopen.github.io/Obojobo-Docs/",
 	"description": "Obojobo express server middleware.",
@@ -39,7 +39,8 @@
 		"react-redux": "^7.2.1",
 		"redux": "^4.0.5",
 		"redux-pack": "^0.1.5",
-		"sass-mq": "^5.0.1"
+		"sass-mq": "^5.0.1",
+		"short-uuid": "^3.1.1"
 	},
 	"peerDependencies": {
 		"obojobo-express": "^11.2.0-alpha.0",

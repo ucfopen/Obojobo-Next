@@ -1,6 +1,6 @@
 {
   "name": "obojobo-pm2-server-app",
-  "version": "11.2.0",
+  "version": "11.3.0",
   "description": "Reference project for deploying and customizing an Obojobo Next server",
   "main": "./index.js",
   "private": true,

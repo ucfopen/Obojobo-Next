@@ -125,6 +125,10 @@
 		}
 	}
 
+	&.stretch-width::before {
+		right: 0;
+	}
+
 	.repository--main-content--sort {
 		display: flex;
 		align-items: center;

@@ -1,0 +1,81 @@
+@import '../../client/css/defaults';
+
+.repository--collection-icon--menu-wrapper {
+	position: relative;
+	box-sizing: border-box;
+	margin-left: -0.8em;
+	width: 100%;
+}
+
+.repository--collection-icon--menu-control-button {
+	$button-size: 2.6em;
+
+	height: $button-size;
+	width: $button-size;
+	line-height: $button-size;
+	position: absolute;
+	border-radius: $button-size;
+	background-color: $color-banner-bg;
+	border: 3px solid white;
+	top: 4.5em;
+	right: 0;
+	color: white;
+
+	> svg {
+		vertical-align: middle;
+		height: 50%;
+		width: 50%;
+		stroke: $color-action;
+		fill: $color-action;
+	}
+
+	&:hover {
+		background-color: $color-action;
+		transform: scale(1.2);
+		transform-origin: center;
+
+		> svg {
+			stroke: white;
+			fill: white;
+		}
+	}
+}
+
+.repository--collection-icon--menu {
+	display: block;
+	position: absolute;
+	width: 100%;
+	top: 0.8em;
+	background-color: $color-banner-bg;
+	border-radius: 0 0 0.25em 0.25em;
+	padding: 0.7em 0.8em;
+	z-index: 100;
+	border: 1px solid $color-banner-bg;
+	border-top: 0;
+	transform: translate(-1px);
+
+	hr {
+		margin: 0 0 0.6em 0;
+		border: 0;
+		border-top: 1px solid darken($color-banner-bg, 10%);
+	}
+
+	.repository--button {
+		display: inline-block;
+		margin-bottom: 0.7em;
+		width: 100%;
+		position: relative;
+		font-size: 1em;
+
+		&.more {
+			margin-bottom: 0;
+			color: $color-action;
+			background-color: inherit;
+			text-decoration: underline;
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+}

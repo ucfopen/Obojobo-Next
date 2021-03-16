@@ -1,0 +1,67 @@
+@import '../../client/css/defaults';
+
+.module-search-dialog {
+	min-width: 23em;
+	text-align: center;
+
+	.wrapper {
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+
+		> .close-button {
+			position: absolute;
+			right: 0.5em;
+			top: 0.5em;
+		}
+	}
+
+	.title {
+		font-weight: 700;
+		font-size: 1em;
+		margin-bottom: 0.2em;
+		margin-top: 1.2em;
+	}
+
+	.sub-title {
+		font-size: 0.7em;
+		margin-bottom: $size-spacing-vertical-half;
+	}
+
+	.module-list-wrapper {
+		margin: 0;
+		margin-top: $size-spacing-vertical-half;
+		background-color: $color-banner-bg;
+		padding: 0;
+	}
+
+	.module-list {
+		text-align: left;
+		height: 11.5em;
+		overflow-y: scroll;
+		list-style: none;
+		font-size: 0.9em;
+		padding: 0;
+		margin: 0;
+
+		li {
+			max-width: 80%;
+			margin: 0 auto;
+			position: relative;
+			border-radius: 0.25em;
+			padding: 0.3em;
+			box-sizing: border-box;
+
+			&:first-child {
+				margin-top: 1em;
+			}
+
+			&:last-child {
+				margin-bottom: 1em;
+			}
+		}
+
+		.respository--button {
+			font-size: 0.8em;
+		}
+	}
+}

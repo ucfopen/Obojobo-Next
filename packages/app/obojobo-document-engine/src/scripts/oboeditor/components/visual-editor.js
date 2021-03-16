@@ -69,6 +69,7 @@ class VisualEditor extends React.Component {
 		this.onResized = this.onResized.bind(this)
 		this.renderElement = this.renderElement.bind(this)
 		this.setEditorFocus = this.setEditorFocus.bind(this)
+		this.onClick = this.onClick.bind(this)
 
 		this.editor = this.withPlugins(withHistory(withReact(createEditor())))
 		this.editor.toggleEditable = this.toggleEditable
@@ -518,6 +519,20 @@ class VisualEditor extends React.Component {
 		ReactEditor.focus(this.editor)
 	}
 
+	onClick(event) {
+		/*
+			As for Slate 0.57.2, triple-click causes selection to bleed into the node below which causes focus to jump down when typing
+			The following solution detects when bleeding happends (focus.offset === 0) and reduces by 1
+			We can disregard this when Slate fixes the problem
+		*/
+		if (event.detail === 3) {
+			const { focus } = this.editor.selection
+			if (focus.offset === 0) {
+				Transforms.move(this.editor, { distance: 1, unit: 'offset', reverse: true, edge: 'end' })
+			}
+		}
+	}
+
 	render() {
 		const className =
 			'editor--page-editor ' +
@@ -567,6 +582,7 @@ class VisualEditor extends React.Component {
 								readOnly={!this.state.editable || this.props.readOnly}
 								onKeyDown={this.onKeyDown}
 								onCut={this.onCut}
+								onClick={this.onClick}
 							/>
 						</VisualEditorErrorBoundry>
 					</div>

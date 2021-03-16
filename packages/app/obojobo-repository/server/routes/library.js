@@ -1,5 +1,5 @@
 const router = require('express').Router() //eslint-disable-line new-cap
-const RepositoryCollection = require('../models/collection')
+const Collection = require('../models/collection')
 const DraftSummary = require('../models/draft_summary')
 const UserModel = require('obojobo-express/server/models/user')
 const { webpackAssetPath } = require('obojobo-express/server/asset_resolver')
@@ -61,7 +61,7 @@ router
 	.route('/library')
 	.get(getCurrentUser)
 	.get((req, res) => {
-		return RepositoryCollection.fetchById(publicLibCollectionId)
+		return Collection.fetchById(publicLibCollectionId)
 			.then(collection => {
 				return collection.loadRelatedDrafts()
 			})

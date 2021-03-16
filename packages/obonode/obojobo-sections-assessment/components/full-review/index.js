@@ -25,7 +25,7 @@ class AssessmentReviewView extends React.Component {
 
 		const attempts = this.props.attempts
 
-		const highestAttempts = AssessmentUtil.getHighestAttemptsForModelByAttemptScore(
+		const highestAttempts = AssessmentUtil.getHighestAttemptsForModelByAssessmentScore(
 			this.props.moduleData.assessmentState,
 			this.props.model
 		)
@@ -43,7 +43,6 @@ class AssessmentReviewView extends React.Component {
 			const ariaDateString = formatDate(date, "MMMM Do yyyy 'at' h:mmaaaa")
 			const numCorrect = AssessmentUtil.getNumCorrect(attempt.result.questionScores)
 			const numPossibleCorrect = AssessmentUtil.getNumPossibleCorrect(attempt.result.questionScores)
-
 			const report = scoreReporter.getReportFor(attempt.attemptNumber)
 
 			let attemptScoreSummary = Math.round(attempt.result.attemptScore) + '%'

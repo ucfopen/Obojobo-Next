@@ -1,0 +1,70 @@
+@import '../../client/css/defaults';
+
+.module-list-item {
+	$dimensions-image: 1.8em;
+	$dimensions-close-button: 1.2em;
+	$dimensions-border-radius: 0.25em;
+
+	padding: 0.3em;
+	margin: 0 auto;
+	position: relative;
+	border-radius: $dimensions-border-radius;
+
+	&:hover {
+		background-color: lighten($color-banner-bg, 2%);
+	}
+
+	.module-title {
+		max-width: calc(100% - #{$dimensions-image + $dimensions-close-button + 1.6em});
+		display: inline-block;
+		margin: 0 $dimensions-close-button + 0.8em 0 0.8em;
+		vertical-align: middle;
+	}
+
+	.repository--module-icon--image {
+		width: $dimensions-image;
+		height: $dimensions-image;
+		margin: 0;
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	> button {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		right: 0;
+	}
+
+	.close-button {
+		height: $dimensions-close-button;
+		min-width: $dimensions-close-button;
+		line-height: $dimensions-close-button;
+		background-color: inherit;
+		position: absolute;
+		right: 0.5em;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+
+	&.is-already-in-collection {
+		color: $color-text-minor;
+
+		&:hover::before {
+			width: 100%;
+			height: 100%;
+			background-color: $color-bg-overlay;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: $dimensions-border-radius;
+			content: 'Already in collection';
+			line-height: 2em;
+			text-align: center;
+			color: $color-text;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollectionRenameDialog renders with expected standard props 1`] = `
+<div
+  className="collection-rename-dialog"
+>
+  <div
+    className="top-bar"
+  >
+    <div
+      className="collection-title"
+    />
+    <button
+      aria-label="Close"
+      className="repository--button close-button"
+      onClick={[Function]}
+    >
+      ×
+    </button>
+  </div>
+  <div
+    className="wrapper"
+  >
+    <input
+      aria-label="Rename Collection"
+      className="collection-rename-input"
+      onChange={[Function]}
+      value="mockCollectionTitle"
+    />
+    <button
+      className="repository--button done-button secondary-button"
+      onClick={[Function]}
+    >
+      Accept
+    </button>
+  </div>
+</div>
+`;

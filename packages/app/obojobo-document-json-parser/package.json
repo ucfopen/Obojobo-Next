@@ -7,7 +7,7 @@
     "obojobo-lib-utils": "^11.2.0-alpha.0"
   },
   "name": "obojobo-document-json-parser",
-  "version": "11.2.0",
+  "version": "11.3.0",
   "license": "AGPL-3.0-only",
   "main": "",
   "scripts": {

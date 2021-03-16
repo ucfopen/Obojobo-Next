@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Collection renders with expected standard props 1`] = `
+<div
+  className="repository--collection-icon is-not-open"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+>
+  <button
+    onClick={[Function]}
+  >
+    <div
+      className="repository--collection-icon--image"
+    >
+      <svg
+        height="80"
+        preserveAspectRatio="xMidYMid meet"
+        version="1.1"
+        viewBox="0 0 80 80"
+        width="80"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<image xlink:href=\\"/library/module-icon/mockCollectionId\\" width=\\"150\\" height=\\"150\\" />",
+              }
+            }
+            height="150"
+            id="collection-img-id-mockCollectionId"
+            patternUnits="userSpaceOnUse"
+            width="150"
+          />
+        </defs>
+        <rect
+          fill="#e8e3eb"
+          height="80"
+          rx="5"
+          width="80"
+        />
+        <path
+          className="repository--collection-icon--pattern-path"
+          d="m20.092289,37.657358q2.2001,-1.270228 4.400197,0l12.100543,6.986251q2.200097,1.270228 2.200097,3.810684l0,13.972502q0,2.540453 -2.200097,3.810681l-12.100543,6.986251q-2.200097,1.270228 -4.400197,0l-12.100543,-6.986251q-2.200097,-1.270228 -2.200097,-3.810681l0,-13.972502q0,-2.540456 2.200097,-3.810684l12.100543,-6.986251z"
+          fill="url(#collection-img-id-mockCollectionId)"
+        />
+        <path
+          d="m55.507514,37.65736q2.200094,-1.270229 4.400197,0l12.100545,6.986249q2.200094,1.270229 2.200094,3.81068l0,13.972507q0,2.54045 -2.200094,3.81068l-12.100545,6.986249q-2.200103,1.270229 -4.400197,0l-12.100545,-6.986249q-2.200094,-1.270229 -2.200094,-3.81068l0,-13.972507q0,-2.54045 2.200094,-3.81068l12.100545,-6.986249z"
+          fill="#9482a6"
+        />
+        <path
+          d="m37.861174,6.776266q2.200094,-1.270229 4.400197,0l12.100545,6.986249q2.200094,1.270229 2.200094,3.81068l0,13.972507q0,2.54045 -2.200094,3.81068l-12.100545,6.986249q-2.200103,1.270229 -4.400197,0l-12.100545,-6.986249q-2.200094,-1.270229 -2.200094,-3.81068l0,-13.972507q0,-2.54045 2.200094,-3.81068l12.100545,-6.986249z"
+          fill="#b09ec3"
+        />
+      </svg>
+    </div>
+    <div
+      className="repository--collection-icon--menu-control-button menu-control-button"
+    >
+      <svg
+        height="32px"
+        viewBox="0 0 32 32"
+        width="32px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+        />
+      </svg>
+    </div>
+    <div
+      className="repository--collection-icon--title"
+    >
+      Mock Collection Title
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Collection renders with expected standard props but hasMenu=false 1`] = `
+<div
+  className="repository--collection-icon is-not-open"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+>
+  <a
+    href="/collections/mock-collection-title-mockCollectionShortId"
+  >
+    <div
+      className="repository--collection-icon--image"
+    >
+      <svg
+        height="80"
+        preserveAspectRatio="xMidYMid meet"
+        version="1.1"
+        viewBox="0 0 80 80"
+        width="80"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<image xlink:href=\\"/library/module-icon/mockCollectionId\\" width=\\"150\\" height=\\"150\\" />",
+              }
+            }
+            height="150"
+            id="collection-img-id-mockCollectionId"
+            patternUnits="userSpaceOnUse"
+            width="150"
+          />
+        </defs>
+        <rect
+          fill="#e8e3eb"
+          height="80"
+          rx="5"
+          width="80"
+        />
+        <path
+          className="repository--collection-icon--pattern-path"
+          d="m20.092289,37.657358q2.2001,-1.270228 4.400197,0l12.100543,6.986251q2.200097,1.270228 2.200097,3.810684l0,13.972502q0,2.540453 -2.200097,3.810681l-12.100543,6.986251q-2.200097,1.270228 -4.400197,0l-12.100543,-6.986251q-2.200097,-1.270228 -2.200097,-3.810681l0,-13.972502q0,-2.540456 2.200097,-3.810684l12.100543,-6.986251z"
+          fill="url(#collection-img-id-mockCollectionId)"
+        />
+        <path
+          d="m55.507514,37.65736q2.200094,-1.270229 4.400197,0l12.100545,6.986249q2.200094,1.270229 2.200094,3.81068l0,13.972507q0,2.54045 -2.200094,3.81068l-12.100545,6.986249q-2.200103,1.270229 -4.400197,0l-12.100545,-6.986249q-2.200094,-1.270229 -2.200094,-3.81068l0,-13.972507q0,-2.54045 2.200094,-3.81068l12.100545,-6.986249z"
+          fill="#9482a6"
+        />
+        <path
+          d="m37.861174,6.776266q2.200094,-1.270229 4.400197,0l12.100545,6.986249q2.200094,1.270229 2.200094,3.81068l0,13.972507q0,2.54045 -2.200094,3.81068l-12.100545,6.986249q-2.200103,1.270229 -4.400197,0l-12.100545,-6.986249q-2.200094,-1.270229 -2.200094,-3.81068l0,-13.972507q0,-2.54045 2.200094,-3.81068l12.100545,-6.986249z"
+          fill="#b09ec3"
+        />
+      </svg>
+    </div>
+    <div
+      className="repository--collection-icon--title"
+    >
+      Mock Collection Title
+    </div>
+  </a>
+</div>
+`;

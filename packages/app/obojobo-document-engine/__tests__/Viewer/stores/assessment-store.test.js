@@ -318,6 +318,24 @@ describe('AssessmentStore', () => {
 		)
 	})
 
+	test('startAttemptWithAPICall shows an error if the assessment ID is invalid', () => {
+		OboModel.create(getExampleAssessment())
+
+		AssessmentAPI.startAttempt.mockResolvedValueOnce({
+			status: 'error',
+			value: {
+				message: 'ID not found'
+			}
+		})
+
+		return AssessmentStore.startAttemptWithAPICall('draftId', 'visitId', 'assessmentId').then(
+			() => {
+				expect(ErrorUtil.show).toHaveBeenCalledTimes(1)
+				expect(AssessmentStore.triggerChange).toHaveBeenCalledTimes(1)
+			}
+		)
+	})
+
 	test('startAttemptWithAPICall shows a generic error if an unrecognized error is thrown and triggers a change', () => {
 		OboModel.create(getExampleAssessment())
 

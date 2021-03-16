@@ -1,30 +1,120 @@
 @import '~styles/includes';
 
+.obojobo-draft--components--modal--modal {
+	overflow: visible;
+}
+
 .youtube-video-properties {
-	width: 15em;
 	text-align: left;
 	margin: auto;
 
-	.error {
-		color: $color-error;
-		font-size: 0.8em;
-		font-weight: bold;
-		margin-bottom: 1em;
-		margin-top: 1em;
-		display: inline-block;
-	}
-
-	label {
-		margin-bottom: 0.3em;
-	}
-
-	input {
+	input[type='text'] {
 		@include text-input();
 
 		width: 100%;
+		box-sizing: border-box;
 
-		&#obojobo-draft--chunks--youtube--video-id {
+		&#obojobo-draft--chunks--youtube--video-url {
 			margin-bottom: 2em;
 		}
+
+		&.time-input {
+			width: 8em;
+			margin-bottom: 2em;
+		}
+	}
+
+	small {
+		display: block;
+		margin-top: 0;
+		margin-bottom: 0.4em;
+		font-size: 0.7em;
+		color: $color-text-minor;
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 1em;
+		margin-bottom: 1.5em;
+	}
+
+	.edit-times-button {
+		margin: 0 auto;
+		display: block;
+
+		button {
+			background: none;
+			text-decoration: underline;
+			color: $color-action;
+			border: none;
+			font-size: 0.7em;
+			margin: 0;
+
+			&:hover {
+				background: $color-action-bg;
+				color: $color-action;
+			}
+		}
+	}
+
+	.youtube-video-properties-input-wrapper {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+
+		label {
+			margin-bottom: 0.3em;
+		}
+
+		input {
+			width: 100%;
+		}
+
+		.obojobo-draft--components--more-info-button {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	.info {
+		$dimension-rounded-radius: 0.25em;
+
+		width: 18em;
+		background: $color-bg2;
+
+		.container {
+			background: $color-bg2;
+		}
+
+		.text-items {
+			text-align: left;
+			border-radius: $dimension-rounded-radius;
+			background: $color-bg;
+			padding: 1em;
+			margin: 1em;
+			font-size: 0.9em;
+
+			p {
+				margin-top: 0;
+			}
+
+			ul {
+				font-size: 0.9em;
+				padding-inline-start: 2em;
+				margin-bottom: 0;
+			}
+
+			code {
+				border-radius: $dimension-rounded-radius;
+				background: $color-bg2;
+				font-family: $font-monospace;
+			}
+		}
+	}
+
+	.obojobo-draft--components--more-info-button.is-default-label > button {
+		margin-left: 0.75em;
+		vertical-align: top;
 	}
 }

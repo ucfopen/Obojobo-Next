@@ -282,7 +282,12 @@ class AssessmentStore extends Store {
 							'You have attempted this assessment the maximum number of times available.'
 						)
 						break
-
+					case 'id not found':
+						ErrorUtil.show(
+							'Assessment ID not found',
+							`Couldn't find an assessment with ID "${assessmentId}".`
+						)
+						break
 					default:
 						ErrorUtil.errorResponse(res)
 				}

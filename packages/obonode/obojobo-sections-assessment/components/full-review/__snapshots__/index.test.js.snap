@@ -493,6 +493,111 @@ exports[`FullReview FullReview component with attempt 1`] = `
 </div>
 `;
 
+exports[`FullReview FullReview component with five attempts 1`] = `
+<div
+  className="attempt-review-container"
+>
+  <div
+    className="attempt-button-container null"
+  >
+    <div
+      className="obojobo-draft--components--button-bar"
+    >
+      <div
+        className=""
+      >
+        <div
+          className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+          contentEditable={false}
+        >
+          <button
+            aria-label="Attempt 1"
+            aria-selected={false}
+            className="button"
+            contentEditable={false}
+            onClick={[Function]}
+          >
+            1
+          </button>
+        </div>
+      </div>
+      <div
+        className=""
+      >
+        <div
+          className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+          contentEditable={false}
+        >
+          <button
+            aria-label="Attempt 1"
+            aria-selected={false}
+            className="button"
+            contentEditable={false}
+            onClick={[Function]}
+          >
+            1
+          </button>
+        </div>
+      </div>
+      <div
+        className=""
+      >
+        <div
+          className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+          contentEditable={false}
+        >
+          <button
+            aria-label="Attempt 1"
+            aria-selected={false}
+            className="button"
+            contentEditable={false}
+            onClick={[Function]}
+          >
+            1
+          </button>
+        </div>
+      </div>
+      <div
+        className=""
+      >
+        <div
+          className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+          contentEditable={false}
+        >
+          <button
+            aria-label="Attempt 1"
+            aria-selected={false}
+            className="button"
+            contentEditable={false}
+            onClick={[Function]}
+          >
+            1
+          </button>
+        </div>
+      </div>
+      <div
+        className="is-selected"
+      >
+        <div
+          className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+          contentEditable={false}
+        >
+          <button
+            aria-label="Attempt 1"
+            aria-selected={true}
+            className="button"
+            contentEditable={false}
+            onClick={[Function]}
+          >
+            1
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FullReview FullReview component with fully displayed attempt 1`] = `
 <div
   className="attempt-review-container"

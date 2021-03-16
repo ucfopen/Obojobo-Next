@@ -14,9 +14,19 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
+    # caches yarn dependencies in the yarn cache (not npm_modules)
+    # should help to speed up yarn install and be safe
+    # across changes to the repo and platforms
+    - name: Cache Yarn Deps
+      uses: c-hive/gha-yarn-cache@v1      
+
     - run: echo "github.ref = ${{ github.ref }}"
-    - run: npm install -g yarn
-    - run: yarn install
+      
+    # frozen lockfile should make the cache more effective
+    # and our tests more predictable
+    - run: yarn install --frozen-lockfile
+    
     - run: yarn test:ci
 
   build_docker_images:

@@ -1,0 +1,27 @@
+@import '../../client/css/defaults';
+
+.repository--checkbox {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+	width: 2em;
+	height: 2em;
+	border: 3px solid $color-bg3;
+	background-color: $color-bg2;
+	border-radius: 0.25em;
+	padding: 0;
+	padding-bottom: 0.3em;
+	margin-right: 0.5em;
+
+	&.is-checked::after {
+		display: block;
+		margin: auto;
+		content: '';
+		height: 0.45em;
+		width: 0.9em;
+		border-top: 3px solid $color-correct;
+		border-right: 3px solid $color-correct;
+		transform: rotate(135deg);
+	}
+}

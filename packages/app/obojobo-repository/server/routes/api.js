@@ -1,6 +1,7 @@
 const router = require('express').Router() //eslint-disable-line new-cap
 const insertEvent = require('obojobo-express/server/insert_event')
-const RepositoryCollection = require('../models/collection')
+const Collection = require('../models/collection')
+const CollectionSummary = require('../models/collection_summary')
 const Draft = require('obojobo-express/server/models/draft')
 const DraftSummary = require('../models/draft_summary')
 const DraftPermissions = require('../models/draft_permissions')
@@ -10,15 +11,19 @@ const {
 	requireCurrentUser,
 	requireCurrentDocument,
 	checkValidationRules,
+	requireCanCreateDrafts,
+	requireCanDeleteDrafts,
 	check
 } = require('obojobo-express/server/express_validators')
 const UserModel = require('obojobo-express/server/models/user')
 const { searchForUserByString } = require('../services/search')
-const publicLibCollectionId = '00000000-0000-0000-0000-000000000000'
+const { fetchAllCollectionsForDraft } = require('../services/collections')
+const { getUserModuleCount } = require('../services/count')
+const publicLibCollectionId = require('../../shared/publicLibCollectionId')
 
 // List public drafts
 router.route('/drafts-public').get((req, res) => {
-	return RepositoryCollection.fetchById(publicLibCollectionId)
+	return Collection.fetchById(publicLibCollectionId)
 		.then(collection => collection.loadRelatedDrafts())
 		.then(collection => {
 			res.success(collection.drafts)
@@ -26,14 +31,50 @@ router.route('/drafts-public').get((req, res) => {
 		.catch(res.unexpected)
 })
 
+// List my collections
+// mounted as /api/collections
+router
+	.route('/collections')
+	.get([requireCurrentUser])
+	.get((req, res) => {
+		return CollectionSummary.fetchByUserId(req.currentUser.id)
+			.then(collections => res.success(collections))
+			.catch(res.unexpected)
+	})
+
+// List my recently modified drafts
+// mounted as /api/recent/drafts
+router
+	.route('/recent/drafts')
+	.get([requireCurrentUser, requireCanPreviewDrafts])
+	.get((req, res) => {
+		let allCount
+		return getUserModuleCount(req.currentUser.id)
+			.then(count => {
+				allCount = count
+				return DraftSummary.fetchRecentByUserId(req.currentUser.id)
+			})
+			.then(modules => {
+				return res.success({ allCount, modules })
+			})
+			.catch(res.unexpected)
+	})
+
 // List my drafts
 // mounted as /api/drafts
 router
 	.route('/drafts')
 	.get([requireCurrentUser, requireCanPreviewDrafts])
 	.get((req, res) => {
-		return DraftSummary.fetchByUserId(req.currentUser.id)
-			.then(res.success)
+		let allCount
+		return getUserModuleCount(req.currentUser.id)
+			.then(count => {
+				allCount = count
+				return DraftSummary.fetchByUserId(req.currentUser.id)
+			})
+			.then(modules => {
+				return res.success({ allCount, modules })
+			})
 			.catch(res.unexpected)
 	})
 
@@ -107,7 +148,7 @@ router
 	.post(async (req, res) => {
 		try {
 			const userId = req.currentUser.id
-			const draftId = req.params.draftId
+			const draftId = req.currentDocument.draftId
 
 			const canCopy = await DraftPermissions.userHasPermissionToCopy(userId, draftId)
 			if (!canCopy) {
@@ -155,7 +196,7 @@ router
 	.route('/drafts/:draftId/permission')
 	.get([requireCurrentUser, requireCurrentDocument, requireCanPreviewDrafts])
 	.get((req, res) => {
-		return DraftPermissions.getDraftOwners(req.params.draftId)
+		return DraftPermissions.getDraftOwners(req.currentDocument.draftId)
 			.then(users => {
 				const filteredUsers = users.map(u => u.toJSON())
 				res.success(filteredUsers)
@@ -214,6 +255,163 @@ router
 			// remove perms
 			await DraftPermissions.removeOwnerFromDraft(draftId, userToRemove.id)
 			res.success()
+		} catch (error) {
+			res.unexpected(error)
+		}
+	})
+
+// list the collections a draft is in
+router
+	.route('/drafts/:draftId/collections')
+	.get([requireCurrentUser, requireCurrentDocument, requireCanPreviewDrafts])
+	.get((req, res) => {
+		return fetchAllCollectionsForDraft(req.currentDocument.draftId)
+			.then(res.success)
+			.catch(res.unexpected)
+	})
+
+// list the modules a collection has
+router
+	.route('/collections/:collectionId/modules')
+	.get([requireCurrentUser, requireCanPreviewDrafts])
+	.get((req, res) => {
+		let allCount
+		return getUserModuleCount(req.currentUser.id)
+			.then(count => {
+				allCount = count
+				return DraftSummary.fetchAllInCollectionForUser(req.params.collectionId, req.currentUser.id)
+			})
+			.then(modules => {
+				return res.success({ allCount, modules })
+			})
+			.catch(res.unexpected)
+	})
+
+router
+	.route('/collections/:collectionId/modules/search')
+	.get([requireCurrentUser, requireCanPreviewDrafts])
+	.get((req, res) => {
+		// empty search string? return empty array
+		if (!req.query.q || !req.query.q.trim()) {
+			res.success([])
+			return
+		}
+
+		let allCount
+		return getUserModuleCount(req.currentUser.id)
+			.then(count => {
+				allCount = count
+				return DraftSummary.fetchByDraftTitleAndUser(req.query.q, req.currentUser.id)
+			})
+			.then(modules => {
+				return res.success({ allCount, modules })
+			})
+			.catch(res.unexpected)
+	})
+
+// Create a Collection
+// mounted as /api/collections/new
+router
+	.route('/collections/new')
+	.post([requireCanCreateDrafts, checkValidationRules])
+	.post((req, res, next) => {
+		return Collection.createWithUser(req.currentUser.id)
+			.then(res.success)
+			.catch(res.unexpected)
+	})
+
+// Rename a Collection
+// mounted as /api/collections/rename
+router
+	.route('/collections/rename')
+	.post([requireCanCreateDrafts, checkValidationRules])
+	.post(async (req, res, next) => {
+		try {
+			const hasPerms = await DraftPermissions.userHasPermissionToCollection(
+				req.currentUser.id,
+				req.body.id
+			)
+			if (!hasPerms) {
+				return res.notAuthorized('You must be the creator of this collection to rename it')
+			}
+			const collection = await Collection.rename(req.body.id, req.body.title, req.currentUser.id)
+			res.success(collection)
+		} catch (error) {
+			res.unexpected(error)
+		}
+	})
+
+// Delete a collection
+// mounted as api/collections/:id
+router
+	.route('/collections/:id')
+	.delete([requireCanDeleteDrafts, checkValidationRules])
+	.delete(async (req, res, next) => {
+		try {
+			const hasPerms = await DraftPermissions.userHasPermissionToCollection(
+				req.currentUser.id,
+				req.params.id
+			)
+			if (!hasPerms) {
+				return res.notAuthorized('You must be the creator of this collection to delete it')
+			}
+
+			const collection = await Collection.delete(req.params.id, req.currentUser.id)
+			res.success(collection)
+		} catch (error) {
+			res.unexpected(error)
+		}
+	})
+
+// Add a module to a collection
+// mounted as api/collections/:id/module/add
+router
+	.route('/collections/:id/module/add')
+	.post([requireCanCreateDrafts, checkValidationRules])
+	.post(async (req, res, next) => {
+		try {
+			const hasPerms = await DraftPermissions.userHasPermissionToCollection(
+				req.currentUser.id,
+				req.params.id
+			)
+			if (!hasPerms) {
+				return res.notAuthorized('You must be the creator of this collection to add modules to it')
+			}
+
+			const collection = await Collection.addModule(
+				req.params.id,
+				req.body.draftId,
+				req.currentUser.id
+			)
+			res.success(collection)
+		} catch (error) {
+			res.unexpected(error)
+		}
+	})
+
+// Remove a module from a collection
+// mounted as api/collections/:id/module/remove
+router
+	.route('/collections/:id/module/remove')
+	.delete([requireCanDeleteDrafts, checkValidationRules])
+	.delete(async (req, res, next) => {
+		try {
+			const hasPerms = await DraftPermissions.userHasPermissionToCollection(
+				req.currentUser.id,
+				req.params.id
+			)
+			if (!hasPerms) {
+				return res.notAuthorized(
+					'You must be the creator of this collection to remove modules from it'
+				)
+			}
+
+			const collection = await Collection.removeModule(
+				req.params.id,
+				req.body.draftId,
+				req.currentUser.id
+			)
+			res.success(collection)
 		} catch (error) {
 			res.unexpected(error)
 		}

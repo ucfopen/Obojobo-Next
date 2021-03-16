@@ -13,6 +13,7 @@ $color-text: #000000;
 $color-text-minor: lighten($color-text, 40%);
 $color-text-subheading: #a20e83;
 $color-bg: #ffffff;
+$color-bg-overlay: rgba(200, 200, 200, 0.9);
 $color-shadow: rgba(0, 0, 0, 0.3);
 $color-highlight: #93c6ff;
 $color-bg2: #f4f4f4;
@@ -50,6 +51,7 @@ $font-text: 'Noto Serif', serif;
 $font-monospace: 'Roboto Mono', monospace;
 $font-size: 14.25pt;
 
+$dimension-collection-icon: 90px;
 $dimension-module-icon: 90px;
 $dimension-avatar-icon: 90px;
 $dimension-padding: 1.5em;

@@ -15,10 +15,6 @@ const Adapter = {
 		json.content.videoId = model.modelState.videoId
 		json.content.startTime = model.modelState.startTime
 		json.content.endTime = model.modelState.endTime
-	},
-
-	toText(model) {
-		return `https://www.youtube.com/watch?v=${model.modelState.videoId}`
 	}
 }
 

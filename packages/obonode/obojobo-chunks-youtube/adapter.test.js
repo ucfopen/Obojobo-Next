@@ -16,8 +16,9 @@ describe('Youtube adapter', () => {
 		const attrs = {
 			content: {
 				videoId: 'example_video_id',
+				videoUrl: 'https://www.youtube.com/watch?v=example_video_id',
 				startTime: 5,
-				enddTime: 10
+				endTime: 10
 			}
 		}
 		const model = new OboModel(attrs)
@@ -29,8 +30,9 @@ describe('Youtube adapter', () => {
 		const attrs = {
 			content: {
 				videoId: 'example_video_id',
+				videoUrl: 'https://www.youtube.com/watch?v=example_video_id',
 				startTime: 5,
-				enddTime: 10
+				endTime: 10
 			}
 		}
 		const a = new OboModel(attrs)
@@ -48,8 +50,9 @@ describe('Youtube adapter', () => {
 		const attrs = {
 			content: {
 				videoId: 'example_video_id',
+				videoUrl: 'https://www.youtube.com/watch?v=example_video_id',
 				startTime: 5,
-				enddTime: 10
+				endTime: 10
 			}
 		}
 		const model = new OboModel(attrs)
@@ -58,20 +61,5 @@ describe('Youtube adapter', () => {
 		YoutubeAdapter.toJSON(model, json)
 
 		expect(json).toMatchSnapshot()
-	})
-
-	test('toText creates a text representation', () => {
-		const attrs = {
-			content: {
-				videoId: 'example_video_id',
-				startTime: 5,
-				enddTime: 10
-			}
-		}
-		const model = new OboModel(attrs)
-
-		YoutubeAdapter.construct(model, attrs)
-
-		expect(YoutubeAdapter.toText(model)).toMatch('https://www.youtube.com/watch?v=example_video_id')
 	})
 })

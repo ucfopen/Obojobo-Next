@@ -10,8 +10,9 @@ import ModalStore from '../../../src/scripts/common/stores/modal-store'
 import Dispatcher from '../../../src/scripts/common/flux/dispatcher'
 import OboModel from 'src/scripts/common/models/obo-model'
 
-import { Editor } from 'slate'
+import { Editor, Transforms } from 'slate'
 import { ReactEditor } from 'slate-react'
+// jest.mock('slate')
 jest.mock('src/scripts/viewer/util/editor-api')
 jest.mock('src/scripts/common/util/modal-util')
 jest.mock('src/scripts/oboeditor/components/node/editor', () => ({
@@ -77,6 +78,43 @@ describe('VisualEditor', () => {
 		}
 		const component = renderer.create(<VisualEditor {...props} />)
 		expect(component.toJSON()).toMatchSnapshot()
+	})
+
+	test('VisualEditor component handles triple click', () => {
+		const spy = jest.spyOn(Transforms, 'move').mockReturnValueOnce(true)
+		const props = {
+			insertableItems: 'mock-insertable-items',
+			page: {
+				attributes: { children: [{ type: 'mockNode' }] },
+				get: jest.fn(),
+				toJSON: () => ({ children: [{ type: 'mockNode' }] })
+			},
+			model: { title: 'Mock Title' }
+		}
+		const component = mount(<VisualEditor {...props} />)
+
+		// Double click
+		component
+			.find('.obojobo-draft--pages--page')
+			.at(0)
+			.simulate('click', { detail: 2 })
+		expect(spy).not.toHaveBeenCalled()
+
+		// Selection does not end at the beginning
+		component.instance().editor.selection.focus.offset = 1
+		component
+			.find('.obojobo-draft--pages--page')
+			.at(0)
+			.simulate('click', { detail: 3 })
+		expect(spy).not.toHaveBeenCalled()
+
+		// Selection ends at the beginning
+		component.instance().editor.selection.focus.offset = 0
+		component
+			.find('.obojobo-draft--pages--page')
+			.at(0)
+			.simulate('click', { detail: 3 })
+		expect(spy).toHaveBeenCalled()
 	})
 
 	test('VisualEditor component - editor is disable when modal is opened', () => {

@@ -24,7 +24,15 @@ describe('Dashboard HOC', () => {
 
 		expect(ReactRedux.connect).toHaveBeenCalledTimes(1)
 		expect(ReactRedux.connect).toHaveBeenCalledWith(expect.any(Function), {
+			createNewCollection: DashboardActions.createNewCollection,
+			loadCollectionModules: DashboardActions.loadCollectionModules,
+			showCollectionManageModules: DashboardActions.showCollectionManageModules,
+			collectionAddModule: DashboardActions.collectionAddModule,
+			collectionRemoveModule: DashboardActions.collectionRemoveModule,
+			showCollectionRename: DashboardActions.showCollectionRename,
+			renameCollection: DashboardActions.renameCollection,
 			restoreVersion: DashboardActions.restoreVersion,
+			deleteCollection: DashboardActions.deleteCollection,
 			createNewModule: DashboardActions.createNewModule,
 			closeModal: DashboardActions.closeModal,
 			addUserToModule: DashboardActions.addUserToModule,
@@ -32,9 +40,14 @@ describe('Dashboard HOC', () => {
 			deleteModulePermissions: DashboardActions.deleteModulePermissions,
 			filterModules: DashboardActions.filterModules,
 			importModuleFile: DashboardActions.importModuleFile,
+			filterCollections: DashboardActions.filterCollections,
 			deleteModule: DashboardActions.deleteModule,
 			showModulePermissions: DashboardActions.showModulePermissions,
 			showVersionHistory: DashboardActions.showVersionHistory,
+			showModuleManageCollections: DashboardActions.showModuleManageCollections,
+			loadModuleCollections: DashboardActions.loadModuleCollections,
+			moduleAddToCollection: DashboardActions.moduleAddToCollection,
+			moduleRemoveFromCollection: DashboardActions.moduleRemoveFromCollection,
 			checkModuleLock: DashboardActions.checkModuleLock
 		})
 

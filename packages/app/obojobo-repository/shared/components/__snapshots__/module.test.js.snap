@@ -38,7 +38,7 @@ exports[`Module renders with expected standard props 1`] = `
       </svg>
     </div>
     <div
-      className="repository--module-icon--menu-control-button"
+      className="repository--module-icon--menu-control-button menu-control-button"
     >
       <svg
         height="32px"

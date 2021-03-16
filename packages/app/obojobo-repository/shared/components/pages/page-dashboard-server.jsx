@@ -21,8 +21,10 @@ PageDashboardServer.defaultProps = {
 	dialog: null,
 	selectedModule: {},
 	draftPermissions: {},
+	myCollections: [],
 	myModules: [],
 	moduleSearchString: '',
+	collectionSearchString: '',
 	shareSearchString: '',
 	versionHistory: {
 		hasFetched: false,

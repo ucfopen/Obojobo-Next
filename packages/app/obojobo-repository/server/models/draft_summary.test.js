@@ -43,6 +43,18 @@ describe('DraftSummary Model', () => {
 		}
 	]
 
+	const checkAgainstMockRawSummary = summary => {
+		expect(summary).toBeInstanceOf(DraftSummary)
+		expect(summary.draftId).toBe('mockDraftId')
+		expect(summary.title).toBe('mockDraftTitle')
+		expect(summary.userId).toBe(0)
+		expect(summary.createdAt).toBe(mockRawDraftSummary.created_at)
+		expect(summary.updatedAt).toBe(mockRawDraftSummary.updated_at)
+		expect(summary.latestVersion).toBe('mockLatestVersionId')
+		expect(summary.revisionCount).toBe(1)
+		expect(summary.editor).toBe('visual')
+	}
+
 	beforeEach(() => {
 		jest.resetModules()
 		jest.resetAllMocks()
@@ -53,10 +65,9 @@ describe('DraftSummary Model', () => {
 	})
 	afterEach(() => {})
 
-	//NOTE:
 	// This is just the DraftSummary non-public 'buildQuery' method.
 	// Not sure if there's a good way of exposing that, so will just use this.
-	const queryBuilder = (whereSQL, joinSQL = '') =>
+	const queryBuilder = (whereSQL, joinSQL = '', limitSQL = '') =>
 		`
 		SELECT
 			DISTINCT drafts_content.draft_id AS draft_id,
@@ -78,6 +89,7 @@ describe('DraftSummary Model', () => {
 			ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
 		)
 		ORDER BY updated_at DESC
+		${limitSQL}
 	`
 
 	const fetchAllDraftRevisionsQuery = `
@@ -129,10 +141,11 @@ describe('DraftSummary Model', () => {
 		db.one = jest.fn()
 		db.one.mockResolvedValueOnce(mockRawDraftSummary)
 
-		const query = queryBuilder('drafts.id = $[id]')
-
 		return DraftSummary.fetchById('mockDraftId').then(summary => {
-			expect(db.one).toHaveBeenCalledWith(query, { id: 'mockDraftId' })
+			const query = queryBuilder('drafts.id = $[id]')
+			const [actualQuery, options] = db.one.mock.calls[0]
+			expectQueryToMatch(query, actualQuery)
+			expect(options).toEqual({ id: 'mockDraftId' })
 			expectIsMockSummary(summary)
 		})
 	})
@@ -161,9 +174,127 @@ describe('DraftSummary Model', () => {
 		const query = queryBuilder(whereSQL, joinSQL)
 
 		return DraftSummary.fetchByUserId(0).then(summary => {
-			expect(db.any).toHaveBeenCalledWith(query, { userId: 0 })
-			expectIsMockSummary(summary)
+			const [actualQuery, options] = db.any.mock.calls[0]
+			expectQueryToMatch(query, actualQuery)
+			expect(options).toEqual({ userId: 0 })
+			checkAgainstMockRawSummary(summary)
 		})
+	})
+
+	test('fetchRecentByUserId generates the correct query and returns a DraftSummary object', () => {
+		db.any = jest.fn()
+		db.any.mockResolvedValueOnce(mockRawDraftSummary)
+
+		const whereSQL = 'repository_map_user_to_draft.user_id = $[userId]'
+		const joinSQL = `JOIN repository_map_user_to_draft
+				ON repository_map_user_to_draft.draft_id = drafts.id`
+		const limitSQL = 'LIMIT 5'
+		const query = queryBuilder(whereSQL, joinSQL, limitSQL)
+
+		return DraftSummary.fetchRecentByUserId(0).then(summary => {
+			const [actualQuery, options] = db.any.mock.calls[0]
+			expectQueryToMatch(query, actualQuery)
+			expect(options).toEqual({ userId: 0 })
+			checkAgainstMockRawSummary(summary)
+		})
+	})
+
+	test('fetchAllInCollection generates the correct query and returns a DraftSummary object', () => {
+		db.any = jest.fn()
+		db.any.mockResolvedValueOnce(mockRawDraftSummary)
+
+		const whereSQL = 'repository_map_drafts_to_collections.collection_id = $[collectionId]'
+		const joinSQL = `JOIN repository_map_drafts_to_collections
+				ON repository_map_drafts_to_collections.draft_id = drafts.id`
+		const query = queryBuilder(whereSQL, joinSQL)
+
+		return DraftSummary.fetchAllInCollection('mockCollectionId').then(summary => {
+			expect(db.any).toHaveBeenCalledWith(query, { collectionId: 'mockCollectionId' })
+			checkAgainstMockRawSummary(summary)
+		})
+	})
+
+	test('fetchAllInCollectionForUser generates the correct query and returns a DraftSummary object', () => {
+		db.any = jest.fn()
+		db.any.mockResolvedValueOnce(mockRawDraftSummary)
+
+		const whereSQL = `repository_map_drafts_to_collections.collection_id = $[collectionId]
+			AND repository_map_user_to_draft.user_id = $[userId]`
+		const joinSQL = `JOIN repository_map_drafts_to_collections
+				ON repository_map_drafts_to_collections.draft_id = drafts.id
+			JOIN repository_map_user_to_draft
+				ON repository_map_user_to_draft.draft_id = drafts.id`
+		const query = queryBuilder(whereSQL, joinSQL)
+
+		return DraftSummary.fetchAllInCollectionForUser('mockCollectionId', 0).then(summary => {
+			expect(db.any).toHaveBeenCalledWith(query, { collectionId: 'mockCollectionId', userId: 0 })
+			checkAgainstMockRawSummary(summary)
+		})
+	})
+
+	test('fetchByDraftTitleAndUser generates the correct query and returns a DraftSummary object', () => {
+		db.any = jest.fn()
+		db.any.mockResolvedValueOnce(mockRawDraftSummary)
+
+		const whereSQL = 'repository_map_user_to_draft.user_id = $[userId]'
+		const joinSQL = `JOIN repository_map_user_to_draft
+			ON repository_map_user_to_draft.draft_id = drafts.id`
+		const innerQuery = queryBuilder(whereSQL, joinSQL)
+		const query = `
+			SELECT inner_query.*
+			FROM (
+				${innerQuery}
+			) AS inner_query
+			WHERE inner_query.title ILIKE $[searchString]
+		`
+
+		return DraftSummary.fetchByDraftTitleAndUser('searchString', 0).then(summary => {
+			expect(db.any).toHaveBeenCalledWith(query, { searchString: '%searchString%', userId: 0 })
+			checkAgainstMockRawSummary(summary)
+		})
+	})
+
+	test('fetchByDraftTitleAndUser returns error when no matches are found in the database', () => {
+		logger.error = jest.fn()
+
+		expect.hasAssertions()
+
+		db.any.mockRejectedValueOnce(new Error('not found in db'))
+
+		return DraftSummary.fetchByDraftTitleAndUser('mockDraftTitle', 0).catch(err => {
+			expect(logger.error).toHaveBeenCalledWith(
+				'fetchByDraftTitleAndUser Error',
+				'not found in db',
+				expect.any(String),
+				{ searchString: '%mockDraftTitle%', userId: 0 }
+			)
+			expect(err).toBe('Error loading DraftSummary by query')
+		})
+	})
+
+	test('fetchAndJoinWhereLimit catches database errors', () => {
+		expect.hasAssertions()
+
+		db.any.mockRejectedValueOnce(new Error('not found in db'))
+
+		const whereSQL = ''
+		const joinSQL = ''
+		const limitSQL = ''
+		const mockQueryValues = { id: 'mockDraftId' }
+
+		return DraftSummary.fetchAndJoinWhereLimit(whereSQL, joinSQL, limitSQL, mockQueryValues).catch(
+			err => {
+				expect(logger.error).toHaveBeenCalledWith(
+					'fetchAndJoinWhereLimit Error',
+					'not found in db',
+					whereSQL,
+					joinSQL,
+					limitSQL,
+					mockQueryValues
+				)
+				expect(err).toBe('Error loading DraftSummary by query')
+			}
+		)
 	})
 
 	test('fetchAndJoinWhere catches database errors', () => {

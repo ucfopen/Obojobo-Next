@@ -1,6 +1,6 @@
 {
 	"name": "obojobo-document-engine",
-	"version": "11.2.0",
+	"version": "11.3.0",
 	"license": "AGPL-3.0-only",
 	"description": "",
 	"engines": {
@@ -45,7 +45,7 @@
 		"codemirror": "^5.58.1",
 		"date-fns": "^2.16.1",
 		"downloadjs": "^1.4.7",
-		"katex": "^0.11.1",
+		"katex": "^0.12.0",
 		"prop-types": "15.7.2",
 		"react": "^16.13.1",
 		"react-codemirror2": "^7.2.1",

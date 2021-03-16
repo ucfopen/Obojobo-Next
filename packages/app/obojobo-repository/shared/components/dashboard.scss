@@ -1,10 +1,32 @@
 @import '../../client/css/defaults';
 
 #dashboard-root {
+	$placeholder-text-color: #aaaaaa;
+
 	.repository--main-content--control-bar {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: $size-spacing-vertical-big;
+
+		.repository--main-content--new-module-button {
+			width: 11em;
+		}
 	}
+
+	.repository--item-list--collection--empty-placeholder {
+		display: block;
+		margin: 0 auto;
+
+		.repository--item-list--collection--empty-placeholder--text {
+			color: $placeholder-text-color;
+			margin-right: 2em;
+		}
+	}
+}
+
+.repository--button.repository--all-modules--button {
+	height: 3em;
+	font-size: 1em;
+	margin: auto;
 }

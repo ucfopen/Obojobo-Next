@@ -1,6 +1,6 @@
 {
 	"name": "stylelint-config-obojobo",
-	"version": "11.2.0",
+	"version": "11.3.0",
 	"license": "AGPL-3.0-only",
 	"scripts": {
 		"lint": "echo 'not implemented'",

@@ -5,6 +5,18 @@ describe('DraftPermissions Model', () => {
 	let db
 	let logger
 	let DraftPermissions
+	let mockError
+
+	const mockUserResults = {
+		id: 1,
+		first_name: 'Jeffrey',
+		last_name: 'Lebowski',
+		email: 'dude@obojobo.com',
+		username: 'dude',
+		created_at: 'whevever',
+		roles: ['student'],
+		extras: 'test-value'
+	}
 
 	beforeEach(() => {
 		jest.resetModules()
@@ -12,6 +24,9 @@ describe('DraftPermissions Model', () => {
 		db = require('obojobo-express/server/db')
 		logger = require('obojobo-express/server/logger')
 		DraftPermissions = require('./draft_permissions')
+		mockError = new Error('mock-error')
+		// mock logError to return the error itself
+		logger.logError = jest.fn().mockImplementation((label, error) => error)
 	})
 
 	test('DraftPermissions has expected methods', () => {
@@ -39,9 +54,7 @@ describe('DraftPermissions Model', () => {
 
 	test('addOwnerToDraft throws and logs error', () => {
 		expect.hasAssertions()
-		const mockError = new Error('mock-error')
 		db.none.mockRejectedValueOnce(mockError)
-		logger.logError = jest.fn().mockReturnValueOnce(mockError)
 
 		return DraftPermissions.addOwnerToDraft('MDID', 'MUID').catch(error => {
 			expect(logger.logError).toHaveBeenCalledWith('Error addOwnerToDraft', mockError)
@@ -68,9 +81,7 @@ describe('DraftPermissions Model', () => {
 
 	test('removeOwnerFromDraft throws and logs error', () => {
 		expect.hasAssertions()
-		const mockError = new Error('mock-error')
 		db.none.mockRejectedValueOnce(mockError)
-		logger.logError = jest.fn().mockReturnValueOnce(mockError)
 
 		return DraftPermissions.removeOwnerFromDraft('MDID', 'MUID').catch(error => {
 			expect(logger.logError).toHaveBeenCalledWith('Error removeOwnerFromDraft', mockError)
@@ -81,16 +92,6 @@ describe('DraftPermissions Model', () => {
 	test('getDraftOwners retrieves a data from the database', () => {
 		expect.hasAssertions()
 
-		const mockUserResults = {
-			id: 1,
-			first_name: 'Jeffrey',
-			last_name: 'Lebowski',
-			email: 'dude@obojobo.com',
-			username: 'dude',
-			created_at: 'whevever',
-			roles: ['student'],
-			extras: 'test-value'
-		}
 		db.manyOrNone.mockResolvedValueOnce([mockUserResults])
 
 		return DraftPermissions.getDraftOwners('MDID').then(users => {
@@ -118,9 +119,7 @@ describe('DraftPermissions Model', () => {
 
 	test('getDraftOwners throws and logs error', () => {
 		expect.hasAssertions()
-		const mockError = new Error('mock-error')
 		db.manyOrNone.mockRejectedValueOnce(mockError)
-		logger.logError = jest.fn().mockReturnValueOnce(mockError)
 
 		return DraftPermissions.getDraftOwners('MDID', 'MUID').catch(error => {
 			expect(logger.logError).toHaveBeenCalledWith('Error getDraftOwners', mockError)
@@ -164,9 +163,7 @@ describe('DraftPermissions Model', () => {
 
 	test('userHasPermissionToDraft throws and logs error', () => {
 		expect.hasAssertions()
-		const mockError = new Error('mock-error')
 		db.oneOrNone.mockRejectedValueOnce(mockError)
-		logger.logError = jest.fn().mockReturnValueOnce(mockError)
 
 		return DraftPermissions.userHasPermissionToDraft('MUID', 'MDID').catch(error => {
 			expect(logger.logError).toHaveBeenCalledWith('Error userHasPermissionToDraft', mockError)
@@ -193,9 +190,7 @@ describe('DraftPermissions Model', () => {
 
 	test('draftIsPublic throws and logs error', () => {
 		expect.hasAssertions()
-		const mockError = new Error('mock-error')
 		db.oneOrNone.mockRejectedValueOnce(mockError)
-		logger.logError = jest.fn().mockReturnValueOnce(mockError)
 
 		return DraftPermissions.draftIsPublic('MUID', 'MDID').catch(error => {
 			expect(logger.logError).toHaveBeenCalledWith('Error draftIsPublic', mockError)
@@ -241,13 +236,8 @@ describe('DraftPermissions Model', () => {
 
 	test('userHasPermissionToCopy throws and logs error', () => {
 		expect.hasAssertions()
-		const mockError = new Error('mock-error')
 		db.oneOrNone.mockResolvedValueOnce('mock-db-results') // draftIsPublic call
 		db.oneOrNone.mockRejectedValueOnce(mockError) // userHasPermissionToDraft call
-		logger.logError = jest
-			.fn()
-			.mockReturnValueOnce(mockError)
-			.mockReturnValueOnce(mockError)
 
 		return DraftPermissions.userHasPermissionToCopy('MUID', 'MDID').catch(error => {
 			expect(logger.logError).toHaveBeenCalledWith('Error userHasPermissionToCopy', mockError)
@@ -257,16 +247,58 @@ describe('DraftPermissions Model', () => {
 
 	test('userHasPermissionToCopy throws and logs error', () => {
 		expect.hasAssertions()
-		const mockError = new Error('mock-error')
 		db.oneOrNone.mockRejectedValueOnce(mockError) // draftIsPublic call
 		db.oneOrNone.mockResolvedValueOnce('mock-db-results') // userHasPermissionToDraft call
-		logger.logError = jest
-			.fn()
-			.mockReturnValueOnce(mockError)
-			.mockReturnValueOnce(mockError)
 
 		return DraftPermissions.userHasPermissionToCopy('MUID', 'MDID').catch(error => {
 			expect(logger.logError).toHaveBeenCalledWith('Error userHasPermissionToCopy', mockError)
+			expect(error).toBe(mockError)
+		})
+	})
+
+	test('userHasPermissionToCollection returns true when the user has permission', () => {
+		expect.hasAssertions()
+		db.oneOrNone.mockResolvedValueOnce(mockUserResults.id)
+
+		return DraftPermissions.userHasPermissionToCollection(
+			mockUserResults.id,
+			'mockCollectionId'
+		).then(response => {
+			expect(db.oneOrNone).toHaveBeenCalledTimes(1)
+			expect(db.oneOrNone).toHaveBeenCalledWith(expect.any(String), {
+				userId: mockUserResults.id,
+				collectionId: 'mockCollectionId'
+			})
+			expect(response).toBe(true)
+		})
+	})
+
+	test('userHasPermissionToCollection returns false when the user does not have permission', () => {
+		expect.hasAssertions()
+		db.oneOrNone.mockResolvedValueOnce(null)
+
+		return DraftPermissions.userHasPermissionToCollection(
+			mockUserResults.id,
+			'mockCollectionId'
+		).then(response => {
+			expect(db.oneOrNone).toHaveBeenCalledTimes(1)
+			expect(db.oneOrNone).toHaveBeenCalledWith(expect.any(String), {
+				userId: mockUserResults.id,
+				collectionId: 'mockCollectionId'
+			})
+			expect(response).toBe(false)
+		})
+	})
+
+	test('userHasPermissionToCollection handles error', () => {
+		expect.hasAssertions()
+		db.oneOrNone.mockRejectedValueOnce(mockError)
+
+		return DraftPermissions.userHasPermissionToCollection(
+			mockUserResults.id,
+			'mockCollectionId'
+		).catch(error => {
+			expect(logger.logError).toHaveBeenCalledWith('Error userHasPermissionToCollection', mockError)
 			expect(error).toBe(mockError)
 		})
 	})

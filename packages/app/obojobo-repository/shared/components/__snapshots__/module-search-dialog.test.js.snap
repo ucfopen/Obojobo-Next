@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModuleSearchDialog renders with no searchModules 1`] = `
+<div
+  className="module-search-dialog"
+>
+  <div
+    className="wrapper"
+  >
+    <button
+      aria-label="Close"
+      className="repository--button close-button"
+      onClick={[Function]}
+    >
+      ×
+    </button>
+    <h1
+      className="title"
+    >
+      Find Modules to Add
+    </h1>
+    <mock-Search
+      focusOnMount={true}
+      onChange={[Function]}
+      placeholder="Search..."
+    />
+  </div>
+  <div
+    className="module-list-wrapper"
+  >
+    <ul
+      className="module-list"
+    />
+  </div>
+</div>
+`;

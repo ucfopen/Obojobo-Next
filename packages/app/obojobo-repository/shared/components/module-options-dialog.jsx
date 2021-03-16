@@ -56,6 +56,16 @@ const ModuleOptionsDialog = props => (
 				<div className="label">View and restore previous versions.</div>
 
 				<Button
+					id="moduleOptionsDialog-manageCollectionsButton"
+					onClick={() => {
+						props.showModuleManageCollections(props)
+					}}
+				>
+					Manage Collections
+				</Button>
+				<div className="label">Add to or remove from private collections.</div>
+
+				<Button
 					id="moduleOptionsDialog-downloadJSONButton"
 					onClick={() => {
 						downloadDocument(props.draftId, 'json')

@@ -1,0 +1,123 @@
+@import '../../client/css/defaults';
+
+.collection-manage-modules-dialog {
+	max-width: 25em;
+	text-align: center;
+	width: 80vw;
+	padding-bottom: 1em;
+
+	.top-bar {
+		text-align: left;
+		position: relative;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		box-sizing: border-box;
+		height: 3em;
+
+		.repository--collection-icon--image svg,
+		.repository--collection-icon--image {
+			width: 1.5em;
+			height: 1.75em;
+
+			&.repository--collection-icon--image {
+				display: inline-block;
+				vertical-align: middle;
+				position: absolute;
+				left: 0.75em;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+		}
+
+		.collection-title {
+			display: inline-block;
+			font-size: 0.625em;
+			font-weight: bold;
+			color: black;
+			margin: 0;
+			max-width: 50%;
+			vertical-align: middle;
+			position: absolute;
+			left: 4.5em;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+
+		.close-button {
+			position: absolute;
+			right: 0.5em;
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+	}
+
+	.wrapper {
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+	}
+
+	.title {
+		font-weight: 700;
+		font-size: 1.3em;
+		margin-bottom: 0.2em;
+	}
+
+	.sub-title {
+		font-size: 0.7em;
+		margin-bottom: 2em;
+	}
+
+	.module-list-wrapper {
+		margin: 1em 0;
+		background-color: $color-banner-bg;
+		padding: 0;
+	}
+
+	.module-list {
+		$dimensions-avatar: 1.8em;
+		$dimensions-close-button: 1.2em;
+
+		text-align: left;
+		height: 11.5em;
+		overflow-y: scroll;
+		list-style: none;
+		font-size: 0.9em;
+		padding: 0;
+		margin: 0;
+
+		li {
+			display: flex;
+			max-width: 75%;
+			margin: 1em auto;
+			padding: 0.25em;
+			align-items: center;
+
+			&:hover {
+				background-color: #ede9ef;
+			}
+
+			span {
+				flex: 1;
+			}
+		}
+	}
+
+	.buttons-with-labels {
+		text-align: left;
+		margin: 2em 0;
+		display: grid;
+		grid-template-columns: 7em auto;
+		grid-gap: 0.6em;
+		align-items: center;
+
+		.label {
+			font-size: 0.8em;
+		}
+
+		.repository--button {
+			min-width: 9.5em;
+			display: inline-block;
+			text-align: center;
+			margin-right: 1em;
+		}
+	}
+}

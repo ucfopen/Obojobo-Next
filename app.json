@@ -14,6 +14,10 @@
 			"description": "PG-Promise SSL Configuration. https://github.com/vitaly-t/pg-promise/wiki/Connection-Syntax",
 			"value": "{\"rejectUnauthorized\":false}"
 		},
+		"DB_TIMEOUT": {
+			"description": "DB Query timeout in milliseconds https://github.com/brianc/node-postgres/pull/1760",
+			"value": "29000"
+		},
 		"OBO_LTI_KEYS_JSON": {
 			"description": "Edit the secret value. JSON string for LTI key:secret values.",
 			"value": "{\"obo-production-lti-key\":\"CHANGE_THIS_VALUE_NOW\"}"
