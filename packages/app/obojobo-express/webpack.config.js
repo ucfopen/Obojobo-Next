@@ -20,6 +20,7 @@ module.exports =
 			performance: { hints: false },
 			mode: is_production ? 'production' : 'development',
 			target: 'web',
+			devtool: 'inline-source-map',
 			devServer: {
 				https: true,
 				host: '127.0.0.1',
