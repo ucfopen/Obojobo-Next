@@ -104,13 +104,8 @@ class Figure extends React.Component {
 
 		const customStyle = {}
 		if (content.size === 'custom') {
-			if (content.width) {
-				customStyle.width = content.width + 'px'
-			}
-
-			if (content.height) {
-				customStyle.height = content.height + 'px'
-			}
+			customStyle.width = content.width ? content.width + 'px' : 'auto'
+			customStyle.height = content.height ? content.height + 'px' : 'auto'
 
 			customStyle['maxWidth'] = '100%'
 		}

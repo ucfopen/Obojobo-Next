@@ -10,6 +10,7 @@ exports[`Image Image component with a custom url of a custom size 1`] = `
   style={
     Object {
       "height": "100px",
+      "objectFit": "",
       "width": "200px",
     }
   }
@@ -27,6 +28,7 @@ exports[`Image Image component with height only 1`] = `
   style={
     Object {
       "height": "100px",
+      "objectFit": "cover",
     }
   }
   unselectable="on"
@@ -46,7 +48,11 @@ exports[`Image Image component with no width and no height 1`] = `
   onError={[Function]}
   onLoad={[Function]}
   src="/api/media/52727a4f-0970-4b2c-941a-ce8027078b40/original"
-  style={Object {}}
+  style={
+    Object {
+      "objectFit": "cover",
+    }
+  }
   unselectable="on"
 />
 `;
@@ -60,6 +66,7 @@ exports[`Image Image component with width only 1`] = `
   src="/api/media/52727a4f-0970-4b2c-941a-ce8027078b40/100x*"
   style={
     Object {
+      "objectFit": "cover",
       "width": "100px",
     }
   }

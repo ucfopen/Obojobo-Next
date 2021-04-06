@@ -67,6 +67,8 @@ class Image extends React.Component {
 			if (data.height) {
 				customStyle.height = data.height + 'px'
 			}
+
+			customStyle.objectFit = data.width && data.height ? '' : 'cover'
 		}
 
 		return this.state.isError ? (

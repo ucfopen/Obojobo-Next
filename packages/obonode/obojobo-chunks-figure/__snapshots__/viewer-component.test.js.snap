@@ -38,6 +38,7 @@ exports[`Figure Figure component 1`] = `
           style={
             Object {
               "height": "400px",
+              "objectFit": "",
               "width": "500px",
             }
           }
@@ -99,6 +100,7 @@ exports[`Figure Figure component costom size with no height 1`] = `
           src="www.example.com/img.jpg"
           style={
             Object {
+              "objectFit": "cover",
               "width": "500px",
             }
           }
@@ -161,6 +163,7 @@ exports[`Figure Figure component costom size with no width 1`] = `
           style={
             Object {
               "height": "400px",
+              "objectFit": "cover",
             }
           }
           unselectable="on"
@@ -275,6 +278,7 @@ exports[`Figure Figure component with no textGroup 1`] = `
           style={
             Object {
               "height": "400px",
+              "objectFit": "",
               "width": "500px",
             }
           }
