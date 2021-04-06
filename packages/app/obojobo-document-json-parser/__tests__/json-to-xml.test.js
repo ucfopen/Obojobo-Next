@@ -17,12 +17,8 @@ describe('JSON to XML Parser', () => {
 	// [[file1], [file2]]
 	const cases = sampleJsonFiles.map(file => [file])
 
-
-	test.each(cases)(
-		"Converts %s to xml",
-		file => {
-			const json = require(`${basePath}${file}`)
-			expect(jsonToXmlParser(json)).toMatchSnapshot()
-		}
-	)
+	test.each(cases)('Converts %s to xml', file => {
+		const json = require(`${basePath}${file}`)
+		expect(jsonToXmlParser(json)).toMatchSnapshot()
+	})
 })

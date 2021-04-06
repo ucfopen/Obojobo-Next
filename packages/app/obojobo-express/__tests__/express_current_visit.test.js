@@ -15,7 +15,7 @@ describe('current visit middleware', () => {
 			const req = {
 				session: {},
 				requireCurrentUser: jest.fn(),
-				currentUser:{
+				currentUser: {
 					id: 'mock-user-id'
 				}
 			}
@@ -69,7 +69,7 @@ describe('current visit middleware', () => {
 		req.body = {
 			visitId: 'mock-visit-id-8'
 		}
-		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({user_id: 'mock-user-id'}))
+		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({ user_id: 'mock-user-id' }))
 
 		return req.getCurrentVisitFromRequest().then(result => {
 			expect(result).toBeUndefined()
@@ -83,7 +83,7 @@ describe('current visit middleware', () => {
 		req.params = {
 			visitId: 'mock-visit-id-8'
 		}
-		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({user_id: 'mock-user-id'}))
+		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({ user_id: 'mock-user-id' }))
 
 		return req.getCurrentVisitFromRequest().then(result => {
 			expect(result).toBeUndefined()
@@ -97,7 +97,7 @@ describe('current visit middleware', () => {
 		req.query = {
 			visitId: 'mock-visit-id-8'
 		}
-		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({user_id: 'mock-user-id'}))
+		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({ user_id: 'mock-user-id' }))
 
 		return req.getCurrentVisitFromRequest().then(result => {
 			expect(result).toBeUndefined()
@@ -113,7 +113,7 @@ describe('current visit middleware', () => {
 				visitId: 'mock-visit-id-9'
 			}
 		}
-		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({user_id: 'mock-user-id'}))
+		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({ user_id: 'mock-user-id' }))
 
 		return req.getCurrentVisitFromRequest().then(result => {
 			expect(result).toBeUndefined()
@@ -140,8 +140,12 @@ describe('current visit middleware', () => {
 				visitId: 'mock-visit-id-9'
 			}
 		}
-		MockVisitModel.fetchById.mockResolvedValueOnce(new MockVisitModel({user_id: 'different-mock-user-id'}))
+		MockVisitModel.fetchById.mockResolvedValueOnce(
+			new MockVisitModel({ user_id: 'different-mock-user-id' })
+		)
 
-		return expect(req.getCurrentVisitFromRequest).rejects.toThrow("Visit mock-visit-id-9 doesn't belong to current user mock-user-id")
+		return expect(req.getCurrentVisitFromRequest).rejects.toThrow(
+			"Visit mock-visit-id-9 doesn't belong to current user mock-user-id"
+		)
 	})
 })

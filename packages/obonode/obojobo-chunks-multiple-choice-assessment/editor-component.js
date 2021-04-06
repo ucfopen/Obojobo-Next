@@ -87,11 +87,7 @@ class MCAssessment extends React.Component {
 							<option value="pick-all">Pick all correct answers</option>
 						</select>
 					</label>
-					<Switch
-						title="Shuffle Choices"
-						checked={content.shuffle}
-						onChange={this.changeShuffle}
-					/>
+					<Switch title="Shuffle Choices" checked={content.shuffle} onChange={this.changeShuffle} />
 				</div>
 				<div>
 					{this.props.children}

@@ -99,7 +99,7 @@ describe('TriggerListModal', () => {
 
 		component
 			.find('button')
-			.at(3)
+			.at(4)
 			.simulate('click')
 
 		const tree = component.html()
@@ -123,7 +123,7 @@ describe('TriggerListModal', () => {
 
 		component
 			.find('button')
-			.at(6)
+			.at(7)
 			.simulate('click')
 
 		const tree = component.html()
@@ -148,7 +148,7 @@ describe('TriggerListModal', () => {
 
 		component
 			.find('button')
-			.at(7)
+			.at(8)
 			.simulate('click')
 
 		expect(close).toHaveBeenCalled()

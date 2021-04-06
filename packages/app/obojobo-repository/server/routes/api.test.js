@@ -473,7 +473,10 @@ describe('repository api route', () => {
 	test('get /drafts/:draftId/permission returns the expected response', () => {
 		expect.hasAssertions()
 		const userToJSON = jest.fn().mockReturnValue('filtered-user')
-		DraftPermissions.getDraftOwners.mockResolvedValueOnce([{ toJSON: userToJSON }, { toJSON: userToJSON }])
+		DraftPermissions.getDraftOwners.mockResolvedValueOnce([
+			{ toJSON: userToJSON },
+			{ toJSON: userToJSON }
+		])
 
 		return request(app)
 			.get('/drafts/mockDraftId/permission')

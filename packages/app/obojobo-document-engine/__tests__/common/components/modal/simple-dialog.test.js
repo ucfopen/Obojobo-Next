@@ -90,7 +90,7 @@ describe('SimpleDialog', () => {
 			</SimpleDialog>
 		)
 
-		const leftButton = component.find('button').at(0)
+		const leftButton = component.find('button').at(1)
 
 		leftButton.simulate('click')
 
@@ -108,8 +108,8 @@ describe('SimpleDialog', () => {
 			</SimpleDialog>
 		)
 
-		const leftButton = component.find('button').at(0)
-		const rightButton = component.find('button').at(1)
+		const leftButton = component.find('button').at(1)
+		const rightButton = component.find('button').at(2)
 
 		leftButton.simulate('click')
 
@@ -132,8 +132,8 @@ describe('SimpleDialog', () => {
 			</SimpleDialog>
 		)
 
-		const leftButton = component.find('button').at(0)
-		const rightButton = component.find('button').at(1)
+		const leftButton = component.find('button').at(1)
+		const rightButton = component.find('button').at(2)
 
 		leftButton.simulate('click')
 
@@ -156,8 +156,8 @@ describe('SimpleDialog', () => {
 			</SimpleDialog>
 		)
 
-		const leftButton = component.find('button').at(0)
-		const rightButton = component.find('button').at(1)
+		const leftButton = component.find('button').at(1)
+		const rightButton = component.find('button').at(2)
 
 		leftButton.simulate('click')
 
@@ -170,11 +170,11 @@ describe('SimpleDialog', () => {
 		expect(onConfirm).toHaveBeenCalledTimes(1)
 	})
 
-	test('SimpleDialog cancelOk click defults', () => {
+	test('SimpleDialog cancelOk click defaults', () => {
 		const component = mount(<SimpleDialog cancelOk>Content</SimpleDialog>)
 
-		const leftButton = component.find('button').at(0)
-		const rightButton = component.find('button').at(1)
+		const leftButton = component.find('button').at(1)
+		const rightButton = component.find('button').at(2)
 
 		leftButton.simulate('click')
 

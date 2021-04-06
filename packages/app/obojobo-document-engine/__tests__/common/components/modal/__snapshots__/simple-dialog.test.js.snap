@@ -19,6 +19,15 @@ exports[`SimpleDialog SimpleDialog cancelOk 1`] = `
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[MockFunction]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -90,6 +99,15 @@ exports[`SimpleDialog SimpleDialog no type 1`] = `
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[MockFunction]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -160,6 +178,15 @@ exports[`SimpleDialog SimpleDialog noOrYes 1`] = `
         onFocus={[Function]}
         type="text"
       />
+      <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[MockFunction]}
+        >
+          Delete
+        </button>
+      </div>
       <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
@@ -237,6 +264,15 @@ exports[`SimpleDialog SimpleDialog ok 1`] = `
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[MockFunction]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -296,6 +332,15 @@ exports[`SimpleDialog SimpleDialog yesOrNo 1`] = `
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[MockFunction]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -353,4 +398,4 @@ exports[`SimpleDialog SimpleDialog yesOrNo 1`] = `
 </div>
 `;
 
-exports[`SimpleDialog focusOnFirstElement without props 1`] = `"<div class=\\"obojobo-draft--components--modal--simple-dialog\\"><div class=\\"obojobo-draft--components--modal--dialog \\"><div class=\\"obojobo-draft--components--modal--modal\\" role=\\"dialog\\" aria-labelledby=\\"obojobo-draft--components--modal--modal--content\\"><input class=\\"first-tab\\" type=\\"text\\"><div class=\\"content\\" id=\\"obojobo-draft--components--modal--modal--content\\"><div class=\\"dialog-content\\" style=\\"text-align: center;\\">Content</div><div class=\\"controls\\"><div class=\\"obojobo-draft--components--button alt-action is-not-dangerous align-center\\" contenteditable=\\"false\\"><button class=\\"button\\" contenteditable=\\"false\\">Cancel</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\" contenteditable=\\"false\\"><button class=\\"button\\" contenteditable=\\"false\\" tabindex=\\"0\\">OK</button></div></div></div><input class=\\"last-tab\\" type=\\"text\\"></div></div></div>"`;
+exports[`SimpleDialog focusOnFirstElement without props 1`] = `"<div class=\\"obojobo-draft--components--modal--simple-dialog\\"><div class=\\"obojobo-draft--components--modal--dialog \\"><div class=\\"obojobo-draft--components--modal--modal\\" role=\\"dialog\\" aria-labelledby=\\"obojobo-draft--components--modal--modal--content\\"><input class=\\"first-tab\\" type=\\"text\\"><div class=\\"obojobo-draft--components--delete-button\\"><button>Delete</button></div><div class=\\"content\\" id=\\"obojobo-draft--components--modal--modal--content\\"><div class=\\"dialog-content\\" style=\\"text-align: center;\\">Content</div><div class=\\"controls\\"><div class=\\"obojobo-draft--components--button alt-action is-not-dangerous align-center\\" contenteditable=\\"false\\"><button class=\\"button\\" contenteditable=\\"false\\">Cancel</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\" contenteditable=\\"false\\"><button class=\\"button\\" contenteditable=\\"false\\" tabindex=\\"0\\">OK</button></div></div></div><input class=\\"last-tab\\" type=\\"text\\"></div></div></div>"`;

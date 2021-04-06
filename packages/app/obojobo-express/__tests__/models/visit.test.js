@@ -38,10 +38,10 @@ describe('Visit Model', () => {
 	})
 
 	test('draftDocument loads a draft and memoize it', async () => {
-		const mockDocument = {id:'mock'}
+		const mockDocument = { id: 'mock' }
 		DraftDocument.fetchDraftByVersion.mockResolvedValueOnce(mockDocument)
 
-		const v = new Visit({draft_id: 10, draft_content_id: 5})
+		const v = new Visit({ draft_id: 10, draft_content_id: 5 })
 
 		const doc = await v.draftDocument
 

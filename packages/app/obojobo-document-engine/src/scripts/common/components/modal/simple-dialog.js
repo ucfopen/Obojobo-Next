@@ -74,6 +74,7 @@ class SimpleDialog extends React.Component {
 				<Dialog
 					centered
 					buttons={buttons}
+					onClose={this.props.onCancel}
 					title={this.props.title}
 					width={this.props.width}
 					focusOnFirstElement={this.focusOnFirstElement}

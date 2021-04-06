@@ -76,7 +76,7 @@ describe('Image Properties Modal', () => {
 		// Click "Change image..."
 		component
 			.find('button')
-			.at(0)
+			.at(1)
 			.simulate('click')
 
 		expect(component.instance().state.isChoosingImage).toBe(true)
@@ -110,7 +110,7 @@ describe('Image Properties Modal', () => {
 
 		component
 			.find('button')
-			.at(0)
+			.at(1)
 			.simulate('click')
 
 		expect(component.instance().state.isChoosingImage).toBe(true)
@@ -149,7 +149,7 @@ describe('Image Properties Modal', () => {
 		// Click OK
 		component
 			.find('button')
-			.at(2)
+			.at(3)
 			.simulate('click')
 
 		expect(onConfirm).toHaveBeenCalled()

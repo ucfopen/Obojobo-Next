@@ -31,7 +31,6 @@ const slateToObo = node => {
 	}
 }
 
-
 /**
  * Generates a Slate node from an Obojobo Materia. Copies all attributes, and adds a dummy child
  * @param {Object} node An Obojobo Materia node

@@ -290,7 +290,7 @@ describe('viewer route', () => {
 		mockCurrentDocument = {
 			draftId: validUUID(),
 			getTitle: () => 'mock title',
-			yell: jest.fn().mockResolvedValueOnce(),
+			yell: jest.fn().mockResolvedValueOnce()
 		}
 
 		return request(app)

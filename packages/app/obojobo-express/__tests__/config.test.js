@@ -6,7 +6,6 @@ const ogConsoleWarn = console.warn // eslint-disable-line no-console
 const configPath = path.resolve(__dirname + '/../server/config')
 let logger
 
-
 describe('config', () => {
 	beforeEach(() => {
 		delete process.env.NODE_ENV
@@ -31,12 +30,14 @@ describe('config', () => {
 		// they'll both be converted into camel case (which will be the same name)
 		// and that should cause a naming conflict error
 		mockFS.mockReaddirSync(configPath, ['file_name.json', 'fileName.json'])
-		mockFS.__setMockFileContents(configPath+'/file_name.json', '{"default":{"name":"file_name"}}')
-		mockFS.__setMockFileContents(configPath+'/fileName.json', '{"default":{"name":"fileName"}}')
+		mockFS.__setMockFileContents(configPath + '/file_name.json', '{"default":{"name":"file_name"}}')
+		mockFS.__setMockFileContents(configPath + '/fileName.json', '{"default":{"name":"fileName"}}')
 
 		const config = oboRequire('server/config')
 		// make sure the logger tells us about the issue
-		expect(logger.error).toHaveBeenCalledWith(`Config name fileName already registered, not loading: ${configPath}/fileName.json`)
+		expect(logger.error).toHaveBeenCalledWith(
+			`Config name fileName already registered, not loading: ${configPath}/fileName.json`
+		)
 		// make sure the second config doesn't overwrite the first
 		expect(config).toHaveProperty('fileName.name', 'file_name')
 	})
