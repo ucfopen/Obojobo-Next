@@ -31,6 +31,8 @@ class SubMenu extends React.Component {
 		this.menu = []
 		this.timeOutId = null
 
+		this.subMenuRef = React.createRef()
+
 		this.showAddPageModal = this.showAddPageModal.bind(this)
 		this.saveId = this.saveId.bind(this)
 		this.addPage = this.addPage.bind(this)
@@ -39,6 +41,10 @@ class SubMenu extends React.Component {
 		this.showDeleteModal = this.showDeleteModal.bind(this)
 		this.deletePage = this.deletePage.bind(this)
 		this.duplicatePage = this.duplicatePage.bind(this)
+	}
+
+	componentDidMount() {
+		this.props.updateHeightList(this.subMenuRef.current.offsetTop)
 	}
 
 	itemFromProps() {
@@ -199,70 +205,10 @@ class SubMenu extends React.Component {
 	}
 
 	renderMoreInfoBox(item) {
-		const model = OboModel.models[item.id]
-		const contentDescription = [
-			{
-				name: 'title',
-				description: 'Title',
-				type: 'input'
-			}
-		]
 
-		if (item.flags.assessment) {
-			contentDescription.push(
-				{
-					name: 'attempts',
-					description: 'Attempts',
-					type: 'input'
-				},
-				{
-					name: 'review',
-					description: 'Review',
-					type: 'select',
-					values: [
-						{
-							value: 'always',
-							description: 'Always show answers in review'
-						},
-						{
-							value: 'never',
-							description: 'Never show answers in review'
-						},
-						{
-							value: 'no-attempts-remaining',
-							description: 'Show answers in review after last attempt'
-						}
-					]
-				},
-				{
-					name: 'lock-nav',
-					description: 'Lock Navigation During Attempts',
-					type: 'abstract-toggle',
-					value: this.lockValue,
-					onChange: this.onChangeLock
-				}
-			)
-		}
-		return (
-			<MoreInfoBox
-				id={item.id}
-				index={model.getIndex()}
-				isFirst={model.isFirst()}
-				isLast={model.isLast()}
-				type={model.get('type')}
-				content={model.get('content')}
-				saveId={this.saveId}
-				saveContent={this.saveContent}
-				savePage={this.props.savePage}
-				contentDescription={contentDescription}
-				deleteNode={this.showDeleteModal}
-				duplicateNode={this.duplicatePage}
-				markUnsaved={this.props.markUnsaved}
-				moveNode={this.movePage}
-				showMoveButtons={!item.flags.assessment}
-				isAssessment={item.flags.assessment}
-			/>
-		)
+		// Updating the index state on the parent (editor-nav) component.
+		const model = OboModel.models[item.id]
+		this.props.updateSelectedSubMenu(model, item)
 	}
 
 	render() {
@@ -289,7 +235,7 @@ class SubMenu extends React.Component {
 		}
 
 		return (
-			<li onClick={this.props.onClick} className={className}>
+			<li onClick={this.props.onClick} className={className} ref={this.subMenuRef}>
 				<button aria-label={ariaLabel}>
 					<span>{item.label}</span>
 				</button>

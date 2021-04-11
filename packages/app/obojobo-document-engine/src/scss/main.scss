@@ -38,8 +38,12 @@ body {
 #editor-app {
 	opacity: 0;
 	transition: opacity $duration-animation-default * 2;
-	height: 100%;
 	overflow: auto;
+	position: absolute;
+	top: 6.2em;
+	left: 0;
+	right: 0;
+	bottom: 0;
 
 	&.is-loaded {
 		opacity: 1;

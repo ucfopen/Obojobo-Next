@@ -4,90 +4,98 @@ exports[`EditorNav EditorNav component 1`] = `
 <div
   className="visual-editor--draft-nav  is-not-locked is-not-open is-enabled"
 >
-  <ul>
-    <li
-      className="no-pages-item"
-    >
-      <button
-        className="add-node-button"
-        onClick={[Function]}
-      >
-        + Page
-      </button>
-    </li>
-  </ul>
-  <button
-    className="add-node-button"
-    onClick={[Function]}
+  <div
+    className="sticky"
   >
-    + Add Assessment
-  </button>
+    <ul>
+      <li
+        className="no-pages-item"
+      >
+        <button
+          className="add-node-button"
+          onClick={[Function]}
+        >
+          + Page
+        </button>
+      </li>
+    </ul>
+    <button
+      className="add-node-button"
+      onClick={[Function]}
+    >
+      + Add Assessment
+    </button>
+  </div>
 </div>
 `;
 
-exports[`EditorNav EditorNav component adds assessment 1`] = `"<div class=\\"visual-editor--draft-nav  is-not-locked is-not-open is-enabled\\"><ul><li class=\\"no-pages-item\\"><button class=\\"add-node-button\\">+ Page</button></li></ul><button class=\\"add-node-button\\">+ Add Assessment</button></div>"`;
+exports[`EditorNav EditorNav component adds assessment 1`] = `"<div class=\\"visual-editor--draft-nav  is-not-locked is-not-open is-enabled\\"><div class=\\"sticky\\"><ul><li class=\\"no-pages-item\\"><button class=\\"add-node-button\\">+ Page</button></li></ul><button class=\\"add-node-button\\">+ Add Assessment</button></div></div>"`;
 
-exports[`EditorNav EditorNav component adds page 1`] = `"<div class=\\"visual-editor--draft-nav  is-not-locked is-not-open is-enabled\\"><ul><li class=\\"no-pages-item\\"><button class=\\"add-node-button\\">+ Page</button></li></ul><button class=\\"add-node-button\\">+ Add Assessment</button></div>"`;
+exports[`EditorNav EditorNav component adds page 1`] = `"<div class=\\"visual-editor--draft-nav  is-not-locked is-not-open is-enabled\\"><div class=\\"sticky\\"><ul><li class=\\"no-pages-item\\"><button class=\\"add-node-button\\">+ Page</button></li></ul><button class=\\"add-node-button\\">+ Add Assessment</button></div></div>"`;
 
 exports[`EditorNav EditorNav component with all list item types 1`] = `
 <div
   className="visual-editor--draft-nav  is-locked is-not-open is-enabled"
 >
-  <ul>
-    <li
-      className="heading is-not-selected"
-    >
-      <span>
-        label4
-      </span>
-      <div
-        className="visual-editor--more-info "
-        onKeyDown={[Function]}
+  <div
+    className="sticky"
+  >
+    <ul>
+      <li
+        className="heading is-not-selected"
       >
-        <button
-          aria-label="Toggle More Info Box"
-          className="more-info-button "
-          onClick={[Function]}
-          tabIndex={0}
+        <span>
+          label4
+        </span>
+        <div
+          className="visual-editor--more-info "
+          onKeyDown={[Function]}
         >
-          <svg
-            fill="none"
-            stroke="#000"
-            viewBox="0 0 214 214"
-            xmlns="http://www.w3.org/2000/svg"
+          <button
+            aria-label="Toggle More Info Box"
+            className="more-info-button "
+            onClick={[Function]}
+            tabIndex={0}
           >
-            <circle
-              cx="107"
-              cy="107"
-              r="100"
-              strokeWidth="14"
-            />
-            <circle
-              cx="57"
-              cy="107"
-              fill="#000"
-              r="7"
-              strokeWidth="16"
-            />
-            <circle
-              cx="107"
-              cy="107"
-              fill="#000"
-              r="7"
-              strokeWidth="16"
-            />
-            <circle
-              cx="157"
-              cy="107"
-              fill="#000"
-              r="7"
-              strokeWidth="16"
-            />
-          </svg>
-        </button>
-      </div>
-    </li>
-  </ul>
+            <svg
+              fill="none"
+              stroke="#000"
+              viewBox="0 0 214 214"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="107"
+                cy="107"
+                r="100"
+                strokeWidth="14"
+              />
+              <circle
+                cx="57"
+                cy="107"
+                fill="#000"
+                r="7"
+                strokeWidth="16"
+              />
+              <circle
+                cx="107"
+                cy="107"
+                fill="#000"
+                r="7"
+                strokeWidth="16"
+              />
+              <circle
+                cx="157"
+                cy="107"
+                fill="#000"
+                r="7"
+                strokeWidth="16"
+              />
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 `;
 

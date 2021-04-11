@@ -1,18 +1,32 @@
 @import '../../../../scss/includes';
 
+// Works perfectly (absolute)(use only as reference):
+// visual-editor--more-info SHOULDN'T be absolute.
+//
+// .visual-editor--more-info {
+// 	position: absolute;
+// 	// position: sticky;
+// 	// position: -webkit-sticky;
+// 	z-index: 9999;
+// 	top: 0;
+// 	// right: 0;
+// 	right: 3.7em;
+// 	font-family: $font-default;
+// 	font-weight: bold;
+
 .visual-editor--more-info {
-	position: absolute;
+	position: sticky;
+	position: -webkit-sticky;
 	z-index: 9999;
-	top: 0;
-	right: 0;
 	font-family: $font-default;
 	font-weight: bold;
+	margin-left: 13em;
 
 	.more-info-button {
 		width: 1.7em;
 		height: 1.7em;
 		position: absolute;
-		right: -2em;
+		// right: -2em;
 		top: 0;
 		border: none;
 		background: none;
@@ -41,7 +55,7 @@
 	.more-info-box {
 		position: absolute;
 		top: -1em;
-		right: -30.5em;
+		right: -27.5em;
 		background-color: $color-bg2;
 		z-index: $z-index-above-content;
 		box-shadow: $box-shadow-overlay;

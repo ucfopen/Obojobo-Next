@@ -14,7 +14,8 @@
 	background: $color-nav-bg;
 	font-size: 1rem;
 	width: $dimension-nav-menu;
-	padding: $padding;
+	// width: 20rem;
+	padding: $padding 1rem;
 	padding-top: 0;
 	box-sizing: border-box;
 	transition: left $duration-animation-default $duration-animation-default;
@@ -22,6 +23,16 @@
 	overflow-y: visible;
 	border-radius: $dimension-rounded-radius 0 0 $dimension-rounded-radius;
 	align-items: stretch;
+	position: relative;
+
+	.sticky {
+		position: -webkit-sticky; // Safari compatibility.
+		position: sticky;
+		top: 0.1em;
+		height: 40em;
+		// width: 120%;
+		overflow-y: auto;
+	}
 
 	hr {
 		border: none;
@@ -120,6 +131,7 @@
 		color: $color-text-minor;
 		cursor: pointer;
 		word-wrap: break-word;
+		width: 7rem;
 
 		&::after {
 			content: '';
