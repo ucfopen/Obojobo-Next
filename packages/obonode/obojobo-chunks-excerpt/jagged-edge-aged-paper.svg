@@ -1,0 +1,6 @@
+<svg viewBox="0 0 10 10" width="10px" height="10px" 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" xml:space="preserve">
+	<polygon points="0,0 0,1 5,6 10,1 10,0" fill="rgba(0,0,0,0.1)" />
+	<polygon points="0,0 5,5 10,0" fill="rgba(214, 187, 158, 1)" />
+</svg>

@@ -16,6 +16,7 @@ const Heading = props => {
 		<OboComponent model={props.model} moduleData={props.moduleData}>
 			<TextChunk className="obojobo-draft--chunks--heading pad">
 				<HTag>
+					<p>{'Dog=' + props.model.modelState.dog}</p>
 					<TextGroupEl
 						parentModel={props.model}
 						textItem={props.model.modelState.textGroup.first}

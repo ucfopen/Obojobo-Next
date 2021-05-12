@@ -77,6 +77,7 @@
 		"packages/obonode/obojobo-chunks-break",
 		"packages/obonode/obojobo-chunks-code",
 		"packages/obonode/obojobo-chunks-figure",
+		"packages/obonode/obojobo-chunks-excerpt",
 		"packages/obonode/obojobo-chunks-heading",
 		"packages/obonode/obojobo-chunks-html",
 		"packages/obonode/obojobo-chunks-iframe",

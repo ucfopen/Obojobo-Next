@@ -1,0 +1,13 @@
+@import '../obojobo-document-engine/src/scss';
+
+.obojobo-draft--chunks--excerpt {
+	pre {
+		font-size: 1em;
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+
+	.text {
+		display: block;
+	}
+}

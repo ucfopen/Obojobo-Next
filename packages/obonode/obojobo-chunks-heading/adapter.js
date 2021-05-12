@@ -9,6 +9,12 @@ const Adapter = {
 
 		model.setStateProp('headingLevel', 1)
 		model.setStateProp('align', 'left', p => p.toLowerCase(), ['left', 'center', 'right'])
+
+		model.modelState.dog = attrs.content.dog // tucker, super-dog
+
+		console.log('HEADING!')
+		console.log(attrs)
+		console.log(model)
 	},
 
 	clone(model, clone) {

@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code Converter oboToSlate converts an OboNode to a Slate node 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": undefined,
+      "content": Object {
+        "hangingIndent": undefined,
+        "indent": 1,
+      },
+      "subtype": "ObojoboDraft.Chunks.Code.CodeLine",
+      "type": "ObojoboDraft.Chunks.Code",
+    },
+    Object {
+      "children": undefined,
+      "content": Object {
+        "hangingIndent": undefined,
+        "indent": 0,
+      },
+      "subtype": "ObojoboDraft.Chunks.Code.CodeLine",
+      "type": "ObojoboDraft.Chunks.Code",
+    },
+  ],
+  "content": Object {
+    "textGroup": Array [
+      Object {
+        "data": Object {
+          "indent": 1,
+        },
+        "text": Object {
+          "value": "mockCode",
+        },
+      },
+      Object {
+        "text": Object {
+          "value": "mockCode2",
+        },
+      },
+    ],
+    "triggers": "mock-triggers",
+  },
+  "id": "mockKey",
+  "type": "mockType",
+}
+`;
+
+exports[`Code Converter slateToObo converts a Slate node to an OboNode with content 1`] = `
+Object {
+  "children": Array [],
+  "content": Object {
+    "textGroup": Array [
+      Object {
+        "data": Object {
+          "indent": undefined,
+        },
+        "text": Object {
+          "styleList": Array [],
+          "value": "",
+        },
+      },
+    ],
+  },
+  "id": "mockKey",
+  "type": "mockType",
+}
+`;
+
+exports[`Code Converter slateToObo converts a Slate node to an OboNode with triggers 1`] = `
+Object {
+  "children": Array [],
+  "content": Object {
+    "textGroup": Array [
+      Object {
+        "data": Object {
+          "indent": undefined,
+        },
+        "text": Object {
+          "styleList": Array [],
+          "value": "",
+        },
+      },
+    ],
+    "triggers": "mock-triggers",
+  },
+  "id": "mockKey",
+  "type": "mockType",
+}
+`;

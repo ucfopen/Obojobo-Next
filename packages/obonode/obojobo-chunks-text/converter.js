@@ -99,6 +99,7 @@ const unFlattenList = (jsonNode, diff, type, bulletList, bulletIndex) => {
 
 const switchType = {
 	'ObojoboDraft.Chunks.Heading': (editor, [, path], data) => {
+		// console.log('ctt TEXT TO HEADIN')
 		const nodeRange = Editor.range(editor, path)
 		// Get only the Element children of the current node that are in the current selection
 		const list = Array.from(
@@ -108,14 +109,17 @@ const switchType = {
 			})
 		)
 
+		// console.log('ctt list', list)
+
 		Editor.withoutNormalizing(editor, () => {
-			list.forEach(([child, childPath]) =>
+			list.forEach(([child, childPath]) => {
+				// console.log('ctt child', child, childPath)
 				Transforms.setNodes(
 					editor,
 					{ type: HEADING_NODE, content: { ...child.content, ...data }, subtype: null },
 					{ at: childPath }
 				)
-			)
+			})
 		})
 	},
 	'ObojoboDraft.Chunks.Code': (editor, [, path]) => {

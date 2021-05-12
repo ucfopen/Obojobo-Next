@@ -74,6 +74,8 @@ const FormatPlugin = {
 				})
 			)
 
+			console.log('ctt', list)
+
 			Editor.withoutNormalizing(editor, () => {
 				list.forEach(entry => {
 					const item = Common.Registry.getItemForType(entry[0].type)

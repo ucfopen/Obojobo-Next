@@ -230,7 +230,20 @@ class Node extends React.Component {
 			.className || ''}`
 
 		return (
-			<div className={className} data-obo-component="true">
+			<div
+				className={className}
+				data-obo-component="true"
+				onClick={() => {
+					const thisPath = getSlatePath(this.props)
+					console.log('ctt-->', thisPath, this.props.element)
+				}}
+			>
+				<h6
+					contentEditable={false}
+					style={{ position: 'absolute', right: 0, top: 0, background: 'green', color: 'white' }}
+				>
+					{getSlatePath(this.props).join(',')}
+				</h6>
 				{this.props.selected ? (
 					<div className={'component-toolbar'}>
 						<InsertMenu

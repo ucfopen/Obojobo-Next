@@ -111,7 +111,7 @@ export default class ViewerApp extends React.Component {
 				visitIdFromApi = visit.value.visitId
 				viewState = visit.value.viewState
 				extensions = visit.value.extensions
-				isPreviewing = visit.value.isPreviewing
+				isPreviewing = false //visit.value.isPreviewing
 				outcomeServiceURL = visit.value.lti.lisOutcomeServiceUrl
 
 				return ViewerAPI.getDraft(this.props.draftId)

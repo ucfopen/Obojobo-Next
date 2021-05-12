@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Code Editor Node Code builds the expected component 1`] = `
+<div>
+  <div
+    className="text-chunk obojobo-draft--chunks--code pad"
+  >
+    <pre>
+      <code />
+    </pre>
+  </div>
+</div>
+`;
