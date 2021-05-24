@@ -1,5 +1,6 @@
 import Common from 'obojobo-document-engine/src/scripts/common'
 import Viewer from 'obojobo-document-engine/src/scripts/viewer'
+import FeatureFlags from 'obojobo-document-engine/src/scripts/common/util/feature-flags'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './polyfills'
@@ -23,6 +24,11 @@ const onBlur = function() {
 
 window.onfocus = onFocus
 window.onblur = onBlur
+
+// Expose an obojobo object:
+window.obojobo = {
+	flags: FeatureFlags
+}
 
 window.__oboViewerRender = () => {
 	ReactDOM.render(

@@ -1,6 +1,6 @@
 import Common from 'obojobo-document-engine/src/scripts/common'
 import Editor from './index'
-
+import FeatureFlags from 'obojobo-document-engine/src/scripts/common/util/feature-flags'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -26,6 +26,11 @@ if (ie) {
 } else {
 	window.onfocus = onFocus
 	window.onblur = onBlur
+}
+
+// Expose an obojobo object:
+window.obojobo = {
+	flags: FeatureFlags
 }
 
 window.__oboEditorRender = (settings = {}) => {
