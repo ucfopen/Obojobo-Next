@@ -3,6 +3,7 @@ import './viewer-component.scss'
 import Common from 'obojobo-document-engine/src/scripts/common'
 import React from 'react'
 import Viewer from 'obojobo-document-engine/src/scripts/viewer'
+import StyleType from 'obojobo-document-engine/src/scripts/common/text/style-type'
 
 const { TextChunk } = Common.chunk
 const { TextGroupEl } = Common.chunk.textChunk
@@ -27,6 +28,19 @@ const addItemToList = (ul, li, lis) => {
 	return lis.push(li)
 }
 
+const pickColorFromText = textStyles => {
+	let bulletColor = ''
+	const textColor = textStyles.getStyleComparisonsForRange(0, 1, StyleType.COLOR)
+
+	try {
+		bulletColor = textColor.contains[0].data.text
+	} catch (e) {
+		bulletColor = ''
+	}
+
+	return bulletColor
+}
+
 const renderEl = (props, node, index, indent) => {
 	const key = `${props.model.cid}-${indent}-${index}`
 
@@ -42,8 +56,21 @@ const renderEl = (props, node, index, indent) => {
 			)
 		case 'element': {
 			const ElType = node.type
+			let bulletColor = ''
+			if (node.type === 'li') {
+				try {
+					bulletColor = pickColorFromText(node.firstChild.text.styleList)
+				} catch (e) {
+					// list either has no text or styled text, no color is needed
+				}
+			}
+
 			return (
-				<ElType key={key} start={node.start} style={{ listStyleType: node.listStyleType }}>
+				<ElType
+					key={key}
+					start={node.start}
+					style={{ listStyleType: node.listStyleType, color: bulletColor }}
+				>
 					{renderChildren(props, node.children, indent + 1)}
 				</ElType>
 			)

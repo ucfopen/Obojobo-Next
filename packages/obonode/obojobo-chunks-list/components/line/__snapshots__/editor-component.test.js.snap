@@ -16,6 +16,30 @@ exports[`Line Editor Node renders with children 1`] = `
 </div>
 `;
 
+exports[`Line Editor Node renders with children with colored text 1`] = `
+<div>
+  <li
+    style={
+      Object {
+        "color": "Black",
+      }
+    }
+  >
+    <div
+      node={
+        Object {
+          "children": Array [
+            Object {
+              "color": "Black",
+            },
+          ],
+        }
+      }
+    />
+  </li>
+</div>
+`;
+
 exports[`Line Editor Node renders without content 1`] = `
 <div>
   <li />

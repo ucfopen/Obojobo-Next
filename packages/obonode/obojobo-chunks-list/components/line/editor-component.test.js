@@ -51,4 +51,24 @@ describe('Line Editor Node', () => {
 
 		expect(tree).toMatchSnapshot()
 	})
+
+	test('renders with children with colored text', () => {
+		const coloredTextProps = {
+			node: {
+				children: [
+					{
+						color: 'Black'
+					}
+				]
+			}
+		}
+
+		const coloredTextChild = React.createElement('div', coloredTextProps)
+		const line = React.createElement(Line, { element: { content: {} } }, coloredTextChild)
+
+		const component = renderer.create(line)
+		const tree = component.toJSON()
+
+		expect(tree).toMatchSnapshot()
+	})
 })
