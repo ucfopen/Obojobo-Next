@@ -5,31 +5,25 @@
 	max-width: 32em;
 	border: 3px solid transparentize($color-action, 0.7);
 	border-radius: $dimension-rounded-radius * 1.65;
+	cursor: default;
 
 	.editor--hidden-text {
 		cursor: default;
 	}
 
 	.obojobo-draft--components--button {
-		transition: opacity 0.2s linear 0.2s;
 		opacity: 0;
+	}
+
+	&.is-not-selected iframe {
+		pointer-events: none;
 	}
 
 	&.is-selected {
 		border: 3px solid $color-action;
 
 		.obojobo-draft--components--button {
-			transition: opacity 0s;
 			opacity: 1;
-		}
-
-		// The EditableHiddenText is on top of the video which allows
-		// authors to click on the video to select it in our editor.
-		// However once selected we want to allow users to click on
-		// play in the video, so we switch the order to put the video
-		// above the hidden text element.
-		iframe {
-			z-index: 1;
 		}
 	}
 
@@ -37,7 +31,6 @@
 		border: 3px solid $color-action;
 
 		.obojobo-draft--components--button {
-			transition: opacity 0s;
 			opacity: 1;
 		}
 	}

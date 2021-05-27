@@ -65,10 +65,7 @@ class YouTube extends React.Component {
 	focusYoutube() {
 		const path = ReactEditor.findPath(this.props.editor, this.props.element)
 		const start = Editor.start(this.props.editor, path)
-		Transforms.setSelection(this.props.editor, {
-			focus: start,
-			anchor: start
-		})
+		Transforms.select(this.props.editor, start)
 	}
 
 	returnFocusOnTab(event) {
@@ -86,24 +83,25 @@ class YouTube extends React.Component {
 		return (
 			<Node {...this.props}>
 				<div
-					contentEditable={false}
 					className={`obojobo-draft--chunks--you-tube viewer pad ${isSelected}`}
 					onClick={this.focusYoutube.bind(this)}
 				>
-					<Button className="delete-button" onClick={this.deleteNode.bind(this)}>
-						×
-					</Button>
-					{content.videoId ? this.renderVideo() : this.renderNoVideo()}
-					<Button
-						className="edit-button"
-						onClick={this.showSourceModal}
-						onKeyDown={this.returnFocusOnTab}
-						tabIndex={this.props.selected ? 0 : -1}
-					>
-						Edit
-					</Button>
+					<div contentEditable={false}>
+						<Button className="delete-button" onClick={this.deleteNode.bind(this)}>
+							×
+						</Button>
+						{content.videoId ? this.renderVideo() : this.renderNoVideo()}
+						<Button
+							className="edit-button"
+							onClick={this.showSourceModal}
+							onKeyDown={this.returnFocusOnTab}
+							tabIndex={this.props.selected ? 0 : -1}
+						>
+							Edit
+						</Button>
+					</div>
 
-					{this.props.children}
+					<span className="invisible-text">{this.props.children}</span>
 				</div>
 			</Node>
 		)

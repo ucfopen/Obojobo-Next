@@ -40,6 +40,17 @@ describe('YouTube Editor Node', () => {
 		expect(component.toJSON()).toMatchSnapshot()
 	})
 
+	test('YouTube is selected when clicked', () => {
+		const component = mount(<YouTube element={{ content: { videoId: 'gJ390e5sjHk' } }} selected />)
+
+		component
+			.find('.obojobo-draft--chunks--you-tube')
+			.at(0)
+			.simulate('click')
+
+		expect(Transforms.select).toHaveBeenCalled()
+	})
+
 	test('YouTube component handles tab', () => {
 		const component = mount(<YouTube element={{ content: { videoId: 'gJ390e5sjHk' } }} selected />)
 
@@ -63,7 +74,7 @@ describe('YouTube Editor Node', () => {
 
 		const tree = component.html()
 		expect(tree).toMatchInlineSnapshot(
-			`"<div><div contenteditable=\\"false\\" class=\\"obojobo-draft--chunks--you-tube viewer pad  is-selected\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center delete-button\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" contenteditable=\\"false\\">×</button></div><div id=\\"obojobo-draft--chunks-you-tube-player-mockId\\" class=\\"obojobo-draft--chunks-you-tube-player\\"></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center edit-button\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" tabindex=\\"0\\" contenteditable=\\"false\\">Edit</button></div></div></div>"`
+			`"<div><div class=\\"obojobo-draft--chunks--you-tube viewer pad  is-selected\\"><div contenteditable=\\"false\\"><div class=\\"obojobo-draft--components--button is-not-dangerous align-center delete-button\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" contenteditable=\\"false\\">×</button></div><div id=\\"obojobo-draft--chunks-you-tube-player-mockId\\" class=\\"obojobo-draft--chunks-you-tube-player\\"></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center edit-button\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" tabindex=\\"0\\" contenteditable=\\"false\\">Edit</button></div></div><span class=\\"invisible-text\\"></span></div></div>"`
 		)
 	})
 

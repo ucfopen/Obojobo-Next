@@ -4,41 +4,47 @@ exports[`YouTube Editor Node YouTube component 1`] = `
 <div>
   <div
     className="obojobo-draft--chunks--you-tube viewer pad  is-not-selected"
-    contentEditable={false}
     onClick={[Function]}
   >
     <div
-      className="obojobo-draft--components--button is-not-dangerous align-center delete-button"
       contentEditable={false}
     >
-      <button
-        className="button"
+      <div
+        className="obojobo-draft--components--button is-not-dangerous align-center delete-button"
         contentEditable={false}
-        onClick={[Function]}
-        type="button"
       >
-        ×
-      </button>
+        <button
+          className="button"
+          contentEditable={false}
+          onClick={[Function]}
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        className="obojobo-draft--chunks-you-tube-player"
+        id="obojobo-draft--chunks-you-tube-player-mockId"
+      />
+      <div
+        className="obojobo-draft--components--button is-not-dangerous align-center edit-button"
+        contentEditable={false}
+      >
+        <button
+          className="button"
+          contentEditable={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          Edit
+        </button>
+      </div>
     </div>
-    <div
-      className="obojobo-draft--chunks-you-tube-player"
-      id="obojobo-draft--chunks-you-tube-player-mockId"
+    <span
+      className="invisible-text"
     />
-    <div
-      className="obojobo-draft--components--button is-not-dangerous align-center edit-button"
-      contentEditable={false}
-    >
-      <button
-        className="button"
-        contentEditable={false}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        type="button"
-      >
-        Edit
-      </button>
-    </div>
   </div>
 </div>
 `;
@@ -47,46 +53,52 @@ exports[`YouTube Editor Node YouTube renders with no id correctly 1`] = `
 <div>
   <div
     className="obojobo-draft--chunks--you-tube viewer pad  is-not-selected"
-    contentEditable={false}
     onClick={[Function]}
   >
     <div
-      className="obojobo-draft--components--button is-not-dangerous align-center delete-button"
       contentEditable={false}
     >
-      <button
-        className="button"
+      <div
+        className="obojobo-draft--components--button is-not-dangerous align-center delete-button"
         contentEditable={false}
-        onClick={[Function]}
-        type="button"
       >
-        ×
-      </button>
-    </div>
-    <div
-      className="empty-frame"
-    >
-      <div>
-        <p>
-          No video specified. Click 'Edit' to add one.
-        </p>
+        <button
+          className="button"
+          contentEditable={false}
+          onClick={[Function]}
+          type="button"
+        >
+          ×
+        </button>
+      </div>
+      <div
+        className="empty-frame"
+      >
+        <div>
+          <p>
+            No video specified. Click 'Edit' to add one.
+          </p>
+        </div>
+      </div>
+      <div
+        className="obojobo-draft--components--button is-not-dangerous align-center edit-button"
+        contentEditable={false}
+      >
+        <button
+          className="button"
+          contentEditable={false}
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          tabIndex={-1}
+          type="button"
+        >
+          Edit
+        </button>
       </div>
     </div>
-    <div
-      className="obojobo-draft--components--button is-not-dangerous align-center edit-button"
-      contentEditable={false}
-    >
-      <button
-        className="button"
-        contentEditable={false}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        tabIndex={-1}
-        type="button"
-      >
-        Edit
-      </button>
-    </div>
+    <span
+      className="invisible-text"
+    />
   </div>
 </div>
 `;

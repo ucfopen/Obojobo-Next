@@ -183,6 +183,7 @@ class Question extends React.Component {
 			>
 				<div
 					className={`component obojobo-draft--chunks--question is-viewed pad is-type-${content.type}`}
+					onClick={this.focusQuestion}
 				>
 					<div className="flipper question-editor">
 						<div className="content-back">

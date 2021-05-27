@@ -9,10 +9,12 @@
 	}
 
 	.incomplete-notice {
+		$incomplete-notice-color: lighten($color-text-minor, 20%);
+
 		font-family: $font-default;
 		display: block;
 		font-size: 0.6em;
-		color: lighten($color-text-minor, 20%);
+		color: $incomplete-notice-color;
 		position: absolute;
 		text-align: center;
 		left: 0%;
