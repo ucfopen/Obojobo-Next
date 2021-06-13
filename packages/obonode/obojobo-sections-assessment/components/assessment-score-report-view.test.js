@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import ReportView from '../../../src/scripts/viewer/assessment/assessment-score-report-view'
+import ReportView from './assessment-score-report-view'
 
 const TYPE_TEXT = 'text'
 const TYPE_DIV = 'divider'

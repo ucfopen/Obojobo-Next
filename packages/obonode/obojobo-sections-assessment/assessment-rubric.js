@@ -220,6 +220,7 @@ class AssessmentRubric {
 }
 
 AssessmentRubric.TYPE_ATTEMPT = 'attempt'
+AssessmentRubric.TYPE_HIGHEST = 'highest'
 AssessmentRubric.TYPE_PASS_FAIL = 'pass-fail'
 
 AssessmentRubric.STATUS_PASSED = 'passed'
@@ -231,6 +232,8 @@ AssessmentRubric.VAR_ATTEMPT_SCORE = '$attempt_score'
 AssessmentRubric.VAR_LAST_ATTEMPT = '$last_attempt'
 
 AssessmentRubric.NO_SCORE = 'no-score'
+AssessmentRubric.NO_VALUE = 'no-value'
+AssessmentRubric.SET_VALUE = 'set-value'
 // AssessmentRubric.VAR_CLOSE_DATE = '$close_date'
 
 module.exports = AssessmentRubric

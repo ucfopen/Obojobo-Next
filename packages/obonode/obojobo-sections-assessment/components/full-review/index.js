@@ -4,8 +4,9 @@ import ReviewIcon from '../review-icon'
 import Viewer from 'obojobo-document-engine/src/scripts/viewer'
 import basicReview from './basic-review'
 import formatDate from 'date-fns/format'
+import AssessmentScoreReporter from '../assessment-score-reporter'
+import AssessmentScoreReportView from '../assessment-score-report-view'
 
-const { AssessmentScoreReporter, AssessmentScoreReportView } = Viewer.assessment
 const { AssessmentUtil } = Viewer.util
 const { NavUtil } = Viewer.util
 const { OboModel } = Common.models

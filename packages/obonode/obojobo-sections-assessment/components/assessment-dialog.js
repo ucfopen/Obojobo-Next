@@ -7,8 +7,8 @@ import AttemptIncompleteDialog from './attempt-incomplete-dialog'
 import PreAttemptImportScoreDialog from './dialogs/pre-attempt-import-score-dialog'
 import { ERROR_INVALID_ATTEMPT_END } from '../server/error-constants.js'
 import UpdatedModuleDialog from './dialogs/updated-module-dialog'
-
-const { AssessmentScoreReportView, AssessmentScoreReporter } = Viewer.assessment
+import AssessmentScoreReportView from './assessment-score-report-view'
+import AssessmentScoreReporter from './assessment-score-reporter'
 
 const { Spinner } = Common.components
 const { SimpleDialog, Dialog } = Common.components.modal

@@ -1,4 +1,4 @@
-import getScoreComparisionData from './assessment-score-reporter/get-score-comparision-data'
+import getScoreComparisonData from './assessment-score-reporter/get-score-comparison-data'
 import getReportDetailsForAttempt from './assessment-score-reporter/get-report-details-for-attempt'
 import getReportDisplayValuesForAttempt from './assessment-score-reporter/get-report-display-values-for-attempt'
 import getScoreChangeDescription from './assessment-score-reporter/get-score-change-description'
@@ -28,7 +28,7 @@ class AssessmentScoreReporter {
 				getReportDisplayValuesForAttempt(assessScoreInfoToReport, this.totalNumberOfAttemptsAllowed)
 			),
 			scoreChangeDescription: getScoreChangeDescription(
-				getScoreComparisionData(this.allScoreDetails, attemptNumber)
+				getScoreComparisonData(this.allScoreDetails, attemptNumber)
 			)
 		}
 	}

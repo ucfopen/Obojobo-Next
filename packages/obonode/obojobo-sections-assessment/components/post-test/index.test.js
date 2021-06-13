@@ -13,9 +13,9 @@ jest.mock('obojobo-document-engine/src/scripts/viewer/util/assessment-util')
 jest.mock('obojobo-document-engine/src/scripts/viewer/util/nav-util')
 jest.mock('obojobo-document-engine/src/scripts/viewer/util/viewer-api')
 jest.mock('obojobo-document-engine/src/scripts/viewer/util/assessment-api')
-jest.mock('obojobo-document-engine/src/scripts/viewer/assessment/assessment-score-reporter')
 jest.mock('obojobo-document-engine/src/scripts/common/flux/dispatcher')
 jest.mock('obojobo-document-engine/src/scripts/common/page/focus')
+jest.mock('../assessment-score-reporter')
 jest.mock('../full-review/index')
 
 const FULL_REVIEW_ALWAYS = 'always'

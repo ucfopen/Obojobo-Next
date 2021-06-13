@@ -8,13 +8,10 @@ import renderer from 'react-test-renderer'
 
 jest.mock('obojobo-document-engine/src/scripts/viewer/util/assessment-util')
 jest.mock('obojobo-document-engine/src/scripts/viewer/util/nav-util')
-jest.mock('obojobo-document-engine/src/scripts/viewer/assessment/assessment-score-reporter')
-jest.mock(
-	'obojobo-document-engine/src/scripts/viewer/assessment/assessment-score-report-view',
-	() => {
-		return () => <div>Mock assessment score report view</div>
-	}
-)
+jest.mock('../assessment-score-reporter')
+jest.mock('../assessment-score-report-view', () => {
+	return () => <div>Mock assessment score report view</div>
+})
 jest.mock('obojobo-document-engine/src/scripts/common/util/uuid', () => () => 'mock-uuid')
 
 // register the modules required for this test

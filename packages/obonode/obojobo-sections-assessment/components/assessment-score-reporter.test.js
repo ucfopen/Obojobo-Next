@@ -1,32 +1,23 @@
-import AssessmentScoreReporter from '../../../src/scripts/viewer/assessment/assessment-score-reporter'
+import AssessmentScoreReporter from './assessment-score-reporter'
 
-const getTextItems = require('../../../src/scripts/viewer/assessment/assessment-score-reporter/get-text-items')
-	.default
-jest.mock('../../../src/scripts/viewer/assessment/assessment-score-reporter/get-text-items')
+const getTextItems = require('./assessment-score-reporter/get-text-items').default
+jest.mock('./assessment-score-reporter/get-text-items')
 
-const getReportDetailsForAttempt = require('../../../src/scripts/viewer/assessment/assessment-score-reporter/get-report-details-for-attempt')
+const getReportDetailsForAttempt = require('./assessment-score-reporter/get-report-details-for-attempt')
 	.default
-jest.mock(
-	'../../../src/scripts/viewer/assessment/assessment-score-reporter/get-report-details-for-attempt'
-)
+jest.mock('./assessment-score-reporter/get-report-details-for-attempt')
 
-const getReportDisplayValuesForAttempt = require('../../../src/scripts/viewer/assessment/assessment-score-reporter/get-report-display-values-for-attempt')
+const getReportDisplayValuesForAttempt = require('./assessment-score-reporter/get-report-display-values-for-attempt')
 	.default
-jest.mock(
-	'../../../src/scripts/viewer/assessment/assessment-score-reporter/get-report-display-values-for-attempt'
-)
+jest.mock('./assessment-score-reporter/get-report-display-values-for-attempt')
 
-const getScoreChangeDescription = require('../../../src/scripts/viewer/assessment/assessment-score-reporter/get-score-change-description')
+const getScoreChangeDescription = require('./assessment-score-reporter/get-score-change-description')
 	.default
-jest.mock(
-	'../../../src/scripts/viewer/assessment/assessment-score-reporter/get-score-change-description'
-)
+jest.mock('./assessment-score-reporter/get-score-change-description')
 
-const getScoreComparisionData = require('../../../src/scripts/viewer/assessment/assessment-score-reporter/get-score-comparision-data')
+const getScoreComparisonData = require('./assessment-score-reporter/get-score-comparison-data')
 	.default
-jest.mock(
-	'../../../src/scripts/viewer/assessment/assessment-score-reporter/get-score-comparision-data'
-)
+jest.mock('./assessment-score-reporter/get-score-comparison-data')
 
 describe('AssessmentScoreReporter', () => {
 	test('getReportFor calls helper methods', () => {
@@ -48,7 +39,7 @@ describe('AssessmentScoreReporter', () => {
 		expect(getReportDetailsForAttempt).toHaveBeenCalledTimes(1)
 		expect(getReportDisplayValuesForAttempt).toHaveBeenCalledTimes(1)
 		expect(getScoreChangeDescription).toHaveBeenCalledTimes(1)
-		expect(getScoreComparisionData).toHaveBeenCalledTimes(1)
+		expect(getScoreComparisonData).toHaveBeenCalledTimes(1)
 	})
 
 	test('throws error when given bad input', () => {

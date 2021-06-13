@@ -1,4 +1,4 @@
-import getTextItems from '../../../../src/scripts/viewer/assessment/assessment-score-reporter/get-text-items.js'
+import getTextItems from './get-text-items'
 import {
 	TYPE_ATTEMPT_WITHOUT_MODS_REWARDED,
 	TYPE_ATTEMPT_WITH_MODS_REWARDED,
@@ -14,12 +14,11 @@ import {
 	TYPE_PASSFAIL_UNABLE_TO_PASS_GIVEN_HIGHEST_ATTEMPT_SCORE,
 	TYPE_PASSFAIL_UNABLE_TO_PASS_GIVEN_SCORE,
 	ERROR_UNKNOWN_DISPLAY_TYPE
-} from '../../../../src/scripts/viewer/assessment/assessment-score-reporter/display-types'
+} from './display-types'
 
-const getDisplayType = require('../../../../src/scripts/viewer/assessment/assessment-score-reporter/get-display-type')
-	.default
+const getDisplayType = require('./get-display-type').default
 
-jest.mock('../../../../src/scripts/viewer/assessment/assessment-score-reporter/get-display-type')
+jest.mock('./get-display-type')
 
 describe('getTextItems', () => {
 	const mods = [

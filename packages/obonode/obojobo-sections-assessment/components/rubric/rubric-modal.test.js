@@ -3,6 +3,7 @@ import { mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 import RubricModal from './rubric-modal'
 import ModProperties from './mod-properties'
+import AssessmentRubric from '../../assessment-rubric'
 import EditorUtil from 'obojobo-document-engine/src/scripts/oboeditor/util/editor-util'
 
 jest.mock('obojobo-document-engine/src/scripts/oboeditor/util/editor-util')
@@ -45,7 +46,7 @@ describe('Rubric editor modal', () => {
 			<RubricModal
 				element={{
 					content: {
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				editor={{ selection: [0, 0] }}
@@ -62,11 +63,11 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						passingAttemptScore: 100,
-						passedResult: '$attempt_score',
+						passedResult: AssessmentRubric.VAR_ATTEMPT_SCORE,
 						failedResult: 0,
 						unableToPassResult: null,
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				editor={{ selection: [0, 0] }}
@@ -83,7 +84,7 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				editor={{
@@ -111,7 +112,7 @@ describe('Rubric editor modal', () => {
 		const component = renderer.create(
 			<RubricModal
 				element={{
-					content: { unableToPassType: 'set-value', mods: [] }
+					content: { unableToPassType: AssessmentRubric.SET_VALUE, mods: [] }
 				}}
 			/>
 		)
@@ -131,7 +132,7 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				editor={{
@@ -167,7 +168,7 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				editor={{
@@ -181,16 +182,16 @@ describe('Rubric editor modal', () => {
 		input = component
 			.find({ name: 'score-type' })
 			.at(0)
-			.simulate('change', { target: { value: 'highest' } })
+			.simulate('change', { target: { value: AssessmentRubric.TYPE_HIGHEST } })
 		expect(input.html().includes(`value="highest"`)).toBe(true)
-		expect(component.instance().state.type).toBe('highest')
+		expect(component.instance().state.type).toBe(AssessmentRubric.TYPE_HIGHEST)
 
 		input = component
 			.find({ name: 'score-type' })
 			.at(1)
-			.simulate('change', { target: { value: 'pass-fail' } })
+			.simulate('change', { target: { value: AssessmentRubric.TYPE_PASS_FAIL } })
 		expect(input.html().includes(`value="pass-fail"`)).toBe(true)
-		expect(component.instance().state.type).toBe('pass-fail')
+		expect(component.instance().state.type).toBe(AssessmentRubric.TYPE_PASS_FAIL)
 	})
 
 	test('Rubric modal component changes passed score type', () => {
@@ -199,11 +200,11 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						passingAttemptScore: 100,
-						passedResult: '$attempt_score',
+						passedResult: AssessmentRubric.VAR_ATTEMPT_SCORE,
 						failedResult: 0,
 						unableToPassResult: null,
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 			/>
@@ -214,13 +215,13 @@ describe('Rubric editor modal', () => {
 		// If passing, set assessment score to attempt score.
 		input = component
 			.find('#attempt-score')
-			.simulate('change', { target: { value: '$attempt_score' } })
+			.simulate('change', { target: { value: AssessmentRubric.VAR_ATTEMPT_SCORE } })
 		expect(input.html().includes(`value="$attempt_score"`)).toBe(true)
 
 		// If passing, set assessment score to a specific value.
 		input = component
 			.find('#specified-value')
-			.simulate('change', { target: { value: 'set-value' } })
+			.simulate('change', { target: { value: AssessmentRubric.SET_VALUE } })
 		expect(input.html().includes(`value="set-value"`)).toBe(true)
 	})
 
@@ -230,11 +231,11 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						passingAttemptScore: 100,
-						passedResult: '$attempt_score',
+						passedResult: AssessmentRubric.VAR_ATTEMPT_SCORE,
 						failedResult: 0,
 						unableToPassResult: null,
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				model={{
@@ -268,11 +269,11 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						passingAttemptScore: 100,
-						passedResult: '$attempt_score',
+						passedResult: AssessmentRubric.VAR_ATTEMPT_SCORE,
 						failedResult: 0,
 						unableToPassResult: null,
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				model={{
@@ -314,11 +315,11 @@ describe('Rubric editor modal', () => {
 				element={{
 					content: {
 						passingAttemptScore: 100,
-						passedResult: '$attempt_score',
+						passedResult: AssessmentRubric.VAR_ATTEMPT_SCORE,
 						failedResult: 0,
 						unableToPassResult: null,
 						mods: [],
-						type: 'pass-fail'
+						type: AssessmentRubric.TYPE_PASS_FAIL
 					}
 				}}
 				onConfirm={onConfirm}

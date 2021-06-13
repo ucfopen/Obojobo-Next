@@ -1,6 +1,4 @@
 import ViewerAPI from './util/viewer-api'
-import AssessmentScoreReportView from './assessment/assessment-score-report-view'
-import AssessmentScoreReporter from './assessment/assessment-score-reporter'
 import AssessmentStore from './stores/assessment-store'
 import AssessmentMachineStates from './stores/assessment-store/assessment-machine-states'
 import AssessmentUtil from './util/assessment-util'
@@ -55,10 +53,5 @@ export default {
 		QuestionUtil,
 		FocusUtil,
 		getLTIOutcomeServiceHostname
-	},
-
-	assessment: {
-		AssessmentScoreReporter,
-		AssessmentScoreReportView
 	}
 }

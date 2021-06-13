@@ -1,4 +1,4 @@
-import getScoreChangeDescription from '../../../../src/scripts/viewer/assessment/assessment-score-reporter/get-score-change-description.js'
+import getScoreChangeDescription from './get-score-change-description'
 
 describe('getScoreChangeDescription', () => {
 	test('Returns correct description', () => {

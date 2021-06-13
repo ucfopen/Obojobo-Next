@@ -1,6 +1,6 @@
 import React from 'react'
 import Common from 'Common'
-import AssessmentScoreReportView from 'obojobo-document-engine/src/scripts/viewer/assessment/assessment-score-report-view'
+import AssessmentScoreReportView from '../assessment-score-report-view'
 const { Dialog } = Common.components.modal
 
 const ResultsDialog = ({ label, attemptNumber, scoreReport, onShowClick }) => (

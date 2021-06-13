@@ -1,3 +1,4 @@
+import AssessmentRubric from '../../assessment-rubric'
 import {
 	TYPE_ATTEMPT_WITHOUT_MODS_REWARDED,
 	TYPE_ATTEMPT_WITH_MODS_REWARDED,
@@ -16,16 +17,16 @@ import {
 } from './display-types'
 
 const getDisplayType = ({ rubricType, mods, status, statusResult, isAttemptScore100 }) => {
-	const passed = status === 'passed'
-	const failed = status === 'failed'
-	const unableToPass = status === 'unableToPass'
-	const isAttemptRubric = rubricType === 'attempt'
-	const isPassFailRubric = rubricType === 'pass-fail'
+	const passed = status === AssessmentRubric.STATUS_PASSED
+	const failed = status === AssessmentRubric.STATUS_FAILED
+	const unableToPass = status === AssessmentRubric.STATUS_UNABLE_TO_PASS
+	const isAttemptRubric = rubricType === AssessmentRubric.TYPE_ATTEMPT
+	const isPassFailRubric = rubricType === AssessmentRubric.TYPE_PASS_FAIL
 	const isRewardedMods = mods.length > 0
 	const isResultNumeric = Number.isFinite(parseFloat(statusResult))
-	const isResultNoScore = statusResult === 'no-score'
-	const isResultAttemptScore = statusResult === '$attempt_score'
-	const isResultHighestAttemptScore = statusResult === '$highest_attempt_score'
+	const isResultNoScore = statusResult === AssessmentRubric.NO_SCORE
+	const isResultAttemptScore = statusResult === AssessmentRubric.VAR_ATTEMPT_SCORE
+	const isResultHighestAttemptScore = statusResult === AssessmentRubric.VAR_HIGHEST_ATTEMPT_SCORE
 
 	if (isAttemptRubric && passed && isResultAttemptScore && !isRewardedMods) {
 		return TYPE_ATTEMPT_WITHOUT_MODS_REWARDED

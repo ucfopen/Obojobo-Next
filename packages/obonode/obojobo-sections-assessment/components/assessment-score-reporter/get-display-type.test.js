@@ -13,8 +13,8 @@ import {
 	TYPE_PASSFAIL_UNABLE_TO_PASS_GIVEN_HIGHEST_ATTEMPT_SCORE,
 	TYPE_PASSFAIL_UNABLE_TO_PASS_GIVEN_SCORE,
 	ERROR_UNKNOWN_DISPLAY_TYPE
-} from '../../../../src/scripts/viewer/assessment/assessment-score-reporter/display-types.js'
-import getDisplayType from '../../../../src/scripts/viewer/assessment/assessment-score-reporter/get-display-type.js'
+} from './display-types'
+import getDisplayType from './get-display-type'
 
 describe('getDisplayType', () => {
 	const tc = (rubricType, status, statusResult, isAttemptScore100, hasMods) => {
