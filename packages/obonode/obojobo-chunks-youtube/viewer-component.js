@@ -14,7 +14,7 @@ const YouTube = props => (
 		role="region"
 	>
 		<div className="obojobo-draft--chunks--you-tube viewer">
-			<YouTubePlayer content={props.model.modelState} />
+			<YouTubePlayer content={props.model.modelState} nodeId={props.model.id} />
 		</div>
 	</OboComponent>
 )
