@@ -1,0 +1,103 @@
+@import '~styles/includes';
+
+.new-iframe-modal {
+	text-align: center;
+
+	header {
+		p {
+			// @HACK: Enforce pixel perfect children.
+			// Used to make the "Click to load this content" element non-blurry in CHROME
+			transform-style: preserve-3d;
+			font-size: 0.9em;
+		}
+
+		input {
+			@include text-input();
+
+			width: 100%;
+			padding: 0.6em;
+			box-sizing: border-box;
+
+			&:focus {
+				outline-color: $color-action;
+			}
+		}
+	}
+
+	.preview {
+		p {
+			// @HACK: Enforce pixel perfect children.
+			// Used to make the "Click to load this content" element non-blurry in CHROME
+			transform-style: preserve-3d;
+			font-size: 0.9em;
+		}
+
+		.no-preview {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $color-neutral;
+			width: 100%;
+			height: 12em;
+			border-radius: 0.4em;
+			color: $color-neutral-text;
+			font-size: 0.8em;
+			font-weight: lighter;
+
+			span {
+				width: 80%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		.preview-with-iframe {
+			iframe {
+				box-sizing: border-box;
+				width: 100%;
+				height: 12em;
+				border: none;
+				border: 0.1em solid $color-shadow;
+				border-radius: 0.4em;
+			}
+
+			section {
+				// @HACK: Enforce pixel perfect children.
+				// Used to make the "Click to load this content" element non-blurry in CHROME
+				transform-style: preserve-3d;
+				width: 100%;
+				max-width: 23em;
+
+				p {
+					font-weight: bold;
+					margin: 2em 0 0.1em 0;
+				}
+
+				button {
+					border: none;
+					color: $color-action;
+					text-decoration: underline;
+					background: transparent;
+					transition: 0.3s;
+					font-family: $font-default;
+
+					&:hover {
+						cursor: pointer;
+						color: $color-action-minor;
+						transition: 0.3s;
+					}
+				}
+
+				.preview-not-working {
+					// @HACK: Enforce pixel perfect children.
+					// Used to make the "Click to load this content" element non-blurry in CHROME
+					transform-style: preserve-3d;
+					margin-top: 1.9em;
+					font-size: 0.8em;
+					text-align: left;
+					text-align: justify;
+				}
+			}
+		}
+	}
+}

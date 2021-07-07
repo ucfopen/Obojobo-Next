@@ -2,7 +2,14 @@
 
 .obojobo-draft--components--switch {
 	position: relative;
-	height: 1.3em;
+
+	//@HACK: Fixes the .info dialog being blurry sometimes in CHROME
+	transform: translate3d(0, 0, 0);
+	z-index: 1;
+
+	.text-content {
+		width: 85%;
+	}
 
 	> span {
 		padding-right: 0.5em;
@@ -11,6 +18,7 @@
 
 	.switch {
 		position: absolute;
+		right: 0;
 		display: inline-block;
 		width: 2.6em;
 		height: 1em;
@@ -85,5 +93,11 @@
 			color: $color-bg;
 			left: 37%;
 		}
+	}
+
+	small {
+		font-size: 0.8em;
+		color: $color-neutral-text;
+		margin-top: 0;
 	}
 }

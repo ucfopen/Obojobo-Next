@@ -3,6 +3,8 @@ const MIN_SEC_TIME_REGEX = /([0-9]+)m([0-9]+)s$/
 const MIN_TIME_REGEX = /([0-9]+)m$/
 const SEC_TIME_REGEX = /([0-9]+)s$/
 
+const IFRAME_NODE = 'ObojoboDraft.Chunks.IFrame'
+
 const minSecFormatToSeconds = timeString => {
 	if (timeString === null) {
 		return null
@@ -37,7 +39,7 @@ const getStandardizedURLFromVideoId = videoId => {
 	return `${document.location.protocol}//youtu.be/${videoId}`
 }
 
-const parseYouTubeURL = videoIdOrUrlOrEmbedCode => {
+const parseURLOrEmbedCode = (videoIdOrUrlOrEmbedCode, nodeType) => {
 	videoIdOrUrlOrEmbedCode = videoIdOrUrlOrEmbedCode.trim()
 
 	let videoId
@@ -61,12 +63,22 @@ const parseYouTubeURL = videoIdOrUrlOrEmbedCode => {
 		videoIdOrUrlOrEmbedCode = document.location.protocol + videoIdOrUrlOrEmbedCode
 	}
 
-	// Try to parse as a URL
+	// Try to parse as a URL (IFrame checks should stop here)
 	try {
 		url = new URL(videoIdOrUrlOrEmbedCode)
+		if (
+			nodeType === IFRAME_NODE &&
+			url &&
+			(url.protocol === 'http:' || url.protocol === 'https:')
+		) {
+			return url
+		} else if (nodeType === IFRAME_NODE) {
+			return false
+		}
 	} catch (e) {
 		// Assume the user may have pasted a video ID
 		videoId = videoIdOrUrlOrEmbedCode
+		if (nodeType === IFRAME_NODE) return false
 	}
 
 	if (url) {
@@ -105,4 +117,4 @@ const parseYouTubeURL = videoIdOrUrlOrEmbedCode => {
 	}
 }
 
-export { parseYouTubeURL, getStandardizedURLFromVideoId }
+export { parseURLOrEmbedCode, getStandardizedURLFromVideoId }

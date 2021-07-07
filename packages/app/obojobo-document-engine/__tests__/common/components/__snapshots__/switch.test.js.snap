@@ -4,11 +4,17 @@ exports[`Switch Switch renders correctly with all options set 1`] = `
 <div
   className="obojobo-draft--components--switch"
 >
-  <span
-    contentEditable={false}
+  <div
+    className="text-content"
   >
-    mocktitle
-  </span>
+    <span
+      contentEditable={false}
+    >
+      mocktitle
+    </span>
+    <br />
+    <small />
+  </div>
   <label
     className="switch"
   >
@@ -29,6 +35,12 @@ exports[`Switch Switch renders correctly with no options set 1`] = `
 <div
   className="obojobo-draft--components--switch"
 >
+  <div
+    className="text-content"
+  >
+    <br />
+    <small />
+  </div>
   <label
     className="switch"
   >

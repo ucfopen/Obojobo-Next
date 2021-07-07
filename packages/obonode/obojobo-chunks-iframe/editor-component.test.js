@@ -139,7 +139,7 @@ describe('IFrame Editor Node', () => {
 		expect(Transforms.removeNodes).toHaveBeenCalled()
 	})
 
-	test('IFrame component edits properties', () => {
+	test('IFrame component opens modals accordingly', () => {
 		const component = mount(
 			<IFrame
 				element={{
@@ -161,11 +161,18 @@ describe('IFrame Editor Node', () => {
 			/>
 		)
 
+		// Testing opening NewIFrameModal
 		component
 			.find('button')
 			.at(1)
 			.simulate('click')
+		expect(ModalUtil.show).toHaveBeenCalled()
 
+		// Testing opening EditIFrameModal
+		component.instance().openEditIframeModal({
+			src: 'mock-src',
+			srcFormatted: 'mock-formatted-src'
+		})
 		expect(ModalUtil.show).toHaveBeenCalled()
 	})
 
@@ -230,5 +237,46 @@ describe('IFrame Editor Node', () => {
 		component.instance().changeProperties({ mockProperties: 'mock value' })
 
 		expect(Transforms.setNodes).toHaveBeenCalled()
+	})
+
+	test('IFrame opens EditIFrameModal when a src is set', () => {
+		const component = renderer.create(
+			<IFrame
+				element={{
+					content: {
+						src: 'mock-src'
+					}
+				}}
+			/>
+		)
+		const button = component.root.findAllByType('button')[1]
+		button.props.onClick({
+			preventDefault: () => {},
+			stopPropagation: () => {}
+		})
+		expect(component.toJSON()).toMatchSnapshot()
+	})
+
+	test('IFrame opens NewIFrameModal after onChange... is pressed', () => {
+		const component = renderer.create(
+			<IFrame
+				element={{
+					content: {
+						controls: '',
+						border: false,
+						initialZoom: 1
+					}
+				}}
+			/>
+		)
+		const button = component.root.findAllByType('button')[1]
+		button.props.onClick(
+			{
+				preventDefault: () => {},
+				stopPropagation: () => {}
+			},
+			'mock-src-to-change'
+		)
+		expect(component.toJSON()).toMatchSnapshot()
 	})
 })

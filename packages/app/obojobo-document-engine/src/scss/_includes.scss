@@ -1,6 +1,7 @@
 $color-action: #6714bd;
 $color-button-bg: lighten($color-action, 9%);
 $color-action-minor: desaturate(lighten($color-action, 30%), 40%);
+$color-action-hover: #f7e9f5;
 $color-error: #990000;
 $color-dangerous: #d40000;
 $color-dangerous-minor: desaturate($color-dangerous, 20%);
@@ -27,6 +28,8 @@ $color-reward: #ffe65d;
 $color-reward-text: #947d00;
 $color-obojobo-blue: #0d4fa7;
 $color-preview: #af1b5c;
+$color-neutral: #f3f3f3;
+$color-neutral-text: #b4b3b4;
 
 $box-shadow-focus: 0 0 3px 3px $color-browser-focus;
 $box-shadow-overlay: 0 2px 2px $color-shadow;

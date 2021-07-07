@@ -52,6 +52,17 @@ describe('SimpleDialog', () => {
 		expect(tree).toMatchSnapshot()
 	})
 
+	test('SimpleDialog cancelOrCustomYes', () => {
+		const component = renderer.create(
+			<SimpleDialog cancelOrCustomYes onCancel={jest.fn()} onConfirm={jest.fn()}>
+				Content
+			</SimpleDialog>
+		)
+		const tree = component.toJSON()
+
+		expect(tree).toMatchSnapshot()
+	})
+
 	test('SimpleDialog no type', () => {
 		const component = renderer.create(
 			<SimpleDialog onCancel={jest.fn()} onConfirm={jest.fn()}>

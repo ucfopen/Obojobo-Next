@@ -2,10 +2,14 @@ import './youtube-properties-modal.scss'
 
 import React from 'react'
 import Common from 'obojobo-document-engine/src/scripts/common'
-import { parseYouTubeURL, getStandardizedURLFromVideoId } from './parse-youtube-url'
+import {
+	parseURLOrEmbedCode,
+	getStandardizedURLFromVideoId
+} from 'obojobo-document-engine/src/scripts/oboeditor/util/url-embed-code-check'
 import Button from 'obojobo-document-engine/src/scripts/common/components/button'
 
 const { SimpleDialog } = Common.components.modal
+const YOUTUBE_NODE = 'ObojoboDraft.Chunks.YouTube'
 
 class YouTubeProperties extends React.Component {
 	constructor(props) {
@@ -83,7 +87,7 @@ class YouTubeProperties extends React.Component {
 	}
 
 	updateStateFromUserInput(userURL) {
-		const videoInfo = parseYouTubeURL(userURL)
+		const videoInfo = parseURLOrEmbedCode(userURL, YOUTUBE_NODE)
 		const url = videoInfo.standardizedVideoUrl
 
 		// If the URL includes time information then we replace the existing start and end times
@@ -156,7 +160,7 @@ class YouTubeProperties extends React.Component {
 
 	getContentFromState() {
 		return {
-			videoId: parseYouTubeURL(this.state.url).videoId,
+			videoId: parseURLOrEmbedCode(this.state.url, YOUTUBE_NODE).videoId,
 			startTime: this.getSecondsFromTimeDisplay(this.state.startTime),
 			endTime: this.getSecondsFromTimeDisplay(this.state.endTime)
 		}

@@ -76,6 +76,82 @@ exports[`SimpleDialog SimpleDialog cancelOk 1`] = `
 </div>
 `;
 
+exports[`SimpleDialog SimpleDialog cancelOrCustomYes 1`] = `
+<div
+  className="obojobo-draft--components--modal--simple-dialog"
+>
+  <div
+    className="obojobo-draft--components--modal--dialog "
+    style={null}
+  >
+    <div
+      aria-labelledby="obojobo-draft--components--modal--modal--content"
+      className="obojobo-draft--components--modal--modal"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <input
+        aria-label="Start of dialog"
+        className="first-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="content"
+        id="obojobo-draft--components--modal--modal--content"
+      >
+        <div
+          className="dialog-content"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          Content
+        </div>
+        <div
+          className="controls"
+        >
+          <div
+            className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[MockFunction]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            className="obojobo-draft--components--button is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[MockFunction]}
+              type="button"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        aria-label="End of dialog"
+        className="last-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`SimpleDialog SimpleDialog no type 1`] = `
 <div
   className="obojobo-draft--components--modal--simple-dialog"

@@ -1,9 +1,15 @@
-import { parseYouTubeURL, getStandardizedURLFromVideoId } from './parse-youtube-url'
+import {
+	parseURLOrEmbedCode,
+	getStandardizedURLFromVideoId
+} from 'obojobo-document-engine/src/scripts/oboeditor/util/url-embed-code-check'
+
+const IFRAME_NODE = 'ObojoboDraft.Chunks.IFrame'
+const YOUTUBE_NODE = 'ObojoboDraft.Chunks.YouTube'
 
 // Example list of URLs modified from https://gist.github.com/rodrigoborgesdeoliveira/987683cfbfcc8d800192da1e73adc486
 // Items at the bottom of the list result in "bad" values, but are expected output based on the
 // algorithm
-describe('parseYouTubeURL', () => {
+describe('parseURLOrEmbedCode works as expected for Youtube nodes', () => {
 	test.each`
 		userString                                                                                                                                                                                                                       | videoId                   | standardizedVideoUrl                      | startSeconds | endSeconds
 		${'dQw4w9WgXcQ'}                                                                                                                                                                                                                 | ${'dQw4w9WgXcQ'}          | ${'http://youtu.be/dQw4w9WgXcQ'}          | ${null}      | ${null}
@@ -68,9 +74,9 @@ describe('parseYouTubeURL', () => {
 		${'http://www.youtube.com/user/Scobleizer#p/u/1/1p3vcRhsYGo'}                                                                                                                                                                    | ${'Scobleizer'}           | ${'http://youtu.be/Scobleizer'}           | ${null}      | ${null}
 		${'http://www.youtube.com/user/Scobleizer#p/u/1/Scobleizer?rel=0 '}                                                                                                                                                              | ${'Scobleizer'}           | ${'http://youtu.be/Scobleizer'}           | ${null}      | ${null}
 	`(
-		'parseYouTubeURL("$userString") = {videoId:"$videoId",standardizedVideoUrl:"$standardizedVideoUrl",startSeconds:"$startSeconds",endSeconds:"$endSeconds"}',
+		'parseURLOrEmbedCode("$userString") = {videoId:"$videoId",standardizedVideoUrl:"$standardizedVideoUrl",startSeconds:"$startSeconds",endSeconds:"$endSeconds"}',
 		({ userString, videoId, standardizedVideoUrl, startSeconds, endSeconds }) => {
-			const info = parseYouTubeURL(userString)
+			const info = parseURLOrEmbedCode(userString, YOUTUBE_NODE)
 
 			expect(info.videoId).toBe(videoId)
 			expect(info.standardizedVideoUrl).toBe(standardizedVideoUrl)
@@ -78,6 +84,56 @@ describe('parseYouTubeURL', () => {
 			expect(info.endSeconds).toBe(endSeconds)
 		}
 	)
+
+	test('parseURLOrEmbedCode works as expected for IFrame nodes', () => {
+		let userString = 'https://mock-url.com'
+		let info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toStrictEqual(new URL(userString))
+
+		userString = 'http://mock-url.com'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toStrictEqual(new URL(userString))
+
+		userString = 'https://www.mock-url.com'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toStrictEqual(new URL(userString))
+
+		userString = 'http://www.mock-url.com'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toStrictEqual(new URL(userString))
+
+		userString = '<iframe width="560" height="315" src="http://mock-url.com">'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toStrictEqual(new URL('http://mock-url.com'))
+
+		userString = '<iframe width="560" height="315" src="https://mock-url.com">'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toStrictEqual(new URL('https://mock-url.com'))
+
+		userString = 'htxp://mock'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toBe(false)
+
+		userString = 'ottttp://mock'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toBe(false)
+
+		userString = 'ftp'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toBe(false)
+
+		userString = '<iframe width="560" height="315" src="htxp://mock-url.com">'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toBe(false)
+
+		userString = 'iframe width="560" height="315" src="htxp://mock-url.com">'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toBe(false)
+
+		userString = '<iframe width="560" height="315" src="mock">'
+		info = parseURLOrEmbedCode(userString, IFRAME_NODE)
+		expect(info).toBe(false)
+	})
 
 	test('getStandardizedURLFromVideoId returns "" when passed in falsy values', () => {
 		expect(getStandardizedURLFromVideoId(null)).toBe('')

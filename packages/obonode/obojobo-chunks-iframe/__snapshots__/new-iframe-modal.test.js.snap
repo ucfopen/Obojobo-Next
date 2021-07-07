@@ -1,0 +1,575 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewIFrameModal NewIFrameModal component changes src 1`] = `
+<div
+  className="obojobo-draft--components--modal--simple-dialog"
+>
+  <div
+    className="obojobo-draft--components--modal--dialog "
+    style={null}
+  >
+    <div
+      aria-labelledby="obojobo-draft--components--modal--modal--content"
+      className="obojobo-draft--components--modal--modal"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <input
+        aria-label="Start of dialog"
+        className="first-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="content"
+        id="obojobo-draft--components--modal--modal--content"
+      >
+        <h1
+          className="heading"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          New Embedded IFrame
+        </h1>
+        <div
+          className="dialog-content"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          <div
+            className="new-iframe-modal"
+          >
+            <header>
+              <p>
+                Paste either an iframe embed code or a URL to embed:
+              </p>
+              <input
+                onChange={[Function]}
+                placeholder="<iframe src=\\"https://example.com\\"/> or \\"https://example.com\\""
+                type="text"
+                value=""
+              />
+            </header>
+            <div
+              className="preview"
+            >
+              <p>
+                Embedded preview:
+              </p>
+              <div
+                className="no-preview"
+              >
+                <span>
+                  Paste a link or embed code above to see the preview
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="controls"
+        >
+          <div
+            className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            className="obojobo-draft--components--button is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Preview is good - Continue...
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        aria-label="End of dialog"
+        className="last-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NewIFrameModal NewIFrameModal component correctly detects content type 1`] = `
+<div
+  className="obojobo-draft--components--modal--simple-dialog"
+>
+  <div
+    className="obojobo-draft--components--modal--dialog "
+    style={null}
+  >
+    <div
+      aria-labelledby="obojobo-draft--components--modal--modal--content"
+      className="obojobo-draft--components--modal--modal"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <input
+        aria-label="Start of dialog"
+        className="first-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="content"
+        id="obojobo-draft--components--modal--modal--content"
+      >
+        <h1
+          className="heading"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          New Embedded IFrame
+        </h1>
+        <div
+          className="dialog-content"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          <div
+            className="new-iframe-modal"
+          >
+            <header>
+              <p>
+                Paste either an iframe embed code or a URL to embed:
+              </p>
+              <input
+                onChange={[Function]}
+                placeholder="<iframe src=\\"https://example.com\\"/> or \\"https://example.com\\""
+                type="text"
+                value=""
+              />
+            </header>
+            <div
+              className="preview"
+            >
+              <p>
+                Embedded preview:
+              </p>
+              <div
+                className="no-preview"
+              >
+                <span>
+                  Paste a link or embed code above to see the preview
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="controls"
+        >
+          <div
+            className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            className="obojobo-draft--components--button is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Preview is good - Continue...
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        aria-label="End of dialog"
+        className="last-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NewIFrameModal NewIFrameModal component correctly detects content type 2`] = `
+<div
+  className="obojobo-draft--components--modal--simple-dialog"
+>
+  <div
+    className="obojobo-draft--components--modal--dialog "
+    style={null}
+  >
+    <div
+      aria-labelledby="obojobo-draft--components--modal--modal--content"
+      className="obojobo-draft--components--modal--modal"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <input
+        aria-label="Start of dialog"
+        className="first-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="content"
+        id="obojobo-draft--components--modal--modal--content"
+      >
+        <h1
+          className="heading"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          New Embedded IFrame
+        </h1>
+        <div
+          className="dialog-content"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          <div
+            className="new-iframe-modal"
+          >
+            <header>
+              <p>
+                Paste either an iframe embed code or a URL to embed:
+              </p>
+              <input
+                onChange={[Function]}
+                placeholder="<iframe src=\\"https://example.com\\"/> or \\"https://example.com\\""
+                type="text"
+                value=""
+              />
+            </header>
+            <div
+              className="preview"
+            >
+              <p>
+                Embedded preview:
+              </p>
+              <div
+                className="no-preview"
+              >
+                <span>
+                  Paste a link or embed code above to see the preview
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="controls"
+        >
+          <div
+            className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            className="obojobo-draft--components--button is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Preview is good - Continue...
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        aria-label="End of dialog"
+        className="last-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NewIFrameModal NewIFrameModal component focuses on first element 1`] = `
+<div
+  className="obojobo-draft--components--modal--simple-dialog"
+>
+  <div
+    className="obojobo-draft--components--modal--dialog "
+    style={null}
+  >
+    <div
+      aria-labelledby="obojobo-draft--components--modal--modal--content"
+      className="obojobo-draft--components--modal--modal"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <input
+        aria-label="Start of dialog"
+        className="first-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="content"
+        id="obojobo-draft--components--modal--modal--content"
+      >
+        <h1
+          className="heading"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          New Embedded IFrame
+        </h1>
+        <div
+          className="dialog-content"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          <div
+            className="new-iframe-modal"
+          >
+            <header>
+              <p>
+                Paste either an iframe embed code or a URL to embed:
+              </p>
+              <input
+                onChange={[Function]}
+                placeholder="<iframe src=\\"https://example.com\\"/> or \\"https://example.com\\""
+                type="text"
+                value=""
+              />
+            </header>
+            <div
+              className="preview"
+            >
+              <p>
+                Embedded preview:
+              </p>
+              <div
+                className="no-preview"
+              >
+                <span>
+                  Paste a link or embed code above to see the preview
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="controls"
+        >
+          <div
+            className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            className="obojobo-draft--components--button is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Preview is good - Continue...
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        aria-label="End of dialog"
+        className="last-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NewIFrameModal NewIFrameModal component mounts as expected 1`] = `"<div class=\\"obojobo-draft--components--modal--simple-dialog\\"><div class=\\"obojobo-draft--components--modal--dialog \\"><div class=\\"obojobo-draft--components--modal--modal\\" role=\\"dialog\\" aria-labelledby=\\"obojobo-draft--components--modal--modal--content\\" tabindex=\\"-1\\"><input aria-label=\\"Start of dialog\\" class=\\"first-tab\\" type=\\"text\\"><div class=\\"content\\" id=\\"obojobo-draft--components--modal--modal--content\\"><h1 class=\\"heading\\" style=\\"text-align: center;\\">New Embedded IFrame</h1><div class=\\"dialog-content\\" style=\\"text-align: center;\\"><div class=\\"new-iframe-modal\\"><header><p>Paste either an iframe embed code or a URL to embed:</p><input type=\\"text\\" placeholder=\\"<iframe src=&quot;https://example.com&quot;/> or &quot;https://example.com&quot;\\" value=\\"\\"></header><div class=\\"preview\\"><p>Embedded preview:</p><div class=\\"no-preview\\"><span>Paste a link or embed code above to see the preview</span></div></div></div></div><div class=\\"controls\\"><div class=\\"obojobo-draft--components--button alt-action is-not-dangerous align-center\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" contenteditable=\\"false\\">Cancel</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" contenteditable=\\"false\\" tabindex=\\"0\\">Preview is good - Continue...</button></div></div></div><input aria-label=\\"End of dialog\\" class=\\"last-tab\\" type=\\"text\\"></div></div></div>"`;
+
+exports[`NewIFrameModal NewIFrameModal component opens section explaining why the iframe preview is not working 1`] = `"<div class=\\"obojobo-draft--components--modal--simple-dialog\\"><div class=\\"obojobo-draft--components--modal--dialog \\"><div class=\\"obojobo-draft--components--modal--modal\\" role=\\"dialog\\" aria-labelledby=\\"obojobo-draft--components--modal--modal--content\\" tabindex=\\"-1\\"><input aria-label=\\"Start of dialog\\" class=\\"first-tab\\" type=\\"text\\"><div class=\\"content\\" id=\\"obojobo-draft--components--modal--modal--content\\"><h1 class=\\"heading\\" style=\\"text-align: center;\\">New Embedded IFrame</h1><div class=\\"dialog-content\\" style=\\"text-align: center;\\"><div class=\\"new-iframe-modal\\"><header><p>Paste either an iframe embed code or a URL to embed:</p><input type=\\"text\\" placeholder=\\"<iframe src=&quot;https://example.com&quot;/> or &quot;https://example.com&quot;\\" value=\\"https://\\"></header><div class=\\"preview\\"><p>Embedded preview:</p><div class=\\"preview-with-iframe\\"><iframe src=\\"\\"></iframe><section><p>Does the preview look good?</p><div class=\\"preview-not-working\\">If the preview above is not what you expected, keep in mind that some pages inside your IFrame may restrict their content, thus not allowing them to be shown within Obojobo. Also, if you are trying to embed media instead of an IFrame, make sure to paste your IFrame's embed code (starting with &lt;iframe...) and not only the regular URL.</div></section></div></div></div></div><div class=\\"controls\\"><div class=\\"obojobo-draft--components--button alt-action is-not-dangerous align-center\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" contenteditable=\\"false\\">Cancel</button></div><div class=\\"obojobo-draft--components--button is-not-dangerous align-center\\" contenteditable=\\"false\\"><button type=\\"button\\" class=\\"button\\" contenteditable=\\"false\\" tabindex=\\"0\\">Preview is good - Continue...</button></div></div></div><input aria-label=\\"End of dialog\\" class=\\"last-tab\\" type=\\"text\\"></div></div></div>"`;
+
+exports[`NewIFrameModal NewIFrameModal shows message after invalid src is typed 1`] = `
+<div
+  className="obojobo-draft--components--modal--simple-dialog"
+>
+  <div
+    className="obojobo-draft--components--modal--dialog "
+    style={null}
+  >
+    <div
+      aria-labelledby="obojobo-draft--components--modal--modal--content"
+      className="obojobo-draft--components--modal--modal"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <input
+        aria-label="Start of dialog"
+        className="first-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+      <div
+        className="content"
+        id="obojobo-draft--components--modal--modal--content"
+      >
+        <h1
+          className="heading"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          New Embedded IFrame
+        </h1>
+        <div
+          className="dialog-content"
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          <div
+            className="new-iframe-modal"
+          >
+            <header>
+              <p>
+                Paste either an iframe embed code or a URL to embed:
+              </p>
+              <input
+                onChange={[Function]}
+                placeholder="<iframe src=\\"https://example.com\\"/> or \\"https://example.com\\""
+                type="text"
+                value="mock-src"
+              />
+            </header>
+            <div
+              className="preview"
+            >
+              <p>
+                Embedded preview:
+              </p>
+              <div
+                className="no-preview"
+              >
+                <span>
+                  Make sure you are using a valid URL or an IFrame embed code
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="controls"
+        >
+          <div
+            className="obojobo-draft--components--button alt-action is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+          <div
+            className="obojobo-draft--components--button is-not-dangerous align-center"
+            contentEditable={false}
+          >
+            <button
+              className="button"
+              contentEditable={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Preview is good - Continue...
+            </button>
+          </div>
+        </div>
+      </div>
+      <input
+        aria-label="End of dialog"
+        className="last-tab"
+        onFocus={[Function]}
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -25,6 +25,15 @@ describe('Switch', () => {
 		expect(checkbox.children).toEqual(['mocktitle'])
 	})
 
+	test('Switch renders correctly with a description', () => {
+		const testRenderer = TestRenderer.create(
+			<Switch title="mocktitle" description="mockDescription" />
+		)
+		const testInstance = testRenderer.root
+		const small = testInstance.findByType('small')
+		expect(small.children).toEqual(['mockDescription'])
+	})
+
 	test('Switch renders when unchecked', () => {
 		const testRenderer = TestRenderer.create(<Switch checked={false} />)
 		const testInstance = testRenderer.root
