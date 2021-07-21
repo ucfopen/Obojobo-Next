@@ -40,4 +40,17 @@
 			}
 		}
 	}
+
+	.obojobo-draft--components--modal--modal.iframe-properties-simple-dialog {
+		> .obojobo-draft--components--delete-button {
+			position: absolute;
+			right: 1.5em;
+		}
+	}
+
+	.obojobo-draft--components--modal--modal.hide-close-button {
+		> .obojobo-draft--components--delete-button {
+			display: none;
+		}
+	}
 }

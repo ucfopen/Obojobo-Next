@@ -5,7 +5,6 @@ const { Dialog } = Common.components.modal
 
 const UpdatedModuleDialog = ({ onClose, onRestart }) => (
 	<Dialog
-		preventEsc
 		width="32rem"
 		title="Updated Module"
 		buttons={[

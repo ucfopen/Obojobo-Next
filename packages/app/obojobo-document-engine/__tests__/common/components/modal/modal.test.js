@@ -59,14 +59,13 @@ describe('Modal', () => {
 		document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 27 }))
 
 		expect(onClose).toHaveBeenCalledTimes(1)
+		expect(ModalUtil.hide).toHaveBeenCalledTimes(2)
 
 		component.unmount()
 	})
 
 	test('Esc closes modal (even when no onClose method present)', () => {
 		const component = mount(<Modal focusOnFirstElement={focusOnFirstElement}>Content</Modal>)
-
-		expect(ModalUtil.hide).toHaveBeenCalledTimes(0)
 
 		document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 27 }))
 
@@ -76,18 +75,15 @@ describe('Modal', () => {
 	})
 
 	test('Esc does not work if preventEsc is set', () => {
-		const component = mount(
-			<Modal onClose={onClose} focusOnFirstElement={focusOnFirstElement} preventEsc>
-				Content
-			</Modal>
-		)
+		// Prevents esc if onClose is not passed
+		const component = mount(<Modal focusOnFirstElement={focusOnFirstElement}>Content</Modal>)
 
 		expect(ModalUtil.hide).toHaveBeenCalledTimes(0)
 		expect(onClose).toHaveBeenCalledTimes(0)
 
 		document.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 27 }))
 
-		expect(ModalUtil.hide).toHaveBeenCalledTimes(0)
+		expect(ModalUtil.hide).toHaveBeenCalledTimes(1)
 		expect(onClose).toHaveBeenCalledTimes(0)
 
 		component.unmount()
@@ -233,5 +229,11 @@ describe('Modal', () => {
 		expect(focus).not.toHaveBeenCalled()
 
 		component.unmount()
+	})
+
+	test('Modal hides X button if hideCloseButton prop is present', () => {
+		const component = renderer.create(<Modal hideCloseButton={true} />)
+		const tree = component.toJSON()
+		expect(tree).toMatchSnapshot()
 	})
 })

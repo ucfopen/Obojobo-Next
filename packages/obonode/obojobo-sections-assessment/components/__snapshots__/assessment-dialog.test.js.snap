@@ -640,6 +640,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -789,6 +798,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         onFocus={[Function]}
         type="text"
       />
+      <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
       <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
@@ -1120,6 +1138,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -1195,6 +1222,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -1269,6 +1305,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         onFocus={[Function]}
         type="text"
       />
+      <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
       <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
@@ -1432,6 +1477,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -1519,6 +1573,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         onFocus={[Function]}
         type="text"
       />
+      <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
       <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
@@ -1677,6 +1740,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -1751,6 +1823,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         onFocus={[Function]}
         type="text"
       />
+      <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
       <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
@@ -1830,6 +1911,15 @@ exports[`AssessmentDialog renders as expected AssessmentDialog(assessmentMachine
         onFocus={[Function]}
         type="text"
       />
+      <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
       <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"

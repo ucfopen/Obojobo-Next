@@ -124,6 +124,7 @@ class IFrameProperties extends React.Component {
 				onConfirm={() => this.props.onConfirm(this.state)}
 				onCancel={this.props.onCancel}
 				focusOnFirstElement={this.focusOnFirstElement}
+				modalClassName="iframe-properties-simple-dialog"
 			>
 				<div className={'iframe-properties'}>
 					<div className="info">

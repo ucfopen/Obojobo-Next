@@ -52,7 +52,7 @@ describe('IFrame Properties Modal', () => {
 
 		component
 			.find('button')
-			.at(1)
+			.at(2)
 			.simulate('click')
 
 		expect(onConfirm).toHaveBeenCalled()

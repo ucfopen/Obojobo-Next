@@ -122,7 +122,7 @@ describe('AssessmentDialog renders as expected', () => {
 		expect(AssessmentUtil.resumeAttempt).not.toHaveBeenCalled()
 
 		const component = renderer.create(<AssessmentDialog {...props} />)
-		const button = component.root.findByType('button')
+		const button = component.root.findAllByType('button')[1]
 		button.props.onClick()
 
 		expect(AssessmentUtil.resumeAttempt).toHaveBeenCalledWith(props.assessmentModel)
@@ -167,7 +167,7 @@ describe('AssessmentDialog renders as expected', () => {
 		expect(AssessmentUtil.continueAttempt).not.toHaveBeenCalled()
 
 		const component = renderer.create(<AssessmentDialog {...props} />)
-		const button = component.root.findByType('button')
+		const button = component.root.findAllByType('button')[1]
 		button.props.onClick()
 
 		expect(AssessmentUtil.continueAttempt).toHaveBeenCalledWith(props.assessmentModel)
@@ -190,7 +190,7 @@ describe('AssessmentDialog renders as expected', () => {
 		expect(AssessmentUtil.acknowledgeStartAttemptFailed).not.toHaveBeenCalled()
 
 		const component = renderer.create(<AssessmentDialog {...props} />)
-		const button = component.root.findByType('button')
+		const button = component.root.findAllByType('button')[1]
 		button.props.onClick()
 
 		expect(AssessmentUtil.acknowledgeStartAttemptFailed).toHaveBeenCalledWith(props.assessmentModel)
@@ -213,7 +213,7 @@ describe('AssessmentDialog renders as expected', () => {
 		expect(AssessmentUtil.acknowledgeStartAttemptFailed).not.toHaveBeenCalled()
 
 		const component = renderer.create(<AssessmentDialog {...props} />)
-		const button = component.root.findByType('button')
+		const button = component.root.findAllByType('button')[1]
 		button.props.onClick()
 
 		expect(AssessmentUtil.acknowledgeStartAttemptFailed).toHaveBeenCalledWith(props.assessmentModel)
@@ -236,7 +236,7 @@ describe('AssessmentDialog renders as expected', () => {
 		expect(AssessmentUtil.acknowledgeStartAttemptFailed).not.toHaveBeenCalled()
 
 		const component = renderer.create(<AssessmentDialog {...props} />)
-		const button = component.root.findByType('button')
+		const button = component.root.findAllByType('button')[1]
 		button.props.onClick()
 
 		expect(AssessmentUtil.acknowledgeStartAttemptFailed).toHaveBeenCalledWith(props.assessmentModel)
@@ -258,7 +258,7 @@ describe('AssessmentDialog renders as expected', () => {
 		expect(AssessmentUtil.acknowledgeResumeAttemptFailed).not.toHaveBeenCalled()
 
 		const component = renderer.create(<AssessmentDialog {...props} />)
-		const button = component.root.findByType('button')
+		const button = component.root.findAllByType('button')[0]
 		button.props.onClick()
 
 		expect(AssessmentUtil.acknowledgeResumeAttemptFailed).toHaveBeenCalledWith(
@@ -453,7 +453,7 @@ describe('AssessmentDialog renders as expected', () => {
 			expect(AssessmentUtil.continueAttempt).not.toHaveBeenCalled()
 
 			const component = renderer.create(<AssessmentDialog {...props} />)
-			const button = component.root.findByType('button')
+			const button = component.root.findAllByType('button')[1]
 			button.props.onClick()
 
 			expect(AssessmentUtil.continueAttempt).toHaveBeenCalledWith(props.assessmentModel)
@@ -609,7 +609,7 @@ describe('AssessmentDialog renders as expected', () => {
 		expect(props.endAttempt).not.toHaveBeenCalled()
 
 		const component = renderer.create(<AssessmentDialog {...props} />)
-		const [, okButton] = component.root.findAllByType('button')
+		const [, , okButton] = component.root.findAllByType('button')
 		okButton.props.onClick()
 
 		expect(AssessmentUtil.continueAttempt).not.toHaveBeenCalled()

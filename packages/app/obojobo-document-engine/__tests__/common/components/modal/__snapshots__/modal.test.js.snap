@@ -36,3 +36,29 @@ exports[`Modal Modal 1`] = `
   />
 </div>
 `;
+
+exports[`Modal Modal hides X button if hideCloseButton prop is present 1`] = `
+<div
+  aria-labelledby="obojobo-draft--components--modal--modal--content"
+  className="obojobo-draft--components--modal--modal hide-close-button"
+  role="dialog"
+  tabIndex="-1"
+>
+  <input
+    aria-label="Start of dialog"
+    className="first-tab"
+    onFocus={[Function]}
+    type="text"
+  />
+  <div
+    className="content"
+    id="obojobo-draft--components--modal--modal--content"
+  />
+  <input
+    aria-label="End of dialog"
+    className="last-tab"
+    onFocus={[Function]}
+    type="text"
+  />
+</div>
+`;

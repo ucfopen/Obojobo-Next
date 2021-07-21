@@ -111,7 +111,7 @@ describe('Choose Image Modal', () => {
 
 		component
 			.find('button')
-			.at(0)
+			.at(1)
 			.simulate('click')
 
 		return flushPromises().then(() => {
@@ -126,7 +126,7 @@ describe('Choose Image Modal', () => {
 
 		component
 			.find('button')
-			.at(1)
+			.at(2)
 			.simulate('click')
 
 		return flushPromises().then(() => {

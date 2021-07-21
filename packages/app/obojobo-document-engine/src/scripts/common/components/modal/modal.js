@@ -26,13 +26,10 @@ class Modal extends React.Component {
 	}
 
 	onKeyUp(event) {
-		if (!this.props.preventEsc && event.keyCode === 27) {
-			//ESC
-			if (this.props.onClose) {
-				this.props.onClose()
-			} else {
-				ModalUtil.hide()
-			}
+		if (!!this.props.onClose && event.keyCode === 27) {
+			// ESC
+			this.props.onClose()
+			ModalUtil.hide()
 		}
 	}
 
@@ -51,7 +48,8 @@ class Modal extends React.Component {
 			<div
 				className={
 					'obojobo-draft--components--modal--modal' +
-					(this.props.className ? ' ' + this.props.className : '')
+					(this.props.className ? ' ' + this.props.className : '') +
+					(this.props.hideCloseButton ? ' hide-close-button' : '')
 				}
 				role="dialog"
 				aria-labelledby="obojobo-draft--components--modal--modal--content"

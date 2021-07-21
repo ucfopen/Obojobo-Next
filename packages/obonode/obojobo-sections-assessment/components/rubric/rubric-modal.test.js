@@ -250,14 +250,14 @@ describe('Rubric editor modal', () => {
 		// Mod properties is open.
 		component
 			.find('button')
-			.at(0)
+			.at(1)
 			.simulate('click')
 		expect(component.html().includes(`mod-box`)).toBe(true)
 
 		// Mod properties is closed.
 		component
 			.find('button')
-			.at(0)
+			.at(1)
 			.simulate('click')
 		expect(component.html().includes(`mod-box`)).toBe(false)
 	})
@@ -288,7 +288,7 @@ describe('Rubric editor modal', () => {
 		// To render ModProperties
 		component
 			.find('button')
-			.at(0)
+			.at(1)
 			.simulate('click')
 
 		const newMods = [
@@ -327,7 +327,7 @@ describe('Rubric editor modal', () => {
 
 		component
 			.find('button')
-			.at(2)
+			.at(3)
 			.simulate('click')
 		expect(onConfirm).toHaveBeenCalled()
 	})

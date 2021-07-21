@@ -102,7 +102,6 @@ const getDialog = (
 					onConfirm={() => {
 						AssessmentUtil.resumeAttempt(assessmentModel)
 					}}
-					preventEsc
 				>
 					<p>
 						It looks like you were in the middle of an attempt. We&apos;ll resume where you left

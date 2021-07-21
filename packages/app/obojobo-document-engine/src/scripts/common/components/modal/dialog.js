@@ -57,9 +57,9 @@ export default class Dialog extends React.Component {
 			<div className={className} style={styles}>
 				<Modal
 					onClose={this.props.onClose}
-					preventEsc={this.props.preventEsc}
 					focusOnFirstElement={this.focusOnFirstElement}
 					className={this.props.modalClassName}
+					hideCloseButton={this.props.hideCloseButton}
 				>
 					{this.props.title ? (
 						<h1 className="heading" style={{ textAlign: this.props.centered ? 'center' : null }}>

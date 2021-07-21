@@ -21,6 +21,15 @@ exports[`Rubric editor modal Rubric modal renders 1`] = `
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -480,6 +489,15 @@ exports[`Rubric editor modal Rubric modal renders with given values 1`] = `
         type="text"
       />
       <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
+      <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"
       >
@@ -863,6 +881,15 @@ exports[`Rubric editor modal Rubric modal renders with no mods 1`] = `
         onFocus={[Function]}
         type="text"
       />
+      <div
+        className="obojobo-draft--components--delete-button"
+      >
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>
+      </div>
       <div
         className="content"
         id="obojobo-draft--components--modal--modal--content"

@@ -27,7 +27,6 @@ describe('UnfinishedAttemptDialog', () => {
 		<div
 		  ok={true}
 		  onConfirm={[MockFunction]}
-		  preventEsc={true}
 		  title="Resume Attempt"
 		>
 		  <p>

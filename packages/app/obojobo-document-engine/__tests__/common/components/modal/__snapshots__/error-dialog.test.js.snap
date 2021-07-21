@@ -24,6 +24,15 @@ exports[`ErrorDialog ErrorDialog component 1`] = `
           type="text"
         />
         <div
+          className="obojobo-draft--components--delete-button"
+        >
+          <button
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+        <div
           className="content"
           id="obojobo-draft--components--modal--modal--content"
         >

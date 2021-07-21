@@ -19,6 +19,17 @@ describe('SimpleDialog', () => {
 		expect(tree).toMatchSnapshot()
 	})
 
+	test('SimpleDialog ok with custom class name', () => {
+		const component = renderer.create(
+			<SimpleDialog ok onCancel={jest.fn()} onConfirm={jest.fn()} className="mock-class-name">
+				Content
+			</SimpleDialog>
+		)
+		const tree = component.toJSON()
+
+		expect(tree).toMatchSnapshot()
+	})
+
 	test('SimpleDialog noOrYes', () => {
 		const component = renderer.create(
 			<SimpleDialog noOrYes onCancel={jest.fn()} onConfirm={jest.fn()}>
@@ -94,8 +105,8 @@ describe('SimpleDialog', () => {
 
 		leftButton.simulate('click')
 
-		expect(onCancel).toHaveBeenCalledTimes(0)
-		expect(onConfirm).toHaveBeenCalledTimes(1)
+		expect(onCancel).toHaveBeenCalledTimes(1)
+		expect(onConfirm).toHaveBeenCalledTimes(0)
 	})
 
 	test('SimpleDialog noOrYes click', () => {
@@ -118,8 +129,8 @@ describe('SimpleDialog', () => {
 
 		rightButton.simulate('click')
 
-		expect(onCancel).toHaveBeenCalledTimes(1)
-		expect(onConfirm).toHaveBeenCalledTimes(1)
+		expect(onCancel).toHaveBeenCalledTimes(2)
+		expect(onConfirm).toHaveBeenCalledTimes(0)
 	})
 
 	test('SimpleDialog yesOrNo click', () => {
@@ -128,30 +139,6 @@ describe('SimpleDialog', () => {
 
 		const component = mount(
 			<SimpleDialog yesOrNo onCancel={onCancel} onConfirm={onConfirm}>
-				Content
-			</SimpleDialog>
-		)
-
-		const leftButton = component.find('button').at(0)
-		const rightButton = component.find('button').at(1)
-
-		leftButton.simulate('click')
-
-		expect(onCancel).toHaveBeenCalledTimes(0)
-		expect(onConfirm).toHaveBeenCalledTimes(1)
-
-		rightButton.simulate('click')
-
-		expect(onCancel).toHaveBeenCalledTimes(1)
-		expect(onConfirm).toHaveBeenCalledTimes(1)
-	})
-
-	test('SimpleDialog cancelOk click', () => {
-		const onCancel = jest.fn()
-		const onConfirm = jest.fn()
-
-		const component = mount(
-			<SimpleDialog cancelOk onCancel={onCancel} onConfirm={onConfirm}>
 				Content
 			</SimpleDialog>
 		)
@@ -170,11 +157,35 @@ describe('SimpleDialog', () => {
 		expect(onConfirm).toHaveBeenCalledTimes(1)
 	})
 
-	test('SimpleDialog cancelOk click defults', () => {
+	test('SimpleDialog cancelOk click', () => {
+		const onCancel = jest.fn()
+		const onConfirm = jest.fn()
+
+		const component = mount(
+			<SimpleDialog cancelOk onCancel={onCancel} onConfirm={onConfirm}>
+				Content
+			</SimpleDialog>
+		)
+
+		const leftButton = component.find('button').at(1)
+		const rightButton = component.find('button').at(2)
+
+		leftButton.simulate('click')
+
+		expect(onCancel).toHaveBeenCalledTimes(1)
+		expect(onConfirm).toHaveBeenCalledTimes(0)
+
+		rightButton.simulate('click')
+
+		expect(onCancel).toHaveBeenCalledTimes(1)
+		expect(onConfirm).toHaveBeenCalledTimes(1)
+	})
+
+	test('SimpleDialog cancelOk click defaults', () => {
 		const component = mount(<SimpleDialog cancelOk>Content</SimpleDialog>)
 
-		const leftButton = component.find('button').at(0)
-		const rightButton = component.find('button').at(1)
+		const leftButton = component.find('button').at(1)
+		const rightButton = component.find('button').at(2)
 
 		leftButton.simulate('click')
 
