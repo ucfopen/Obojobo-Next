@@ -391,6 +391,24 @@ exports[`Stats Renders loaded state correctly 1`] = `
                   columns={
                     Array [
                       Object {
+                        "advanced": false,
+                        "name": "First Name",
+                        "selector": "userFirstName",
+                        "sortable": true,
+                      },
+                      Object {
+                        "advanced": false,
+                        "name": "Last Name",
+                        "selector": "userLastName",
+                        "sortable": true,
+                      },
+                      Object {
+                        "advanced": true,
+                        "name": "User Roles",
+                        "selector": "userRoles",
+                        "sortable": true,
+                      },
+                      Object {
                         "advanced": true,
                         "name": "Course ID",
                         "selector": "contextId",
@@ -449,24 +467,6 @@ exports[`Stats Renders loaded state correctly 1`] = `
                         "advanced": true,
                         "name": "Username",
                         "selector": "username",
-                        "sortable": true,
-                      },
-                      Object {
-                        "advanced": false,
-                        "name": "First Name",
-                        "selector": "userFirstName",
-                        "sortable": true,
-                      },
-                      Object {
-                        "advanced": false,
-                        "name": "Last Name",
-                        "selector": "userLastName",
-                        "sortable": true,
-                      },
-                      Object {
-                        "advanced": true,
-                        "name": "User Roles",
-                        "selector": "userRoles",
                         "sortable": true,
                       },
                       Object {
