@@ -1,3 +1,4 @@
+const db = oboRequire('server/db')
 const express = require('express')
 const router = express.Router()
 const logger = oboRequire('server/logger')
@@ -48,6 +49,10 @@ router
 		let viewState
 		let visitStartExtensions
 		let launch
+		let isRedAlertEnabled = false
+
+		const userId = req.currentUser.id
+		const draftId = req.currentDocument.draftId
 
 		return Promise.all([
 			viewerState.get(
@@ -101,6 +106,25 @@ router
 					})
 				})
 			})
+			.then(() =>
+				db.oneOrNone(
+					`
+						SELECT is_enabled FROM red_alert_status
+						WHERE
+							user_id = $[userID]
+							AND draft_id = $[draftID]
+					`,
+					{
+						userID,
+						draftId
+					}
+				)
+			)
+			.then(result => {
+				if (result) {
+					isRedAlertEnabled = result.is_enabled
+				}
+			})
 			.then(() => {
 				logger.log(
 					`VISIT: Start visit success for visitId="${req.currentVisit.id}", draftId="${req.currentDocument.draftId}", userId="${req.currentUser.id}"`
@@ -121,7 +145,8 @@ router
 					isPreviewing: req.currentVisit.is_preview,
 					lti,
 					viewState,
-					extensions: visitStartExtensions
+					extensions: visitStartExtensions,
+					isRedAlertEnabled
 				})
 			})
 			.catch(err => {

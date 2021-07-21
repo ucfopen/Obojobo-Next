@@ -34,7 +34,8 @@ describe('viewer events', () => {
 		ve = oboRequire('server/viewer/viewer_events')
 		expect(oboEvents.on).toBeCalledWith('client:nav:open', expect.any(Function))
 		expect(oboEvents.on).toBeCalledWith('client:nav:close', expect.any(Function))
-		expect(oboEvents.on).toHaveBeenCalledTimes(2)
+		expect(oboEvents.on).toBeCalledWith('client:nav:setRedAlert', expect.any(Function))
+		expect(oboEvents.on).toHaveBeenCalledTimes(3)
 	})
 
 	test('executes next when included to support express middleware', () => {

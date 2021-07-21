@@ -61,7 +61,9 @@ jest.mock('../../../src/scripts/viewer/util/nav-util', () => ({
 	getOrderedList: jest.fn(),
 	getNavTarget: jest.fn(),
 	close: jest.fn(),
-	open: jest.fn()
+	open: jest.fn(),
+	isRedAlertEnabled: jest.fn(),
+	setRedAlert: jest.fn()
 }))
 
 // NavStore
