@@ -1,6 +1,9 @@
 @import '~styles/includes';
 
 .obojobo-draft--chunks--iframe {
+	// Cancel any floating elements:
+	clear: both;
+
 	display: block;
 	font-size: 1em;
 	margin: 0 auto;

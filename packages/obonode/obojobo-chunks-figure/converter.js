@@ -28,7 +28,8 @@ const slateToObo = node => {
 			size: node.content.size,
 			width: node.content.width,
 			height: node.content.height,
-			captionWidth: node.content.captionWidth
+			captionWidth: node.content.captionWidth,
+			align: node.content.align
 		})
 	}
 }
@@ -46,6 +47,11 @@ const oboToSlate = node => {
 		slateNode.children = [{ text: '' }]
 	} else {
 		slateNode.children = node.content.textGroup.flatMap(line => TextUtil.parseMarkings(line))
+	}
+
+	if (node.content.size === 'large' || node.content.size === 'medium') {
+		node.content.captionWidth = null
+		node.content.align = null
 	}
 
 	return slateNode

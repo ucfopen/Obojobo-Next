@@ -1,5 +1,13 @@
 @import '~styles/includes';
 
+.component[data-type='ObojoboDraft.Chunks.Figure'].is-selected {
+	&.is-align-left-wrap,
+	&.is-align-right-wrap {
+		overflow: visible;
+		float: inherit;
+	}
+}
+
 .obojobo-draft--chunks--figure {
 	.accessibility-warning {
 		font-family: $font-default;

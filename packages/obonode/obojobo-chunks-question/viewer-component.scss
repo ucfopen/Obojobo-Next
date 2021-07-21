@@ -1,6 +1,9 @@
 @import '~styles/includes';
 
 .obojobo-draft--chunks--question {
+	// Cancel any floating elements:
+	clear: both;
+
 	perspective: 1000px;
 	margin: 0 auto;
 

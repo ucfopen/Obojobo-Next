@@ -1,6 +1,9 @@
 @import '~styles/includes';
 
 .obojobo-draft--chunks--question-bank {
+	// Cancel any floating elements:
+	clear: both;
+
 	position: relative;
 	width: auto;
 	margin: 0.3em;

@@ -34,6 +34,7 @@ class ImageProperties extends React.Component {
 		this.focusOnFirstElement = this.focusOnFirstElement.bind(this)
 		this.handleAltTextChange = this.handleAltTextChange.bind(this)
 		this.handleCaptionWidthChange = this.handleCaptionWidthChange.bind(this)
+		this.handleAlignChange = this.handleAlignChange.bind(this)
 		this.onOpenChoosingImageModal = this.onOpenChoosingImageModal.bind(this)
 	}
 
@@ -47,6 +48,12 @@ class ImageProperties extends React.Component {
 		const captionWidth = event.target.value
 
 		this.setState({ captionWidth })
+	}
+
+	handleAlignChange(event) {
+		const align = event.target.value
+
+		this.setState({ align })
 	}
 
 	handleWidthTextChange(event) {
@@ -68,7 +75,8 @@ class ImageProperties extends React.Component {
 			size,
 			width: null,
 			height: null,
-			captionWidth: size === 'small' || size === 'custom' ? this.state.captionWidth : null
+			captionWidth: size === 'small' || size === 'custom' ? this.state.captionWidth : null,
+			align: size === 'small' || size === 'custom' ? this.state.align : null
 		})
 	}
 
@@ -110,6 +118,7 @@ class ImageProperties extends React.Component {
 		const size = this.state.size
 		const isCaptionWidthOptionAvailable =
 			this.state.size === 'small' || this.state.size === 'custom'
+		const isAlignAvailable = this.state.size === 'small' || this.state.size === 'custom'
 
 		return (
 			<SimpleDialog
@@ -172,6 +181,26 @@ class ImageProperties extends React.Component {
 									<option value={ImageCaptionWidthTypes.TEXT_WIDTH}>
 										Allow caption to extend past the image width
 									</option>
+								</React.Fragment>
+							) : (
+								<option>--</option>
+							)}
+						</select>
+
+						<label className="align-label" htmlFor="obojobo-draft--chunks--figure--align">
+							Align:
+						</label>
+						<select
+							id="obojobo-draft--chunks--figure--align"
+							value={this.state.align || 'center'}
+							onChange={this.handleAlignChange}
+							disabled={!isAlignAvailable}
+						>
+							{isAlignAvailable ? (
+								<React.Fragment>
+									<option value={'left-wrap'}>Left (Wrap)</option>
+									<option value={'center'}>Center</option>
+									<option value={'right-wrap'}>Right (Wrap)</option>
 								</React.Fragment>
 							) : (
 								<option>--</option>

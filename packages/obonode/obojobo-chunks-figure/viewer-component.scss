@@ -1,5 +1,57 @@
 @import '~styles/includes';
 
+@include mq($from: tablet) {
+	.component[data-type='ObojoboDraft.Chunks.Figure'] {
+		&.is-align-left-wrap,
+		&.is-align-right-wrap {
+			clear: both;
+			z-index: $z-index-above-all;
+			overflow: auto;
+			padding-bottom: 0.5em;
+		}
+
+		&.is-align-left-wrap {
+			float: left;
+
+			.obojobo-draft--chunks--figure {
+				padding-right: 1.5em;
+
+				&.custom {
+					padding-left: 3em;
+
+					@include mq($until: desktop) {
+						padding-left: 3em * 0.75;
+					}
+
+					@include mq($until: tablet) {
+						padding-left: 3em * 0.3;
+					}
+				}
+			}
+		}
+
+		&.is-align-right-wrap {
+			float: right;
+
+			.obojobo-draft--chunks--figure {
+				padding-left: 1.5em;
+
+				&.custom {
+					padding-right: 3em;
+
+					@include mq($until: desktop) {
+						padding-right: 3em * 0.75;
+					}
+
+					@include mq($until: tablet) {
+						padding-right: 3em * 0.3;
+					}
+				}
+			}
+		}
+	}
+}
+
 .obojobo-draft--chunks--figure {
 	text-align: center;
 

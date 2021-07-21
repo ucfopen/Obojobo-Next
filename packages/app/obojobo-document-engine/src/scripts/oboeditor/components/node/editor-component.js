@@ -230,7 +230,7 @@ class Node extends React.Component {
 			.className || ''}`
 
 		return (
-			<div className={className} data-obo-component="true">
+			<div className={className} data-obo-component="true" data-type={this.props.element.type}>
 				{this.props.selected ? (
 					<div className={'component-toolbar'}>
 						<InsertMenu

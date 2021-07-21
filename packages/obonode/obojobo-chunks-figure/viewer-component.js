@@ -31,7 +31,11 @@ const Figure = props => {
 	}
 
 	return (
-		<OboComponent model={props.model} moduleData={props.moduleData}>
+		<OboComponent
+			model={props.model}
+			moduleData={props.moduleData}
+			className={`is-align-${props.model.modelState.align}`}
+		>
 			<NonEditableChunk
 				className={`obojobo-draft--chunks--figure viewer ${props.model.modelState.size}`}
 			>

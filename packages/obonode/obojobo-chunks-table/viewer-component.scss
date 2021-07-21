@@ -1,5 +1,10 @@
 @import '~styles/includes';
 
+.obojobo-draft--chunks--table {
+	// Cancel any floating elements:
+	clear: both;
+}
+
 .obojobo-draft--chunks--table.viewer {
 	> .container {
 		// This allows auto-width tables with really long strings of text to still fit within the viewer

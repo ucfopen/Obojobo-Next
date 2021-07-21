@@ -1,6 +1,9 @@
 @import '~styles/includes';
 
 .obojobo-draft--chunks--you-tube {
+	// Cancel any floating elements:
+	clear: both;
+
 	display: block;
 	margin: 1em auto;
 	position: relative;

@@ -22,6 +22,12 @@ const Adapter = {
 		])
 		model.setStateProp('width', null, p => parseInt(p, 10))
 		model.setStateProp('height', null, p => parseInt(p, 10))
+		model.setStateProp('align', 'center', p => p.toLowerCase(), [
+			'left-wrap',
+			'center',
+			'right-wrap'
+		])
+		// model.setStateProp('wrap', 'no-wrap', p => p.toLowerCase(), ['no-wrap', 'wrap'])
 		model.setStateProp('alt', null)
 		model.setStateProp('captionWidth', ImageCaptionWidthTypes.IMAGE_WIDTH, p => p.toLowerCase(), [
 			ImageCaptionWidthTypes.IMAGE_WIDTH,
@@ -30,6 +36,7 @@ const Adapter = {
 
 		if (model.modelState.size === 'large' || model.modelState.size === 'medium') {
 			model.modelState.captionWidth = ImageCaptionWidthTypes.IMAGE_WIDTH
+			model.modelState.align = 'center'
 		}
 	},
 
